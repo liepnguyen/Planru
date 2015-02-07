@@ -1,0 +1,72 @@
+﻿<!-- Modal -->
+<div class="modal-header">
+    <button type="button" class="close"
+            data-dismiss="modal" aria-hidden="true" ng-click="vm.close()">
+        &times;
+    </button>
+    <h4 class="modal-title" id="myModalLabel">
+        Create a user account
+    </h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label for="tbFirstName" class="control-label">First Name</label>
+                <input type="text" class="form-control" ng-model="vm.new.firstName">
+            </div>
+            <div class="col-sm-6">
+                <label for="tbLastName" class="control-label">Last Name</label>
+                <input type="text" class="form-control" ng-model="vm.new.lastName">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label for="tbDisplayName" class="control-label">Display Name</label>
+                <input type="text" class="form-control" ng-model="vm.new.displayName">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label for="tbUserName" class="control-label">User Name</label>
+                <input type="text" class="form-control" ng-model="vm.new.userName">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <div class="rdio rdio-default">
+                    <input type="radio" name="radio" id="radioDefault" value="{{vm.passwordOptions.automatically}}" checked="checked" ng-model="vm.new.passwordOption">
+                    <label for="radioDefault">Auto-generated password</label>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="rdio rdio-default">
+                    <input type="radio" name="radio" value="{{vm.passwordOptions.manually}}" id="radioPrimary" ng-model="vm.new.passwordOption">
+                    <label for="radioPrimary">Type password</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" >
+            <div ng-if="vm.new.passwordOption == vm.passwordOptions.manually">
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" placeholder="Enter password" ng-model="vm.new.password">
+                </div>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" placeholder="Re-enter password" ng-model="vm.new.confirmedPassword">
+                </div>
+            </div>
+            <div ng-if="vm.new.passwordOption == vm.passwordOptions.automatically">
+                <div class="alert alert-info">New password will be displayed in the next page</div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+                    data-dismiss="modal" ng-click="vm.close()">
+                Close
+            </button>
+            <button type="button" class="btn btn-primary" ng-click="vm.create()">
+                Create
+            </button>
+        </div>
+    </form>
+</div>

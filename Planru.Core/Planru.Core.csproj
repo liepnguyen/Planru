@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F2826D4-B154-4B16-94B6-288D1EFB9D05}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Planru.Core</RootNamespace>
+    <AssemblyName>Planru.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Annotations\ConfigurationAttribute.cs" />
+    <Compile Include="Configuration\Elements\MappingElement.cs" />
+    <Compile Include="Configuration\Elements\ModuleElementCollection.cs" />
+    <Compile Include="Configuration\Elements\ModuleElement.cs" />
+    <Compile Include="Configuration\PlanruSection.cs" />
+    <Compile Include="Domain\Entity.cs" />
+    <Compile Include="Configuration\Annotations\CollectionAttribute.cs" />
+    <Compile Include="Configuration\Annotations\TableAttribute.cs" />
+    <Compile Include="Persistence\IRepository.cs" />
+    <Compile Include="Persistence\IUnitOfWork.cs" />
+    <Compile Include="Persistence\EntityDMO.cs" />
+    <Compile Include="Persistence\EntityAuditDMO.cs" />
+    <Compile Include="Domain\ValueObject.cs" />
+    <Compile Include="Persistence\MongoDB\Repository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Domain\Specification\AndSpecification.cs" />
+    <Compile Include="Domain\Specification\CompositeSpecification.cs" />
+    <Compile Include="Domain\Specification\DirectSpecification.cs" />
+    <Compile Include="Domain\Specification\ExpressionBuilder.cs" />
+    <Compile Include="Domain\Specification\ISpecification.cs" />
+    <Compile Include="Domain\Specification\NotSpecification.cs" />
+    <Compile Include="Domain\Specification\OrSpecification.cs" />
+    <Compile Include="Domain\Specification\ParametersRebinder.cs" />
+    <Compile Include="Domain\Specification\Specification.cs" />
+    <Compile Include="Domain\Specification\TrueSpecification.cs" />
+    <Compile Include="Domain\IService.cs" />
+    <Compile Include="Domain\Service.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Planru.Crosscutting.Adapter\Planru.Crosscutting.Adapter.csproj">
+      <Project>{c4ff9d0b-2f25-40e3-868f-a94057ad90a0}</Project>
+      <Name>Planru.Crosscutting.Adapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Planru.Crosscutting.Common\Planru.Crosscutting.Common.csproj">
+      <Project>{ecc001c0-8bc3-4c9d-8d32-4cabb030f16e}</Project>
+      <Name>Planru.Crosscutting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Planru.Crosscutting.Data\Planru.Crosscutting.Data.csproj">
+      <Project>{ca941891-7b9b-499b-966c-481e515120e1}</Project>
+      <Name>Planru.Crosscutting.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Planru.CrossCutting.IoC\Planru.Crosscutting.IoC.csproj">
+      <Project>{2044441e-908a-4a87-8c1c-55f241d09980}</Project>
+      <Name>Planru.Crosscutting.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Planru.Crosscutting.Logging\Planru.Crosscutting.Logging.csproj">
+      <Project>{212b9252-b4ad-40cd-a893-25dac6305fb2}</Project>
+      <Name>Planru.Crosscutting.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
