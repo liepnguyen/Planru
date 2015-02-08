@@ -83,6 +83,7 @@
     <Compile Include="Assets\IService.cs" />
     <Compile Include="Assets\Service.cs" />
     <Compile Include="Configration\DependencyConfigurationSectionTest.cs" />
+    <Compile Include="Configration\IoCConfigurationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.Unity;
+using Planru.Crosscutting.IoC.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Planru.Crosscutting.IoC.Unity
         public UnityContainer() 
         {
             _unityContainer = new Microsoft.Practices.Unity.UnityContainer();
+            IoCConfigurator.LoadConfig(this);
         }
 
         public void Register<TSource, TTarget>() where TTarget : TSource
