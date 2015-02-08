@@ -20,11 +20,10 @@
     }
 
     function removeUser(id) {
-
+        return User.delete({ id: id }).$promise;
     }
 
     function getUser(id) {
-
     }
 
     function updateUser(user) {

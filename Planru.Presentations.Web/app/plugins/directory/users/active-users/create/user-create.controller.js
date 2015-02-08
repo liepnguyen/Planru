@@ -11,8 +11,8 @@ function ($rootScope, $scope, $modalInstance, toastr, userCtrl, userService, use
 
         vm.create = function () {
             userService.addUser(vm.new).then(function (response) {
-                toastr.success('You have created user successfully!', 'Success');
                 userEvent.emitUserCreatedEvent({ sender: vm, user: response });
+                toastr.success('You have created user successfully!', 'Success');
                 $modalInstance.close();
             });
         }

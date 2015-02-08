@@ -59,12 +59,12 @@
 /********** 1. FILE IMPORTS **********/
 /*************************************/
 
-@import url('../../dependencies/bootstrap/dist/css/bootstrap.min.css');
+@import url('../../bower_components/bootstrap/dist/css/bootstrap.min.css');
 @import url('bootstrap-override.css');
-@import url('../../dependencies/ng-table/ng-table.min.css');
-@import url('../../dependencies/fontawesome/css/font-awesome.min.css');
-@import url('../../dependencies/angular-loading-bar/build/loading-bar.min.css');
-@import url('../../dependencies/angular-toastr/dist/angular-toastr.min.css');
+@import url('../../bower_components/ng-table/ng-table.min.css');
+@import url('../../bower_components/fontawesome/css/font-awesome.min.css');
+@import url('../../bower_components/angular-loading-bar/build/loading-bar.min.css');
+@import url('../../bower_components/angular-toastr/dist/angular-toastr.min.css');
 @import url('lato.css');
 @import url('roboto.css');
 
