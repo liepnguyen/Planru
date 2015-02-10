@@ -25,6 +25,7 @@ gulp.task('build:js', function () {
     }
     else {
     	gulp.src(paths.scripts)
+    		//.pipe(concat('main.min.js'))
     		.pipe(gulp.dest('build'));
     }
 });
