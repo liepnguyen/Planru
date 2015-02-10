@@ -7,7 +7,10 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="content/images/favicon.png" type="image/png">
     <title>Planru System</title>
-    <link href="content/css/style.default.css" rel="stylesheet">
+
+    <!-- inject:css -->
+    <!-- endinject -->
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="lib/html5shiv/dist/html5shiv.min.js"></script>
@@ -109,50 +112,17 @@
         </div><!-- rightpanel -->
     </section>
 
-    <script src="lib/scriptjs/dist/script.js"></script>
-    <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="lib/jquery-migrate/jquery-migrate.js"></script>
-    <script src="lib/jquery-cookie/jquery.cookie.js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
-    <script src="lib/ui-router/release/angular-ui-router.min.js"></script>
-    <script src="lib/ng-table/ng-table.min.js"></script>
-    <script src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script src="lib/angular-resource/angular-resource.min.js"></script>
-    <script src="lib/angular-loading-bar/build/loading-bar.min.js"></script>
-    <script src="lib/angular-toastr/dist/angular-toastr.min.js"></script>
-    <script src="lib/angular-animate/angular-animate.min.js"></script>
+    <!-- components:js -->
+    <!-- endinject -->        
 
+    <!-- configs:js -->
+    <!-- endinject -->    
 
-    
-    <script src="app/common/directives/bootstrap-modal/bootstrap-modal.directive.js"></script>
-    <script src="app/plugins/directory/plugin.config.js"></script>
-    <script src="app/app.module.js"></script>
-    <script src="app/app.routes.js"></script>
-    <script src="app/app.config.js"></script>
-    <script src="scripts/custom.js"></script>
-    <script src="scripts/dashboard.js"></script>
-    <script src="app/plugins/directory/users/user.events.js"></script>
+    <!-- services:js -->
+    <!-- endinject -->
 
-    <script type="text/javascript">
-        $script([
-            'app/plugins/directory/users/user.service.js',
-            'app/plugins/directory/users/active-users/list/user-list.service.js'
-        ], function () {
-            $script([
-            'app/plugins/dashboard/dashboard.controller.js',
-            'app/plugins/directory/users/active-users/active-user.controller.js',
-            'app/plugins/directory/users/active-users/create/user-create.controller.js',
-            'app/plugins/directory/users/active-users/list/user-list.controller.js',
-            'app/plugins/directory/users/deleted-users/deleted-user.controller.js',
-            'app/plugins/directory/users/deleted-users/list/deleted-user-list.controller.js'
-            ], function () {
-                // when all is done, execute bootstrap angular application
-                angular.bootstrap(document, ['planruApp']);
-            });
-        });
+    <!-- controllers:js -->
+    <!-- endinject -->
         
     </script>
 </body>
