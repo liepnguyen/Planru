@@ -83,7 +83,6 @@
     <Content Include="src\app\plugins\directory\users\user.controller.js" />
     <Content Include="src\app\plugins\directory\users\user.view.html" />
     <Content Include="src\app\plugins\directory\users\user.service.js" />
-    <Content Include="src\app\app.routes.js" />
     <Content Include="bower.json" />
     <Content Include="src\content\css\lato.css" />
     <Content Include="src\content\css\roboto.css" />
@@ -191,16 +190,14 @@
     <Content Include="src\content\fonts\roboto\Roboto-ThinItalic-webfont.ttf" />
     <Content Include="src\content\fonts\roboto\Roboto-ThinItalic-webfont.woff" />
     <Content Include="src\content\fonts\roboto\Roboto-ThinItalic-webfontd41d.eot" />
-    <Content Include="src\app\app.config.js" />
     <Content Include="package.json" />
-    <None Include="src\scripts\_references.js" />
     <Content Include="gulpfile.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\app\plugins\directory\users\active-users\active-user.view.html" />
     <Content Include="src\app\plugins\directory\users\active-users\active-user.controller.js" />
-    <Content Include="src\app\app.module.js" />
+    <Content Include="src\app\app.config.js" />
     <Content Include="src\app\plugins\dashboard\dashboard.view.html" />
     <Content Include="src\app\plugins\dashboard\dashboard.controller.js" />
     <Content Include="src\content\css\bootstrap-override.css" />

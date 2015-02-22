@@ -10,64 +10,49 @@ var filter = require('gulp-filter');
 var rename = require('gulp-rename');
 var minifyCss = require('gulp-minify-css');
 var inject = require('gulp-inject');
+var clean = require('gulp-clean');
+var when = require('when');
 
-var paths = {
-	scripts: ['src/**/*.js'],
-	images: ''
-};
-
-gulp.task('clean', function(cb) {
-  del(['build'], cb);
+gulp.task('clean', function () {
+    return gulp.src('build', { read: false })
+        .pipe(clean());
 });
 
 gulp.task('build:js', function () {
-    if (yargs.release) {
-    	gulp.src('src/**/*.js')
-    		.pipe(uglify())
-            .pipe(rename({ suffix: '.min' }))
-    		.pipe(gulp.dest('build'));
+    var scripts = gulp.src('src/**/*.js');
+    if (yargs.buildProd) {
+    	scripts.pipe(uglify()).pipe(rename({ suffix: '.min' }));
     }
-    else {
-    	gulp.src('src/**/*.js')
-    		.pipe(gulp.dest('build'));
-    }
+    return scripts.pipe(gulp.dest('build'));
 });
 
 gulp.task('build:html', function() {
     var htmls = gulp.src(['src/**/*.html', '!src/index.html']);
-
-    if (yargs.release) {
-        htmls
-            .pipe(minifyHTML({ comments: false, spare: false }));
+    if (yargs.buildProd) {
+        htmls.pipe(minifyHTML({ comments: false, spare: false }));
     }
-
-    htmls.pipe(gulp.dest('build'));
+    return htmls.pipe(gulp.dest('build'));
 });
 
-gulp.task('build:inject', function() {
+gulp.task('build:index', ['build:bower', 'build:js'], function() {
     var index = gulp.src('./src/index.html');
-    var services = gulp.src(['./src/**/*.service.js'], { read: false });
-    var controllers = gulp.src(['./src/**/*.controller.js'], { read: false });
-    var configs = gulp.src(['./src/**/*.config.js'], { read: false });
+    var components = gulp.src(['./build/lib/**/*.js', './build/lib/**/*.css'], { read: false });
 
-    if (yargs.release) {
-        services.pipe(uglify()).pipe(rename({ suffix: '.min' }));
-        controllers.pipe(uglify()).pipe(rename({ suffix: '.min' }));
-        configs.pipe(uglify()).pipe(rename({ suffix: '.min' }));
-    }
+    var services = gulp.src(['./build/app/**/*.service.js'], { read: false });
+    var controllers = gulp.src(['./build/app/**/*.controller.js'], { read: false });
+    var configs = gulp.src(['./build/app/**/*.config.js'], { read: false });
 
-    index
-        .pipe(inject(configs, { name: 'configs' }))
+    return index.pipe(inject(components, { name: 'components' }, { relative: true }))
         .pipe(inject(services, { name: 'services' }))
         .pipe(inject(controllers, { name: 'controllers' }))
+        .pipe(inject(configs, { name: 'configs' }))
         .pipe(gulp.dest('./build'));
 });
 
-gulp.task('build:lib', function () {
-    var index = gulp.src('./src/index.html');
+gulp.task('build:bower', function () {
     var jsFilter = filter('**/*.js');
     var cssFilter = filter('**/*.css');
-    var components = gulp.src(bowerFiles(), { base: 'bower_components' })
+    return gulp.src(bowerFiles(), { base: 'bower_components' })
         .pipe(jsFilter)
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
@@ -77,11 +62,16 @@ gulp.task('build:lib', function () {
         .pipe(rename({ suffix: ".min" }))
         .pipe(cssFilter.restore())
 		.pipe(gulp.dest('build/lib'));
-
-    index.pipe(inject(components, { name: 'components' }))
-        .pipe(gulp.dest('./build'));
 });
 
-gulp.task('default', ['clean'], function() {
-    gulp.start('build:lib', 'build:html', "build:js", "build:inject");
+gulp.task('default', ['build'], function () {
+
+});
+
+gulp.task('build', ['clean'], function () {
+    var d = when.defer();
+    gulp.start(['build:index'], function () {
+        d.resolve();
+    });
+    return d.promise;
 });
