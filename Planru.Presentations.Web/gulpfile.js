@@ -42,10 +42,15 @@ gulp.task('build:index', ['build:bower', 'build:js'], function() {
     var controllers = gulp.src(['./build/app/**/*.controller.js'], { read: false });
     var configs = gulp.src(['./build/app/**/*.config.js'], { read: false });
 
-    return index.pipe(inject(components, { name: 'components' }, { relative: true }))
-        .pipe(inject(services, { name: 'services' }))
-        .pipe(inject(controllers, { name: 'controllers' }))
-        .pipe(inject(configs, { name: 'configs' }))
+    var transform = function (filepath) {
+        arguments[0] = filepath.replace('/build/', './');
+        return inject.transform.apply(inject.transform, arguments);
+    };
+
+    return index.pipe(inject(components, { name: 'components', transform: transform }))
+        .pipe(inject(services, { name: 'services', transform: transform }))
+        .pipe(inject(controllers, { name: 'controllers', transform: transform }))
+        .pipe(inject(configs, { name: 'configs', transform: transform }))
         .pipe(gulp.dest('./build'));
 });
 
@@ -53,13 +58,12 @@ gulp.task('build:bower', function () {
     var jsFilter = filter('**/*.js');
     var cssFilter = filter('**/*.css');
     return gulp.src(bowerFiles(), { base: 'bower_components' })
+        .pipe(rename({ suffix: '.min' }))
         .pipe(jsFilter)
         .pipe(uglify())
-        .pipe(rename({ suffix: '.min' }))
         .pipe(jsFilter.restore())
         .pipe(cssFilter)
         .pipe(minifyCss())
-        .pipe(rename({ suffix: ".min" }))
         .pipe(cssFilter.restore())
 		.pipe(gulp.dest('build/lib'));
 });
