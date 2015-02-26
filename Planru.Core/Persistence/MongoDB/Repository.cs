@@ -1,176 +1,99 @@
-﻿using System;
+﻿using MongoDB.Driver;
+using Planru.Core.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Planru.Core.Domain.Specification;
-using Planru.Core.Domain;
-using System.Linq.Expressions;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
-using System.Data.Entity.Design.PluralizationServices;
-using MongoDB.Driver.Builders;
-using MongoDB.Bson;
-using Planru.Crosscutting.Data;
-using Planru.Crosscutting.Adapter;
-using Planru.Crosscutting.Common;
-using Planru.Core.Configuration.Annotations;
 
 namespace Planru.Core.Persistence.MongoDB
 {
-    public abstract class Repository<TPersistenceEntity, TDomainEntity, TID> : IRepository<TDomainEntity, TID>
-        where TDomainEntity : Entity<TID>
-        where TPersistenceEntity : EntityDMO<TID>
+    public abstract class Repository<TEntity, TID> : IRepository<TEntity, TID>
+        where TEntity : IEntity<TID>
     {
-        private bool _disposed = false;
-        private MongoCollection<TPersistenceEntity> _collection;
-        private ITypeAdapter _typeAdapter;
+        public Repository(MongoDatabase database)
+        { 
 
-        public Repository(MongoDatabase database, ITypeAdapter typeAdapter)
-        {
-            _typeAdapter = typeAdapter;
-            _collection = database.GetCollection<TPersistenceEntity>(this.GetCollectionName());
         }
 
-        public void Add(TDomainEntity item)
+        public void Add(TEntity item)
         {
-            var entity = Adapt<TPersistenceEntity>(item);
-            _collection.Insert(item);
+            throw new NotImplementedException();
         }
 
-        public void Add(IEnumerable<TDomainEntity> items)
+        public void Add(IEnumerable<TEntity> items)
         {
-            var entities = Adapt<TPersistenceEntity>(items);
-            _collection.InsertBatch(items);
+            throw new NotImplementedException();
         }
 
-        public void Remove(TDomainEntity item)
+        public void Remove(TEntity item)
         {
-            this.Remove(item.Id);
+            throw new NotImplementedException();
         }
 
         public void Remove(TID id)
         {
-            _collection.Remove(Query.EQ("_id", BsonValue.Create(id)));
+            throw new NotImplementedException();
         }
 
-        public void Remove(IEnumerable<TDomainEntity> items)
+        public void Remove(IEnumerable<TEntity> items)
         {
-            IEnumerable<TID> ids = items.Select(e => e.Id);
-            Remove(ids);
+            throw new NotImplementedException();
         }
 
         public void Remove(IEnumerable<TID> ids)
         {
-            _collection.Remove(Query.In("_id", new BsonArray(ids)));
+            throw new NotImplementedException();
         }
 
-        public void Modify(TDomainEntity item)
+        public void Modify(TEntity item)
         {
-            var entity = Adapt<TPersistenceEntity>(item);
-            _collection.Save(item);
+            throw new NotImplementedException();
         }
 
-        public void Modify(IEnumerable<TDomainEntity> items)
+        public void Modify(IEnumerable<TEntity> items)
         {
-            var entities = Adapt<TPersistenceEntity>(items);
-            _collection.Save(items);
+            throw new NotImplementedException();
+        }
+
+        public TEntity Get(TID id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<TEntity> GetAll()
+        {
+            throw new NotImplementedException();
         }
 
         public bool Exists(TID id)
         {
-            return _collection.AsQueryable<TPersistenceEntity>().Any(e => e.Id.Equals(id));
+            throw new NotImplementedException();
         }
 
-        public TDomainEntity Get(TID id)
+        public IEnumerable<TEntity> AllMatching(Domain.Specification.ISpecification<TEntity> specification)
         {
-            var result = _collection.FindOneById(BsonValue.Create(id));
-            return Adapt<TDomainEntity>(result);
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<TDomainEntity> GetAll()
+        public Crosscutting.Data.PageResult<TEntity> GetPaged<KProperty>(int pageNumber, int pageSize, System.Linq.Expressions.Expression<Func<TEntity, KProperty>> orderByExpression, bool ascending)
         {
-            var result = _collection.FindAll().AsEnumerable();
-            return Adapt<TDomainEntity>(result);
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<TDomainEntity> AllMatching(ISpecification<TDomainEntity> specification)
+        public IEnumerable<TEntity> GetFiltered(System.Linq.Expressions.Expression<Func<TEntity, bool>> filter)
         {
-            return this.GetFiltered(specification.SatisfiedBy());
-        }
-
-        public PageResult<TDomainEntity> GetPaged<KProperty>(int pageNumber, int pageSize, 
-            Expression<Func<TDomainEntity, KProperty>> orderByExpression, bool ascending)
-        {
-            var newOrderByExpression = 
-                ExpressionConverter<TPersistenceEntity>.Convert(orderByExpression);
-
-            IEnumerable<TPersistenceEntity> persistenceEntities;
-            if (ascending)
-                persistenceEntities = _collection.AsQueryable()
-                                                    .OrderBy(newOrderByExpression)
-                                                    .Skip(pageNumber * pageSize)
-                                                    .Take(pageSize);
-            else
-                persistenceEntities = _collection.AsQueryable()
-                                                    .OrderByDescending(newOrderByExpression)
-                                                    .Skip(pageNumber * pageSize)
-                                                    .Take(pageSize);
-            var domainEntities = Adapt<TDomainEntity>(persistenceEntities);
-
-            return new PageResult<TDomainEntity>(domainEntities, pageNumber, pageSize, this.Count());
-        }
-
-        public IEnumerable<TDomainEntity> GetFiltered(Expression<Func<TDomainEntity, bool>> filter)
-        {
-            var filterExpression = ExpressionConverter<TPersistenceEntity>.Convert(filter);
-
-            var result = _collection.Find(Query<TPersistenceEntity>
-                                    .Where(filterExpression))
-                                    .Select(e => Adapt<TDomainEntity>(e));
-            return result;
-        }
-
-        private TTarget Adapt<TTarget>(object source)
-        {
-            return _typeAdapter.Adapt<TTarget>(source);
-        }
-
-        private IEnumerable<TTarget> Adapt<TTarget>(IEnumerable<object> sourceArray)
-        {
-            return sourceArray.Select(source => _typeAdapter.Adapt<TTarget>(source));
+            throw new NotImplementedException();
         }
 
         public long Count()
         {
-            return _collection.Count();
-        }
-
-        protected virtual string GetCollectionName()
-        {
-            var collectionName = ((CollectionAttribute)typeof(TPersistenceEntity).GetCustomAttributes(true)
-                    .FirstOrDefault(attr => attr.GetType() == typeof(CollectionAttribute))).Name;
-
-            return collectionName;
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (_disposed)
-                return;
-
-            if (disposing)
-            {
-                // 
-            }
-
-            _disposed = true;
+            throw new NotImplementedException();
         }
 
         public void Dispose()
         {
-            Dispose(true);
-            GC.SuppressFinalize(this);
+            throw new NotImplementedException();
         }
     }
 }

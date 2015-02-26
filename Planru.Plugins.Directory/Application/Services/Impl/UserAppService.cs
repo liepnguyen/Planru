@@ -27,14 +27,7 @@ namespace Planru.Plugins.Directory.Application.Impl
 
         public void CreateUser(UserDTO userDto)
         {
-            var user = _typeAdapter.Adapt<User>(userDto);
-            _userService.Add(user);
-        }
-
-        public async Task CreateUserAsync(UserDTO userDto)
-        {
-            var user = _typeAdapter.Adapt<User>(userDto);
-            await _userService.AddAsync(user);
+            throw new NotImplementedException();
         }
 
         public void UpdateUser(UserDTO userDto)
@@ -44,15 +37,12 @@ namespace Planru.Plugins.Directory.Application.Impl
 
         public void DeleteUser(object id)
         {
-            _userService.Remove((Guid)id);
+            throw new NotImplementedException();
         }
-
 
         public PageResult<UserDTO> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<UserDTO, KProperty>> orderByExpression, bool ascending)
         {
-            var adaptedExpression = ExpressionConverter<User>.Convert(orderByExpression);
-            var pageResult = _userService.GetPaged<KProperty>(pageNumber, pageSize, adaptedExpression, ascending);
-            return pageResult.ToPageResult<UserDTO>(_typeAdapter);
+            throw new NotImplementedException();
         }
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Planru.Core.Domain
 {
-    public abstract class Entity<TID>
+    public interface IEntity<TID>
     {
-        public virtual TID Id { get; set; }
+        TID Id { get; }
     }
 }

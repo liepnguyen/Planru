@@ -11,59 +11,58 @@ using System.Threading.Tasks;
 
 namespace Planru.Core.Domain
 {
-    public abstract class Service<TDomainEntity, TID> : IService<TDomainEntity, TID>
-        where TDomainEntity : Entity<TID>
+    public abstract class Service<TEntity, TID> : IService<TEntity, TID>
+        where TEntity : IEntity<TID>
     {
         private bool _disposed = false;
 
-        protected IRepository<TDomainEntity, TID> _repository;
+        protected IRepository<TEntity, TID> _repository;
         protected ITypeAdapter _typeAdapter;
 
-        public Service(ITypeAdapter typeAdapter, IRepository<TDomainEntity, TID> repository)
+        public Service(ITypeAdapter typeAdapter, IRepository<TEntity, TID> repository)
         {
             _typeAdapter = typeAdapter;
             _repository = repository;
         }
 
-        public TDomainEntity Get(TID id)
+        public TEntity Get(TID id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<TDomainEntity> GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public PageResult<TDomainEntity> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<TDomainEntity, KProperty>> orderByExpression, bool ascending)
-        {
-            var pageResult = _repository.GetPaged<KProperty>(pageNumber, pageSize, orderByExpression, ascending);
-            return pageResult;
-        }
-
-        public void Add(TDomainEntity item)
-        {
-            _repository.Add(item);
-        }
-
-        public void Add(IEnumerable<TDomainEntity> items)
+        public PageResult<TEntity> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<TEntity, KProperty>> orderByExpression, bool ascending)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(TDomainEntity item)
+        public void Add(TEntity item)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(IEnumerable<TDomainEntity> items)
+        public void Add(IEnumerable<TEntity> items)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(TEntity item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(IEnumerable<TEntity> items)
         {
             throw new NotImplementedException();
         }
 
         public void Remove(TID id)
         {
-            _repository.Remove(id);
+            throw new NotImplementedException();
         }
 
         public void Remove(IEnumerable<TID> ids)
@@ -71,47 +70,47 @@ namespace Planru.Core.Domain
             throw new NotImplementedException();
         }
 
-        public void Modify(TDomainEntity item)
+        public void Modify(TEntity item)
         {
             throw new NotImplementedException();
         }
 
-        public void Modify(IEnumerable<TDomainEntity> items)
+        public void Modify(IEnumerable<TEntity> items)
         {
             throw new NotImplementedException();
         }
 
-        public Task<TDomainEntity> GetAsync(TID id)
+        public Task<TEntity> GetAsync(TID id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<TDomainEntity>> GetAllAsync()
+        public Task<IEnumerable<TEntity>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<PageResult<TDomainEntity>> GetPagedAsync<KProperty>(int pageNumber, int pageSize, Expression<Func<TDomainEntity, KProperty>> orderByExpression, bool ascending)
+        public Task<PageResult<TEntity>> GetPagedAsync<KProperty>(int pageNumber, int pageSize, Expression<Func<TEntity, KProperty>> orderByExpression, bool ascending)
         {
             throw new NotImplementedException();
         }
 
-        public Task AddAsync(TDomainEntity item)
+        public Task AddAsync(TEntity item)
         {
             throw new NotImplementedException();
         }
 
-        public Task AddAsync(IEnumerable<TDomainEntity> items)
+        public Task AddAsync(IEnumerable<TEntity> items)
         {
             throw new NotImplementedException();
         }
 
-        public Task RemoveAsync(TDomainEntity item)
+        public Task RemoveAsync(TEntity item)
         {
             throw new NotImplementedException();
         }
 
-        public Task RemoveAsync(IEnumerable<TDomainEntity> items)
+        public Task RemoveAsync(IEnumerable<TEntity> items)
         {
             throw new NotImplementedException();
         }
@@ -126,12 +125,12 @@ namespace Planru.Core.Domain
             throw new NotImplementedException();
         }
 
-        public Task ModifyAsync(TDomainEntity item)
+        public Task ModifyAsync(TEntity item)
         {
             throw new NotImplementedException();
         }
 
-        public Task ModifyAsync(IEnumerable<TDomainEntity> items)
+        public Task ModifyAsync(IEnumerable<TEntity> items)
         {
             throw new NotImplementedException();
         }

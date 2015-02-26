@@ -8,7 +8,7 @@ using Planru.Core.Domain;
 
 namespace Planru.Plugins.Directory.Domain.Services
 {
-    public interface IUserService : IService<User, Guid>
+    public interface IUserService : IService<IUser, Guid>
     {
 
     }

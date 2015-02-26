@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace Planru.Core.Persistence
 {
     public interface IRepository<TEntity, TID> : IDisposable
+        where TEntity : IEntity<TID>
     {
         /// <summary>
         /// Add item into repository

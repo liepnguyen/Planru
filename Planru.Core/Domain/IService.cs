@@ -8,29 +8,29 @@ using System.Threading.Tasks;
 
 namespace Planru.Core.Domain
 {
-    public interface IService<TDomainEntity, TID> : IDisposable
+    public interface IService<TEntity, TID> : IDisposable
     {
-        TDomainEntity Get(TID id);
-        IEnumerable<TDomainEntity> GetAll();
-        PageResult<TDomainEntity> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<TDomainEntity, KProperty>> orderByExpression, bool ascending);
-        void Add(TDomainEntity item);
-        void Add(IEnumerable<TDomainEntity> items);
-        void Remove(TDomainEntity item);
-        void Remove(IEnumerable<TDomainEntity> items);
+        TEntity Get(TID id);
+        IEnumerable<TEntity> GetAll();
+        PageResult<TEntity> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<TEntity, KProperty>> orderByExpression, bool ascending);
+        void Add(TEntity item);
+        void Add(IEnumerable<TEntity> items);
+        void Remove(TEntity item);
+        void Remove(IEnumerable<TEntity> items);
         void Remove(TID id);
         void Remove(IEnumerable<TID> ids);
-        void Modify(TDomainEntity item);
-        void Modify(IEnumerable<TDomainEntity> items);
-        Task<TDomainEntity> GetAsync(TID id);
-        Task<IEnumerable<TDomainEntity>> GetAllAsync();
-        Task<PageResult<TDomainEntity>> GetPagedAsync<KProperty>(int pageNumber, int pageSize, Expression<Func<TDomainEntity, KProperty>> orderByExpression, bool ascending);
-        Task AddAsync(TDomainEntity item);
-        Task AddAsync(IEnumerable<TDomainEntity> items);
-        Task RemoveAsync(TDomainEntity item);
-        Task RemoveAsync(IEnumerable<TDomainEntity> items);
+        void Modify(TEntity item);
+        void Modify(IEnumerable<TEntity> items);
+        Task<TEntity> GetAsync(TID id);
+        Task<IEnumerable<TEntity>> GetAllAsync();
+        Task<PageResult<TEntity>> GetPagedAsync<KProperty>(int pageNumber, int pageSize, Expression<Func<TEntity, KProperty>> orderByExpression, bool ascending);
+        Task AddAsync(TEntity item);
+        Task AddAsync(IEnumerable<TEntity> items);
+        Task RemoveAsync(TEntity item);
+        Task RemoveAsync(IEnumerable<TEntity> items);
         Task RemoveAsync(TID id);
         Task RemoveAsync(IEnumerable<TID> ids);
-        Task ModifyAsync(TDomainEntity item);
-        Task ModifyAsync(IEnumerable<TDomainEntity> items);
+        Task ModifyAsync(TEntity item);
+        Task ModifyAsync(IEnumerable<TEntity> items);
     }
 }

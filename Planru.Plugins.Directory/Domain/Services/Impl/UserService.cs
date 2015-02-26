@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Planru.Plugins.Directory.Services.Impl
 {
-    public class UserService : Service<User, Guid>, IUserService
+    public class UserService : Service<IUser, Guid>, IUserService
     {
         public UserService(ITypeAdapter typeAdapter, IUserRepository repository)
             : base(typeAdapter, repository)
