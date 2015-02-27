@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Plugins.Directory.Persistence.MongoDB.Models
+namespace Planru.Modules.Directory.Persistence.MongoDB.Models
 {
     [Collection("user")]
     public class UserDMO : EntityAuditDMO<Guid>

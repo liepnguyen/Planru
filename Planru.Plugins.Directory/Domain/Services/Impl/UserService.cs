@@ -1,16 +1,16 @@
 ﻿using Planru.Core.Domain;
 using Planru.Crosscutting.Adapter;
-using Planru.Plugins.Directory.Domain.Entities;
-using Planru.Plugins.Directory.Domain.Repositories;
-using Planru.Plugins.Directory.Domain.Services;
-using Planru.Plugins.Directory.Persistence;
+using Planru.Modules.Directory.Domain.Entities;
+using Planru.Modules.Directory.Domain.Repositories;
+using Planru.Modules.Directory.Domain.Services;
+using Planru.Modules.Directory.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Plugins.Directory.Services.Impl
+namespace Planru.Modules.Directory.Services.Impl
 {
     public class UserService : Service<User, Guid>, IUserService
     {

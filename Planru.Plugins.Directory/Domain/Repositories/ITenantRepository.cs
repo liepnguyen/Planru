@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Plugins.Directory.Domain.Repositories
+namespace Planru.Modules.Directory.Domain.Repositories
 {
     public interface ITenantRepository
     {

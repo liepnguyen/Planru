@@ -1,5 +1,5 @@
 ﻿using Planru.Crosscutting.Data;
-using Planru.Plugins.Directory.Application.DTOs;
+using Planru.Modules.Directory.Application.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Plugins.Directory.Application.Services
+namespace Planru.Modules.Directory.Application.Services
 {
     public interface IUserAppService
     {

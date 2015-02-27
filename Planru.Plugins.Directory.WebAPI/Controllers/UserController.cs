@@ -1,6 +1,6 @@
 ﻿using Planru.Core.Persistence;
 using Planru.Crosscutting.Adapter;
-using Planru.Plugins.Directory.Services;
+using Planru.Modules.Directory.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Net.Http;
 using System.Net;
-using Planru.Plugins.Directory.Domain.Services;
+using Planru.Modules.Directory.Domain.Services;
 using Planru.Crosscutting.Data;
-using Planru.Plugins.Directory.Application.DTOs;
-using Planru.Plugins.Directory.Application.Services;
+using Planru.Modules.Directory.Application.DTOs;
+using Planru.Modules.Directory.Application.Services;
 
-namespace Planru.Plugins.Directory.WebAPI.Controllers
+namespace Planru.Modules.Directory.WebAPI.Controllers
 {
     public class UserController : ApiController
     {

@@ -9,7 +9,7 @@ using System.Configuration;
 using Planru.Crosscutting.IoC.Configuration;
 using System.Reflection;
 using Planru.Crosscutting.IoC.Unity;
-using Planru.Plugins.Directory.Domain.Repositories;
+using Planru.Modules.Directory.Domain.Repositories;
 using Planru.Crosscutting.IoC.Tests.Assets;
 
 namespace Planru.Crosscutting.IoC.Tests.Configration

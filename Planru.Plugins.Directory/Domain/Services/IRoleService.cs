@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Plugins.Directory.Domain.Services
+namespace Planru.Modules.Directory.Domain.Services
 {
     public interface IRoleService
     {

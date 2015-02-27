@@ -1,10 +1,10 @@
 ﻿using Planru.Crosscutting.Adapter;
 using Planru.Crosscutting.Common;
 using Planru.Crosscutting.Data;
-using Planru.Plugins.Directory.Application.DTOs;
-using Planru.Plugins.Directory.Application.Services;
-using Planru.Plugins.Directory.Domain.Entities;
-using Planru.Plugins.Directory.Domain.Services;
+using Planru.Modules.Directory.Application.DTOs;
+using Planru.Modules.Directory.Application.Services;
+using Planru.Modules.Directory.Domain.Entities;
+using Planru.Modules.Directory.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Plugins.Directory.Application.Impl
+namespace Planru.Modules.Directory.Application.Impl
 {
     public class UserAppService : IUserAppService
     {

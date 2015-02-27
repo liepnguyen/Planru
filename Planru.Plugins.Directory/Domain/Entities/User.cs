@@ -7,7 +7,7 @@ using Planru.Core.Domain;
 using Planru.Core.Persistence.MongoDB;
 using MongoDB.Bson;
 
-namespace Planru.Plugins.Directory.Domain.Entities
+namespace Planru.Modules.Directory.Domain.Entities
 {
     public class User : Entity<Guid>
     {

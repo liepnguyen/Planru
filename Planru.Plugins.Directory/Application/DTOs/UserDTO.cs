@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Plugins.Directory.Application.DTOs
+namespace Planru.Modules.Directory.Application.DTOs
 {
     public class UserDTO
     {

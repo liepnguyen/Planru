@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Planru.Crosscutting.Adapter;
 using Planru.Crosscutting.Adapter.Automapper;
-using Planru.Plugins.Directory.Domain.Entities;
+using Planru.Modules.Directory.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Plugins.Directory.Tests
+namespace Planru.Modules.Directory.Tests
 {
     
     [TestClass]

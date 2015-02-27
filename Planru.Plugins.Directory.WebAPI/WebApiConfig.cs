@@ -1,25 +1,25 @@
 ﻿using Planru.Core.Plugin.WebAPI;
 using Planru.Crosscutting.Adapter;
 using Planru.Crosscutting.IoC;
-using Planru.Plugins.Directory.Domain.Entities;
-using Planru.Plugins.Directory.Persistence.MongoDB;
-using Planru.Plugins.Directory.Persistence;
-using Planru.Plugins.Directory.Services;
-using Planru.Plugins.Directory.WebAPI.Controllers;
+using Planru.Modules.Directory.Domain.Entities;
+using Planru.Modules.Directory.Persistence.MongoDB;
+using Planru.Modules.Directory.Persistence;
+using Planru.Modules.Directory.Services;
+using Planru.Modules.Directory.WebAPI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Planru.Plugins.Directory.Domain.Repositories;
-using Planru.Plugins.Directory.Domain.Services;
-using Planru.Plugins.Directory.Services.Impl;
-using Planru.Plugins.Directory.Persistence.MongoDB.Models;
-using Planru.Plugins.Directory.Application.DTOs;
-using Planru.Plugins.Directory.Application.Services;
-using Planru.Plugins.Directory.Application.Impl;
+using Planru.Modules.Directory.Domain.Repositories;
+using Planru.Modules.Directory.Domain.Services;
+using Planru.Modules.Directory.Services.Impl;
+using Planru.Modules.Directory.Persistence.MongoDB.Models;
+using Planru.Modules.Directory.Application.DTOs;
+using Planru.Modules.Directory.Application.Services;
+using Planru.Modules.Directory.Application.Impl;
 
-namespace Planru.Plugins.Directory.WebAPI
+namespace Planru.Modules.Directory.WebAPI
 {
     public class WebApiConfig : IWebApiConfig
     {
