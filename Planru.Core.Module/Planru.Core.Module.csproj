@@ -7,8 +7,8 @@
     <ProjectGuid>{DA3FADFF-955B-4D20-94D0-9CB1FE32DEF6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Planru.Core.Plugin</RootNamespace>
-    <AssemblyName>Planru.Core.Plugin</AssemblyName>
+    <RootNamespace>Planru.Core.Module</RootNamespace>
+    <AssemblyName>Planru.Core.Module</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

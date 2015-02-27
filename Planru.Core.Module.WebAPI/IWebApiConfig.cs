@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Core.Plugin.WebAPI
+namespace Planru.Core.Module.WebAPI
 {
     public interface IWebApiConfig
     {

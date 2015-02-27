@@ -14,7 +14,7 @@ namespace Planru.Core.WebAPI.Resolvers
         {
             var appPath = AppDomain.CurrentDomain.BaseDirectory;
             List<Assembly> assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
-            var files = Directory.GetFiles(appPath + "\\Plugins", "Planru.Plugins.*.dll", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(appPath + "\\Modules", "Planru.Modules.*.dll", SearchOption.AllDirectories);
             var pluginAssemblies = files.Select(Assembly.LoadFile).ToList();
             assemblies.AddRange(pluginAssemblies);
             return assemblies;

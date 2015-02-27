@@ -9,7 +9,7 @@ using System.Configuration;
 using Planru.Crosscutting.IoC.Configuration.Elements;
 using Planru.Crosscutting.IoC.Configuration;
 
-namespace Planru.Core.Plugin.Configuration
+namespace Planru.Core.Module.Configuration
 {
     public abstract class PluginConfiguration : IPluginConfiguration
     {

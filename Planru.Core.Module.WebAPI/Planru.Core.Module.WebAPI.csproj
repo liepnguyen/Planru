@@ -7,8 +7,8 @@
     <ProjectGuid>{9DAA9363-02C3-406F-8BA8-5B48ECC238AD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Planru.Core.Plugin.WebAPI</RootNamespace>
-    <AssemblyName>Planru.Core.Plugin.WebAPI</AssemblyName>
+    <RootNamespace>Planru.Core.Module.WebAPI</RootNamespace>
+    <AssemblyName>Planru.Core.Module.WebAPI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

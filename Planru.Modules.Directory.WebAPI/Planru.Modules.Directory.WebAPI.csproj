@@ -64,9 +64,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Planru.Core.Plugin.WebAPI\Planru.Core.Plugin.WebAPI.csproj">
+    <ProjectReference Include="..\Planru.Core.Plugin.WebAPI\Planru.Core.Module.WebAPI.csproj">
       <Project>{9daa9363-02c3-406f-8ba8-5b48ecc238ad}</Project>
-      <Name>Planru.Core.Plugin.WebAPI</Name>
+      <Name>Planru.Core.Module.WebAPI</Name>
     </ProjectReference>
     <ProjectReference Include="..\Planru.Core.WebAPI\Planru.Core.WebAPI.csproj">
       <Project>{9f766328-2e8a-42a6-adfb-ea1ac9b16b1d}</Project>

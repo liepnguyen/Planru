@@ -1,5 +1,5 @@
 ﻿using MongoDB.Driver;
-using Planru.Core.Plugin.WebAPI;
+using Planru.Core.Module.WebAPI;
 using Planru.Crosscutting.Adapter;
 using Planru.Crosscutting.Adapter.Automapper;
 using Planru.Crosscutting.IoC;

@@ -1,4 +1,4 @@
-﻿using Planru.Core.Plugin.WebAPI;
+﻿using Planru.Core.Module.WebAPI;
 using Planru.Crosscutting.Adapter;
 using System;
 using System.Collections.Generic;

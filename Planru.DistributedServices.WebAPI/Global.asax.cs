@@ -9,7 +9,7 @@ using System.Web.Routing;
 using Microsoft.Practices.Unity;
 using System.Web.Http.Dispatcher;
 using Planru.Core.WebAPI.Resolvers;
-using Planru.Core.Plugin.WebAPI;
+using Planru.Core.Module.WebAPI;
 using System.Reflection;
 using System.IO;
 

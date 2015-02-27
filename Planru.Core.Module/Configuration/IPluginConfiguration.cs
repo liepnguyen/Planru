@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Core.Plugin.Configuration
+namespace Planru.Core.Module.Configuration
 {
     public interface IPluginConfiguration
     {
