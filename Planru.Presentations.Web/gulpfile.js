@@ -11,6 +11,7 @@ var rename = require('gulp-rename');
 var minifyCss = require('gulp-minify-css');
 var inject = require('gulp-inject');
 var clean = require('gulp-clean');
+var runSequence = require('gulp-run-sequence');
 var when = require('when');
 
 gulp.task('clean', function () {
@@ -34,7 +35,7 @@ gulp.task('build:html', function() {
     return htmls.pipe(gulp.dest('build'));
 });
 
-gulp.task('build:index', ['build:bower', 'build:js'], function() {
+gulp.task('build:index', function() {
     var index = gulp.src('./src/index.html');
     var components = gulp.src(['./build/lib/**/*.js', './build/lib/**/*.css'], { read: false });
 
@@ -69,13 +70,9 @@ gulp.task('build:bower', function () {
 });
 
 gulp.task('default', ['build'], function () {
-
+    
 });
 
-gulp.task('build', ['clean'], function () {
-    var d = when.defer();
-    gulp.start(['build:index'], function () {
-        d.resolve();
-    });
-    return d.promise;
+gulp.task('build', function (cb) {
+    runSequence('clean', 'build:bower', 'build:js', 'build:index', cb);
 });
