@@ -4,7 +4,7 @@ using Planru.Crosscutting.Adapter;
 using Planru.Plugins.Directory.Domain.Entities;
 using Planru.Plugins.Directory.Domain.Repositories;
 using Planru.Plugins.Directory.Persistence;
-using Planru.Plugins.Directory.Persistence.MongoDB.Entities;
+using Planru.Plugins.Directory.Persistence.MongoDB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

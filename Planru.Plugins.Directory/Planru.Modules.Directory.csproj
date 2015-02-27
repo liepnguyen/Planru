@@ -7,8 +7,8 @@
     <ProjectGuid>{BF73C400-1175-458F-AAD1-EE59104F14BF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Planru.Plugins.Directory</RootNamespace>
-    <AssemblyName>Planru.Plugins.Directory</AssemblyName>
+    <RootNamespace>Planru.Modules.Directory</RootNamespace>
+    <AssemblyName>Planru.Modules.Directory</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>
@@ -72,8 +72,8 @@
     <Compile Include="Domain\Entities\Tenant.cs" />
     <Compile Include="Domain\Entities\User.cs" />
     <Compile Include="Domain\Services\IRoleService.cs" />
-    <Compile Include="Persistence\MongoDB\Entities\GroupDMO.cs" />
-    <Compile Include="Persistence\MongoDB\Entities\UserDMO.cs" />
+    <Compile Include="Persistence\MongoDB\Models\GroupDMO.cs" />
+    <Compile Include="Persistence\MongoDB\Models\UserDMO.cs" />
     <Compile Include="Persistence\MongoDB\Repositories\GroupRepository.cs" />
     <Compile Include="Persistence\MongoDB\Repositories\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

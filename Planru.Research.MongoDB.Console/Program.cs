@@ -23,7 +23,7 @@ using Planru.Crosscutting.Adapter;
 using Planru.Plugins.Directory.Domain.Repositories;
 using Planru.Plugins.Directory.Domain.Services;
 using Planru.Plugins.Directory.Services.Impl;
-using Planru.Plugins.Directory.Persistence.MongoDB.Entities;
+using Planru.Plugins.Directory.Persistence.MongoDB.Models;
 using Planru.Plugins.Directory.Application.Services;
 using Planru.Plugins.Directory.Application.Impl;
 using Planru.Plugins.Directory.Application.DTOs;

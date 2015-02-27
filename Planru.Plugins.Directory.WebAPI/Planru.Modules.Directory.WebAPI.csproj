@@ -7,8 +7,8 @@
     <ProjectGuid>{E477281A-2127-4703-B30F-E2ED074E016D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Planru.Plugins.Directory.WebAPI</RootNamespace>
-    <AssemblyName>Planru.Plugins.Directory.WebAPI</AssemblyName>
+    <RootNamespace>Planru.Modules.Directory.WebAPI</RootNamespace>
+    <AssemblyName>Planru.Modules.Directory.WebAPI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -88,9 +88,9 @@
       <Project>{2044441e-908a-4a87-8c1c-55f241d09980}</Project>
       <Name>Planru.Crosscutting.IoC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Planru.Plugins.Directory\Planru.Plugins.Directory.csproj">
+    <ProjectReference Include="..\Planru.Plugins.Directory\Planru.Modules.Directory.csproj">
       <Project>{bf73c400-1175-458f-aad1-ee59104f14bf}</Project>
-      <Name>Planru.Plugins.Directory</Name>
+      <Name>Planru.Modules.Directory</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
