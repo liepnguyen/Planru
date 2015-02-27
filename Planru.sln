@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Distributed Services", "Dis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core", "Planru.Core\Planru.Core.csproj", "{2F2826D4-B154-4B16-94B6-288D1EFB9D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Modules.Directory", "Planru.Plugins.Directory\Planru.Modules.Directory.csproj", "{BF73C400-1175-458F-AAD1-EE59104F14BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Modules.Directory", "Planru.Modules.Directory\Planru.Modules.Directory.csproj", "{BF73C400-1175-458F-AAD1-EE59104F14BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.DistributedServices.WebAPI", "Planru.DistributedServices.WebAPI\Planru.DistributedServices.WebAPI.csproj", "{3B4AD82A-9DCF-4E63-9087-BCBB5F643A9D}"
 EndProject
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{49B55C31
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modeling and Design", "Modeling and Design", "{400EBC41-270D-4FA7-84D4-3BDE864B1E5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Plugins.Directory.Tests", "Planru.Plugins.Directory.Tests\Planru.Plugins.Directory.Tests.csproj", "{542A22A6-2691-498D-B7D6-0F5D341C9263}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Plugins.Directory.Tests", "Planru.Modules.Directory.Tests\Planru.Plugins.Directory.Tests.csproj", "{542A22A6-2691-498D-B7D6-0F5D341C9263}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Directory", "Directory", "{90151720-7AE7-4BAE-AE8D-ECBE10B0FC57}"
 EndProject
@@ -51,7 +51,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Crosscutting.Adapter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Presentations.Web", "Planru.Presentations.Web\Planru.Presentations.Web.csproj", "{35070A93-C4D8-40BC-9195-66407BE42758}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Modules.Directory.WebAPI", "Planru.Plugins.Directory.WebAPI\Planru.Modules.Directory.WebAPI.csproj", "{E477281A-2127-4703-B30F-E2ED074E016D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Modules.Directory.WebAPI", "Planru.Modules.Directory.WebAPI\Planru.Modules.Directory.WebAPI.csproj", "{E477281A-2127-4703-B30F-E2ED074E016D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core.Plugin.WebAPI", "Planru.Core.Plugin.WebAPI\Planru.Core.Plugin.WebAPI.csproj", "{9DAA9363-02C3-406F-8BA8-5B48ECC238AD}"
 EndProject

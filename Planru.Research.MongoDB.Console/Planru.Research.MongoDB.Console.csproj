@@ -78,7 +78,7 @@
       <Project>{2044441e-908a-4a87-8c1c-55f241d09980}</Project>
       <Name>Planru.Crosscutting.IoC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Planru.Plugins.Directory\Planru.Modules.Directory.csproj">
+    <ProjectReference Include="..\Planru.Modules.Directory\Planru.Modules.Directory.csproj">
       <Project>{bf73c400-1175-458f-aad1-ee59104f14bf}</Project>
       <Name>Planru.Modules.Directory</Name>
     </ProjectReference>
