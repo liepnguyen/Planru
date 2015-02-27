@@ -87,7 +87,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Planru.Core.Plugin\Planru.Core.Module.csproj">
+    <ProjectReference Include="..\Planru.Core.Module\Planru.Core.Module.csproj">
       <Project>{da3fadff-955b-4d20-94d0-9cb1fe32def6}</Project>
       <Name>Planru.Core.Module</Name>
     </ProjectReference>

@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{49B55C31
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modeling and Design", "Modeling and Design", "{400EBC41-270D-4FA7-84D4-3BDE864B1E5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Plugins.Directory.Tests", "Planru.Modules.Directory.Tests\Planru.Plugins.Directory.Tests.csproj", "{542A22A6-2691-498D-B7D6-0F5D341C9263}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Modules.Directory.Tests", "Planru.Modules.Directory.Tests\Planru.Modules.Directory.Tests.csproj", "{542A22A6-2691-498D-B7D6-0F5D341C9263}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Directory", "Directory", "{90151720-7AE7-4BAE-AE8D-ECBE10B0FC57}"
 EndProject
@@ -45,7 +45,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Research", "Research", "{72
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Research.MongoDB.Console", "Planru.Research.MongoDB.Console\Planru.Research.MongoDB.Console.csproj", "{80347BF6-7EBE-479F-8438-BED0E5E87379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core.Module", "Planru.Core.Plugin\Planru.Core.Module.csproj", "{DA3FADFF-955B-4D20-94D0-9CB1FE32DEF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core.Module", "Planru.Core.Module\Planru.Core.Module.csproj", "{DA3FADFF-955B-4D20-94D0-9CB1FE32DEF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Crosscutting.Adapter.Tests", "Planru.Crosscutting.Adapter.Tests\Planru.Crosscutting.Adapter.Tests.csproj", "{3EB0881E-6063-46A8-AFC2-CD2D21E8F368}"
 EndProject
@@ -53,7 +53,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Presentations.Web", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Modules.Directory.WebAPI", "Planru.Modules.Directory.WebAPI\Planru.Modules.Directory.WebAPI.csproj", "{E477281A-2127-4703-B30F-E2ED074E016D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core.Module.WebAPI", "Planru.Core.Plugin.WebAPI\Planru.Core.Module.WebAPI.csproj", "{9DAA9363-02C3-406F-8BA8-5B48ECC238AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core.Module.WebAPI", "Planru.Core.Module.WebAPI\Planru.Core.Module.WebAPI.csproj", "{9DAA9363-02C3-406F-8BA8-5B48ECC238AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Crosscutting.Data", "Planru.Crosscutting.Data\Planru.Crosscutting.Data.csproj", "{CA941891-7B9B-499B-966C-481E515120E1}"
 EndProject

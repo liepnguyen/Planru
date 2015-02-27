@@ -347,7 +347,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Planru.Core.Plugin.WebAPI\Planru.Core.Module.WebAPI.csproj">
+    <ProjectReference Include="..\Planru.Core.Module.WebAPI\Planru.Core.Module.WebAPI.csproj">
       <Project>{9daa9363-02c3-406f-8ba8-5b48ecc238ad}</Project>
       <Name>Planru.Core.Module.WebAPI</Name>
     </ProjectReference>
