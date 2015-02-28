@@ -38,7 +38,7 @@ namespace Planru.Core.Persistence.MongoDB
 
         public void Add(IEnumerable<TDomainEntity> items)
         {
-            var entities = items.Select(item => item.Adapt<TPersistenceEntity>());
+            var entities = items.AdaptMany<TPersistenceEntity>();
             _collection.InsertBatch(items);
         }
 
@@ -65,13 +65,13 @@ namespace Planru.Core.Persistence.MongoDB
 
         public void Modify(TDomainEntity item)
         {
-            var entity = Adapt<TPersistenceEntity>(item);
+            var entity = item.Adapt<TPersistenceEntity>();
             _collection.Save(item);
         }
 
         public void Modify(IEnumerable<TDomainEntity> items)
         {
-            var entities = Adapt<TPersistenceEntity>(items);
+            var entities = items.AdaptMany<TPersistenceEntity>();
             _collection.Save(items);
         }
 
@@ -83,13 +83,13 @@ namespace Planru.Core.Persistence.MongoDB
         public TDomainEntity Get(TID id)
         {
             var result = _collection.FindOneById(BsonValue.Create(id));
-            return Adapt<TDomainEntity>(result);
+            return result.Adapt<TDomainEntity>();
         }
 
         public IEnumerable<TDomainEntity> GetAll()
         {
             var result = _collection.FindAll().AsEnumerable();
-            return Adapt<TDomainEntity>(result);
+            return result.AdaptMany<TDomainEntity>();
         }
 
         public IEnumerable<TDomainEntity> AllMatching(ISpecification<TDomainEntity> specification)
@@ -114,7 +114,7 @@ namespace Planru.Core.Persistence.MongoDB
                                                     .OrderByDescending(newOrderByExpression)
                                                     .Skip(pageNumber * pageSize)
                                                     .Take(pageSize);
-            var domainEntities = Adapt<TDomainEntity>(persistenceEntities);
+            var domainEntities = persistenceEntities.AdaptMany<TDomainEntity>();
 
             return new PageResult<TDomainEntity>(domainEntities, pageNumber, pageSize, this.Count());
         }
@@ -125,7 +125,7 @@ namespace Planru.Core.Persistence.MongoDB
 
             var result = _collection.Find(Query<TPersistenceEntity>
                                     .Where(filterExpression))
-                                    .Select(e => Adapt<TDomainEntity>(e));
+                                    .Select(e => e.Adapt<TDomainEntity>());
             return result;
         }
 

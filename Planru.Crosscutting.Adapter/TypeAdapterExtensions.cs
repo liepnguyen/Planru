@@ -13,5 +13,11 @@ namespace Planru.Crosscutting.Adapter
             var adapter = TypeAdapterFactory.CreateAdapter();
             return adapter.Adapt<T>(source);
         }
+
+        public static IEnumerable<T> AdaptMany<T>(this IEnumerable<object> array)
+        {
+            var adapter = TypeAdapterFactory.CreateAdapter();
+            return array.Select(item => item.Adapt<T>());
+        }
     }
 }
