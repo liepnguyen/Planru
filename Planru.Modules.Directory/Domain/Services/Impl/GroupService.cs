@@ -14,8 +14,8 @@ namespace Planru.Modules.Directory.Services.Impl
 {
     public class GroupService : Service<Group, Guid>, IGroupService
     {
-        public GroupService(ITypeAdapter typeAdapter, IGroupRepository repository) 
-            : base(typeAdapter, repository)
+        public GroupService(IGroupRepository repository) 
+            : base(repository)
         { 
 
         }

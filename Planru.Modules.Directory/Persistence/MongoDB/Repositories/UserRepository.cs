@@ -15,8 +15,8 @@ namespace Planru.Modules.Directory.Persistence.MongoDB
 {
     public class UserRepository : Repository<UserDMO, User, Guid>, IUserRepository
     {
-        public UserRepository(MongoDatabase database, ITypeAdapter typeAdapter)
-            : base(database, typeAdapter)
+        public UserRepository(MongoDatabase database)
+            : base(database)
         {
 
         }

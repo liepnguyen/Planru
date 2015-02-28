@@ -16,43 +16,41 @@ namespace Planru.Modules.Directory.Application.Impl
 {
     public class UserAppService : IUserAppService
     {
-        private ITypeAdapter _typeAdapter;
         private IUserService _userService;
 
-        public UserAppService(ITypeAdapter typeAdapter, IUserService userService)
+        public UserAppService(IUserService userService)
         {
-            _typeAdapter = typeAdapter;
             _userService = userService;
         }
 
         public void CreateUser(UserDTO userDto)
         {
-            var user = _typeAdapter.Adapt<User>(userDto);
+            var user = userDto.Adapt<User>();
             _userService.Add(user);
         }
 
-        public async Task CreateUserAsync(UserDTO userDto)
+        public Task CreateUserAsync(UserDTO userDto)
         {
-            var user = _typeAdapter.Adapt<User>(userDto);
-            await _userService.AddAsync(user);
+            var user = userDto.Adapt<User>();
+            return _userService.AddAsync(user);
         }
 
         public void UpdateUser(UserDTO userDto)
         {
-            throw new NotImplementedException();
+            var user = userDto.Adapt<User>();
+            _userService.Modify(user);
         }
 
-        public void DeleteUser(object id)
+        public void DeleteUser(Guid id)
         {
-            _userService.Remove((Guid)id);
+            _userService.Remove(id);
         }
-
 
         public PageResult<UserDTO> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<UserDTO, KProperty>> orderByExpression, bool ascending)
         {
             var adaptedExpression = ExpressionConverter<User>.Convert(orderByExpression);
             var pageResult = _userService.GetPaged<KProperty>(pageNumber, pageSize, adaptedExpression, ascending);
-            return pageResult.ToPageResult<UserDTO>(_typeAdapter);
+            return pageResult.ToPageResult<UserDTO>(null);
         }
     }
 }

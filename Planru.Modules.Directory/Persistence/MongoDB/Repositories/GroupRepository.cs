@@ -15,8 +15,8 @@ namespace Planru.Modules.Directory.Persistence.MongoDB
 {
     public class GroupRepository : Repository<GroupDMO, Group, Guid>, IGroupRepository
     {
-        public GroupRepository(MongoDatabase database, ITypeAdapter typeAdapter)
-            : base(database, typeAdapter)
+        public GroupRepository(MongoDatabase database)
+            : base(database)
         {
 
         }

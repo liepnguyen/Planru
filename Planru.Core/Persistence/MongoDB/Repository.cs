@@ -24,23 +24,21 @@ namespace Planru.Core.Persistence.MongoDB
     {
         private bool _disposed = false;
         private MongoCollection<TPersistenceEntity> _collection;
-        private ITypeAdapter _typeAdapter;
 
-        public Repository(MongoDatabase database, ITypeAdapter typeAdapter)
+        public Repository(MongoDatabase database)
         {
-            _typeAdapter = typeAdapter;
             _collection = database.GetCollection<TPersistenceEntity>(this.GetCollectionName());
         }
 
         public void Add(TDomainEntity item)
         {
-            var entity = Adapt<TPersistenceEntity>(item);
+            var entity = item.Adapt<TPersistenceEntity>();
             _collection.Insert(item);
         }
 
         public void Add(IEnumerable<TDomainEntity> items)
         {
-            var entities = Adapt<TPersistenceEntity>(items);
+            var entities = items.Select(item => item.Adapt<TPersistenceEntity>());
             _collection.InsertBatch(items);
         }
 
@@ -129,16 +127,6 @@ namespace Planru.Core.Persistence.MongoDB
                                     .Where(filterExpression))
                                     .Select(e => Adapt<TDomainEntity>(e));
             return result;
-        }
-
-        private TTarget Adapt<TTarget>(object source)
-        {
-            return _typeAdapter.Adapt<TTarget>(source);
-        }
-
-        private IEnumerable<TTarget> Adapt<TTarget>(IEnumerable<object> sourceArray)
-        {
-            return sourceArray.Select(source => _typeAdapter.Adapt<TTarget>(source));
         }
 
         public long Count()

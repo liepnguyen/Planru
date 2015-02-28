@@ -17,11 +17,9 @@ namespace Planru.Core.Domain
         private bool _disposed = false;
 
         protected IRepository<TDomainEntity, TID> _repository;
-        protected ITypeAdapter _typeAdapter;
 
-        public Service(ITypeAdapter typeAdapter, IRepository<TDomainEntity, TID> repository)
+        public Service(IRepository<TDomainEntity, TID> repository)
         {
-            _typeAdapter = typeAdapter;
             _repository = repository;
         }
 

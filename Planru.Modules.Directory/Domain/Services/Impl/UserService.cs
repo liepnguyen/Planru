@@ -14,8 +14,8 @@ namespace Planru.Modules.Directory.Services.Impl
 {
     public class UserService : Service<User, Guid>, IUserService
     {
-        public UserService(ITypeAdapter typeAdapter, IUserRepository repository)
-            : base(typeAdapter, repository)
+        public UserService(IUserRepository repository)
+            : base(repository)
         { 
 
         }
