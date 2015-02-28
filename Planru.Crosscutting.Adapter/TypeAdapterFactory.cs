@@ -25,9 +25,9 @@
         }
 
         /// <summary>
-        /// Create a new type adapter from currect factory
+        /// Create a new type adapter from current factory
         /// </summary>
-        /// <returns>Created type adapter</returns>
+        /// <returns>The created type adapter</returns>
         public static ITypeAdapter CreateAdapter()
         {
             return _currentTypeAdapterFactory.Create();

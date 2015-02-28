@@ -8,9 +8,10 @@ namespace Planru.Crosscutting.Adapter
 {
     public static class TypeAdapterExtensions
     {
-        public static T AdaptTo<T>(this object source)
+        public static T Adapt<T>(this object source)
         {
-            return (T)new object();
+            var adapter = TypeAdapterFactory.CreateAdapter();
+            return adapter.Adapt<T>(source);
         }
     }
 }
