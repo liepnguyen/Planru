@@ -35,7 +35,7 @@ namespace Planru.Modules.Directory.Application.Impl
             _userService.Modify(user);
         }
 
-        public void DeleteUser(Guid id)
+        public void DeleteUserById(Guid id)
         {
             _userService.Remove(id);
         }

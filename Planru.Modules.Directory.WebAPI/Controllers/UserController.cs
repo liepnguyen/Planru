@@ -38,7 +38,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public IHttpActionResult Get(Guid id)
         {
-            UserDTO user = null; // TODO: should be implemented
+            UserDTO user = _userAppService.
             if (user == null)
             {
                 return NotFound();
@@ -60,7 +60,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public void Delete(Guid id)
         {
-            _userAppService.DeleteUser(id);
+            _userAppService.DeleteUserById(id);
         }
     }
 }
