@@ -30,7 +30,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
             var pageNumber = page ?? 0;
             var pageSize = count ?? 10;
 
-            var pageResult = _userAppService.GetPaged(pageNumber, pageSize, o => o.Id, true)
+            var pageResult = _userAppService.GetPaged(pageNumber, pageSize, o => o.UserName, true)
                 .ToPageResult<UserDTO>();
 
             return pageResult;

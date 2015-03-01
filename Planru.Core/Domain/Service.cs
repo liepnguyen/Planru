@@ -25,18 +25,17 @@ namespace Planru.Core.Domain
 
         public TDomainEntity Get(TID id)
         {
-            throw new NotImplementedException();
+            return _repository.Get(id);
         }
 
         public IEnumerable<TDomainEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return _repository.GetAll();
         }
 
         public PageResult<TDomainEntity> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<TDomainEntity, KProperty>> orderByExpression, bool ascending)
         {
-            var pageResult = _repository.GetPaged<KProperty>(pageNumber, pageSize, orderByExpression, ascending);
-            return pageResult;
+            return _repository.GetPaged<KProperty>(pageNumber, pageSize, orderByExpression, ascending);
         }
 
         public void Add(TDomainEntity item)
@@ -46,17 +45,17 @@ namespace Planru.Core.Domain
 
         public void Add(IEnumerable<TDomainEntity> items)
         {
-            throw new NotImplementedException();
+            _repository.Add(items);
         }
 
         public void Remove(TDomainEntity item)
         {
-            throw new NotImplementedException();
+            _repository.Remove(item);
         }
 
         public void Remove(IEnumerable<TDomainEntity> items)
         {
-            throw new NotImplementedException();
+            _repository.Remove(items);
         }
 
         public void Remove(TID id)
@@ -66,17 +65,17 @@ namespace Planru.Core.Domain
 
         public void Remove(IEnumerable<TID> ids)
         {
-            throw new NotImplementedException();
+            _repository.Remove(ids);
         }
 
         public void Modify(TDomainEntity item)
         {
-            throw new NotImplementedException();
+            _repository.Modify(item);
         }
 
         public void Modify(IEnumerable<TDomainEntity> items)
         {
-            throw new NotImplementedException();
+            _repository.Modify(items);
         }
 
         public Task<TDomainEntity> GetAsync(TID id)

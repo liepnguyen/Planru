@@ -29,12 +29,6 @@ namespace Planru.Modules.Directory.Application.Impl
             _userService.Add(user);
         }
 
-        public Task CreateUserAsync(UserDTO userDto)
-        {
-            var user = userDto.Adapt<User>();
-            return _userService.AddAsync(user);
-        }
-
         public void UpdateUser(UserDTO userDto)
         {
             var user = userDto.Adapt<User>();
@@ -44,6 +38,11 @@ namespace Planru.Modules.Directory.Application.Impl
         public void DeleteUser(Guid id)
         {
             _userService.Remove(id);
+        }
+
+        public UserDTO GetUserById(Guid id)
+        {
+            return _userService.Get(id).Adapt<UserDTO>();
         }
 
         public PageResult<UserDTO> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<UserDTO, KProperty>> orderByExpression, bool ascending)

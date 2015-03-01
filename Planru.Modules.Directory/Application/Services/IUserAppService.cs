@@ -14,6 +14,7 @@ namespace Planru.Modules.Directory.Application.Services
         void CreateUser(UserDTO userDto);
         void UpdateUser(UserDTO userDto);
         void DeleteUser(Guid id);
+        UserDTO GetUserById(Guid id);
         PageResult<UserDTO> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<UserDTO, KProperty>> orderByExpression, bool ascending);
     }
 }
