@@ -50,7 +50,7 @@ namespace Planru.Modules.Directory.Application.Impl
         {
             var adaptedExpression = ExpressionConverter<User>.Convert(orderByExpression);
             var pageResult = _userService.GetPaged<KProperty>(pageNumber, pageSize, adaptedExpression, ascending);
-            return pageResult.ToPageResult<UserDTO>(null);
+            return pageResult.ToPageResult<UserDTO>();
         }
     }
 }

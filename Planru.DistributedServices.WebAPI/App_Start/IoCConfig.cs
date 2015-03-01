@@ -30,8 +30,7 @@ namespace Planru.DistributedServices.WebAPI
 
         public static void RegisterTypes(IContainer container)
         {
-            container.Register<ITypeAdapterFactory, AutomapperTypeAdapterFactory>();
-            container.RegisterInstance<ITypeAdapter>(container.Resolve<ITypeAdapterFactory>().Create());
+            TypeAdapterFactory.SetCurrent(new SingletonAutomapperTypeAdapterFactory());
             container.RegisterInstance<MongoDatabase>(MongoDbConfig.GetMongoDbDatabase());
         }
     }

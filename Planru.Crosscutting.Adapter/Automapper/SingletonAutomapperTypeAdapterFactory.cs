@@ -11,8 +11,14 @@ namespace Planru.Crosscutting.Adapter.Automapper
         private static Lazy<ITypeAdapter> _typeAdapter = new Lazy<ITypeAdapter>(() =>
         {
             var typeAdapter = new AutomapperTypeAdapter();
+            Initialize(typeAdapter);
             return typeAdapter;
         });
+
+        private static void Initialize(ITypeAdapter typeAdapter)
+        { 
+            // TODO:
+        }
 
         public ITypeAdapter Create()
         {

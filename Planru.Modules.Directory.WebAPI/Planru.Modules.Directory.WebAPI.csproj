@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Planru.DistributedServices.WebAPI\Plugins\Directory\</OutputPath>
+    <OutputPath>..\Planru.DistributedServices.WebAPI\Modules\Directory\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

@@ -25,7 +25,7 @@ namespace Planru.DistributedServices.WebAPI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            PluginConfig.ConfigPlugins();
+            ModuleConfig.ConfigModules();
         }
     }
 }

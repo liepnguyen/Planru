@@ -19,11 +19,9 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
     public class UserController : ApiController
     {
         private IUserAppService _userAppService;
-        private ITypeAdapter _typeAdapter;
 
-        public UserController(ITypeAdapter typeAdapter, IUserAppService userService)
+        public UserController(IUserAppService userService)
         {
-            _typeAdapter = typeAdapter;
             _userAppService = userService;
         }
 
@@ -33,7 +31,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
             var pageSize = count ?? 10;
 
             var pageResult = _userAppService.GetPaged(pageNumber, pageSize, o => o.Id, true)
-                .ToPageResult<UserDTO>(_typeAdapter);
+                .ToPageResult<UserDTO>();
 
             return pageResult;
         }

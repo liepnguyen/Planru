@@ -32,14 +32,10 @@ namespace Planru.Crosscutting.Data
             _totalItems = totalItems;
         }
 
-        public PageResult<TItem> ToPageResult<TItem>(ITypeAdapter typeAdapter)
+        public PageResult<TItem> ToPageResult<TItem>()
         {
-            var items = this.Items.Select(obj => 
-                (TItem)typeAdapter.Adapt(obj, obj.GetType(), typeof(TItem)));
-
-            var pageResult = new PageResult<TItem>(items, this.PageNumber, this.PageSize, this.TotalItems);
-
-            return pageResult;
+            var items = this.Items.Select(item => item.Adapt<TItem>());
+            return new PageResult<TItem>(items, this.PageNumber, this.PageSize, this.TotalItems);
         }
     }
 }
