@@ -12,6 +12,7 @@ var minifyCss = require('gulp-minify-css');
 var inject = require('gulp-inject');
 var clean = require('gulp-clean');
 var runSequence = require('gulp-run-sequence');
+var ignore = require('gulp-ignore');
 var when = require('when');
 
 gulp.task('clean', function () {
@@ -28,7 +29,7 @@ gulp.task('build:js', function () {
 });
 
 gulp.task('build:css', function() {
-    var css = gulp.src('src/content/css/*.*');
+    var css = gulp.src('src/content/css/**/*.*');
     if (yargs.buildProd) {
         // TODO:
     }
@@ -36,7 +37,7 @@ gulp.task('build:css', function() {
 });
 
 gulp.task('build:images', function() {
-    var css = gulp.src('src/content/images/*.*');
+    var css = gulp.src('src/content/images/**/*.*');
     if (yargs.buildProd) {
         // TODO:
     }
@@ -61,8 +62,16 @@ gulp.task('build:html', function() {
 
 gulp.task('build:index', function() {
     var index = gulp.src('./src/index.html');
-    var components = gulp.src(['./build/lib/**/*.js', './build/lib/**/*.css'], { read: false });
+    var importantsFilter = [
+        '**/jquery.min.js'
+    ]
 
+    var scripts = gulp.src('./build/scripts/**', { read: false });
+    var bowerFiles = gulp.src([
+        './build/lib/**/*.js', 
+        './build/lib/**/*.css'], { read: false });
+    var components = bowerFiles.pipe(ignore.exclude(importantsFilter));
+    var importants = bowerFiles.pipe(filter(importantsFilter));
     var services = gulp.src(['./build/app/**/*.service.js'], { read: false });
     var controllers = gulp.src(['./build/app/**/*.controller.js'], { read: false });
     var configs = gulp.src(['./build/app/**/*.config.js'], { read: false });
@@ -74,6 +83,8 @@ gulp.task('build:index', function() {
     };
 
     return index.pipe(inject(components, { name: 'components', transform: transform }))
+        .pipe(inject(importants, { name: 'importants', transform: transform }))
+        .pipe(inject(scripts, { name: 'scripts', transform: transform }))
         .pipe(inject(services, { name: 'services', transform: transform }))
         .pipe(inject(controllers, { name: 'controllers', transform: transform }))
         .pipe(inject(configs, { name: 'configs', transform: transform }))

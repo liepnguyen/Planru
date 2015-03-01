@@ -59,12 +59,7 @@
 /********** 1. FILE IMPORTS **********/
 /*************************************/
 
-@import url('../../lib/bootstrap/dist/css/bootstrap.min.css');
 @import url('bootstrap-override.css');
-@import url('../../lib/ng-table/ng-table.min.css');
-@import url('../../lib/fontawesome/css/font-awesome.min.css');
-@import url('../../lib/angular-loading-bar/build/loading-bar.min.css');
-@import url('../../lib/angular-toastr/dist/angular-toastr.min.css');
 @import url('lato.css');
 @import url('roboto.css');
 
