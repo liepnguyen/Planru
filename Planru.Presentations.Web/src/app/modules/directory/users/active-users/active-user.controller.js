@@ -6,7 +6,7 @@
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             if (toState.name == 'active-users.create') {
                 var modalInstance = $modal.open({
-                    templateUrl: 'app/plugins/directory/users/active-users/create/user-create.view.html',
+                    templateUrl: 'app/modules/directory/users/active-users/create/user-create.view.html',
                     controller: 'UserCreateController',
                     controllerAs: 'vm',
                     backdrop: true,

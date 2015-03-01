@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="content/images/favicon.png" type="image/png">
     <title>Planru System</title>
 
+    <link rel="stylesheet" type="text/css" href="./content/css/style.default.css">
+
     <!-- components:css -->
     <!-- endinject -->
 
@@ -115,16 +117,26 @@
         </div><!-- rightpanel -->
     </section>
 
+    <!-- important:js -->
+    <!-- endinject -->
+
     <!-- components:js -->
     <!-- endinject -->        
 
     <!-- configs:js -->
     <!-- endinject -->    
 
-    <!-- scripts:service.js -->
+    <!-- events:js -->
+    <!-- endinject -->
+
+    <!-- services:js -->
     <!-- endinject -->
 
     <!-- controllers:js -->
     <!-- endinject -->
+
+    <script type="text/javascript">
+        angular.bootstrap(document, ['planruApp']);
+    </script>
 </body>
 </html>
