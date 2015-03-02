@@ -5,7 +5,7 @@ namespace Planru.Crosscutting.Adapter
     /// <summary>
     /// Base contract for map dto to aggregate or aggregate to dto.
     /// <remarks>
-    /// This is a  contract for work with "auto" mappers ( automapper,emitmapper,valueinjecter...)
+    /// This is a contract for work with "auto" mappers (automapper, emitmapper, valueinjecter...)
     /// or adhoc mappers
     /// </remarks>
     /// </summary>
@@ -19,9 +19,6 @@ namespace Planru.Crosscutting.Adapter
         /// <param name="source">Instance to adapt</param>
         /// <returns><paramref name="source"/> mapped to <typeparamref name="TTarget"/></returns>
         TTarget Adapt<TSource, TTarget>(TSource source);
-            //where TTarget : class, new()
-            //where TSource : class;
-
 
         /// <summary>
         /// Adapt a source object to an instnace of type <paramref name="TTarget"/>
@@ -30,7 +27,6 @@ namespace Planru.Crosscutting.Adapter
         /// <param name="source">Instance to adapt</param>
         /// <returns><paramref name="source"/> mapped to <typeparamref name="TTarget"/></returns>
         TTarget Adapt<TTarget>(object source);
-            //where TTarget : class, new();
 
         object Adapt(object source, Type TSource, Type TTarget);
 

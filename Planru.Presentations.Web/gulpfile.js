@@ -31,7 +31,7 @@ gulp.task('build:js', function () {
 gulp.task('build:css', function() {
     var css = gulp.src('src/content/css/**/*.*');
     if (yargs.buildProd) {
-        // TODO:
+        // TODO: should be implemented to minify all css files in build pro mode
     }
     return css.pipe(gulp.dest('build/content/css'));
 });
@@ -39,16 +39,13 @@ gulp.task('build:css', function() {
 gulp.task('build:images', function() {
     var css = gulp.src('src/content/images/**/*.*');
     if (yargs.buildProd) {
-        // TODO:
+        // TODO: should be implemented to compress all image files in build pro mode
     }
     return css.pipe(gulp.dest('build/content/images'));
 });
 
 gulp.task('build:fonts', function() {
     var css = gulp.src('src/content/fonts/**/*.*');
-    if (yargs.buildProd) {
-        // TODO:
-    }
     return css.pipe(gulp.dest('build/content/fonts'));
 });
 
@@ -112,5 +109,12 @@ gulp.task('default', ['build'], function () {
 });
 
 gulp.task('build', function (cb) {
-    runSequence('clean', 'build:bower', 'build:html', 'build:js', 'build:css', 'build:fonts', 'build:images', 'build:index', cb);
+    runSequence(
+        'clean', 
+        'build:bower', 
+        'build:html', 
+        'build:js', 'build:css', 
+        'build:fonts', 
+        'build:images', 
+        'build:index', cb);
 });
