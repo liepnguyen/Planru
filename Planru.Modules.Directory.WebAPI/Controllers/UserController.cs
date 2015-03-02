@@ -38,7 +38,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public IHttpActionResult Get(Guid id)
         {
-            UserDTO user = _userAppService.
+            UserDTO user = _userAppService.GetUserById(id);
             if (user == null)
             {
                 return NotFound();
