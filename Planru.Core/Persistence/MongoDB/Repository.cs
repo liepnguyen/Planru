@@ -63,6 +63,11 @@ namespace Planru.Core.Persistence.MongoDB
             _collection.Remove(Query.In("_id", new BsonArray(ids)));
         }
 
+        public void RemoveAll()
+        {
+            _collection.RemoveAll();
+        }
+
         public void Modify(TDomainEntity item)
         {
             var entity = item.Adapt<TPersistenceEntity>();

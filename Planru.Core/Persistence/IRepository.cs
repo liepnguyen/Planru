@@ -40,6 +40,8 @@ namespace Planru.Core.Persistence
 
         void Remove(IEnumerable<TID> ids);
 
+        void RemoveAll();
+
         /// <summary>
         /// Set item as modified
         /// </summary>
