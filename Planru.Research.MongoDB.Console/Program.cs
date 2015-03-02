@@ -70,8 +70,8 @@ namespace Planru.Research.MongoDB.Console
             container.Register<IUserAppService, UserAppService>();
 
             // domain <-> persistence
-            typeAdapter.CreateMap<UserDMO, User>();
-            typeAdapter.CreateMap<User, UserDMO>();
+            typeAdapter.CreateMap<PUser, User>();
+            typeAdapter.CreateMap<User, PUser>();
 
             // domain <-> application
             typeAdapter.CreateMap<User, UserDTO>();

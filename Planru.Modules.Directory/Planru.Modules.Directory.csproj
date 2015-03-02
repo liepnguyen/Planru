@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\DTOs\GroupDTO.cs" />
     <Compile Include="Application\DTOs\UserDTO.cs" />
     <Compile Include="Application\Services\Impl\UserAppService.cs" />
     <Compile Include="Application\Services\IUserAppService.cs" />
@@ -67,14 +68,18 @@
     <Compile Include="Domain\Repositories\IRoleRepository.cs" />
     <Compile Include="Domain\Entities\Role.cs" />
     <Compile Include="Domain\Repositories\ITenantRepository.cs" />
+    <Compile Include="Domain\Services\Impl\RoleService.cs" />
+    <Compile Include="Domain\Services\Impl\TenantService.cs" />
     <Compile Include="Domain\Services\ITenantService.cs" />
     <Compile Include="Domain\Repositories\IUserRepositoty.cs" />
     <Compile Include="Domain\Entities\Tenant.cs" />
     <Compile Include="Domain\Entities\User.cs" />
     <Compile Include="Domain\Services\IRoleService.cs" />
-    <Compile Include="Persistence\MongoDB\Models\GroupDMO.cs" />
-    <Compile Include="Persistence\MongoDB\Models\UserDMO.cs" />
+    <Compile Include="Persistence\MongoDB\Models\PGroup.cs" />
+    <Compile Include="Persistence\MongoDB\Models\PTenant.cs" />
+    <Compile Include="Persistence\MongoDB\Models\PUser.cs" />
     <Compile Include="Persistence\MongoDB\Repositories\GroupRepository.cs" />
+    <Compile Include="Persistence\MongoDB\Repositories\TenantRepository.cs" />
     <Compile Include="Persistence\MongoDB\Repositories\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Services\Impl\GroupService.cs" />

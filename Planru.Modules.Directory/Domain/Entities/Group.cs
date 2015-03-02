@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Domain.Entities
 {
+    /// <summary>
+    /// Represent for a group entity
+    /// </summary>
     public class Group : Entity<Guid>
     {
 

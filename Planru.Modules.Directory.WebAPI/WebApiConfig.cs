@@ -34,8 +34,8 @@ namespace Planru.Modules.Directory.WebAPI
         public void CreateMappings(ITypeAdapter typeAdapter)
         {
             // domain <-> persistence
-            typeAdapter.CreateMap<UserDMO, User>();
-            typeAdapter.CreateMap<User, UserDMO>();
+            typeAdapter.CreateMap<PUser, User>();
+            typeAdapter.CreateMap<User, PUser>();
 
             // domain <-> application
             typeAdapter.CreateMap<User, UserDTO>();

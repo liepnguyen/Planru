@@ -9,10 +9,20 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Persistence.MongoDB.Models
 {
+    /// <summary>
+    /// Represent for a group
+    /// </summary>
     [Collection("group")]
-    public class GroupDMO : EntityAuditDMO<Guid>
+    public class PGroup : EntityAuditDMO<Guid>
     {
+        /// <summary>
+        /// Gets or sets the name
+        /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the description
+        /// </summary>
         public string Description { get; set; }
     }
 }

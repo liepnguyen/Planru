@@ -111,10 +111,11 @@ gulp.task('default', ['build'], function () {
 gulp.task('build', function (cb) {
     runSequence(
         'clean', 
-        'build:bower', 
+        ['build:bower', 
         'build:html', 
-        'build:js', 'build:css', 
+        'build:js', 
+        'build:css', 
         'build:fonts', 
-        'build:images', 
+        'build:images'], 
         'build:index', cb);
 });

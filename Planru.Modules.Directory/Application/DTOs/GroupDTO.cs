@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Planru.Core.Domain;
 
-namespace Planru.Modules.Directory.Domain.Entities
+namespace Planru.Modules.Directory.Application.DTOs
 {
     /// <summary>
-    /// Represent for a role entity
+    /// Represent for a group data transfer object
     /// </summary>
-    public class Role : Entity<Guid>
+    public class GroupDTO
     {
-
     }
 }

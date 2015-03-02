@@ -9,12 +9,30 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Persistence.MongoDB.Models
 {
+    /// <summary>
+    /// Represent for a user
+    /// </summary>
     [Collection("user")]
-    public class UserDMO : EntityAuditDMO<Guid>
+    public class PUser : EntityAuditDMO<Guid>
     {
+        /// <summary>
+        /// Gets or sets the username
+        /// </summary>
         public string UserName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the display name
+        /// </summary>
         public string DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the first name
+        /// </summary>
         public string FirstName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last name
+        /// </summary>
         public string LastName { get; set; }
     }
 }
