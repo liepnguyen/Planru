@@ -74,8 +74,8 @@ namespace Planru.Modules.Directory.Tests.Persistence.MongoDB.Repositories
 
             var adapter = TypeAdapterFactory.CreateAdapter();
 
-            adapter.CreateMap<PUser, User>();
-            adapter.CreateMap<User, PUser>();
+            adapter.CreateMap<CUser, User>();
+            adapter.CreateMap<User, CUser>();
         }
 
         private void AssertTwoUsersAreEqual(User expected, User actual)

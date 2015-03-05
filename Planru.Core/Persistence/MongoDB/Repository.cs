@@ -19,8 +19,8 @@ using Planru.Core.Configuration.Annotations;
 namespace Planru.Core.Persistence.MongoDB
 {
     public abstract class Repository<TPersistenceEntity, TDomainEntity, TID> : IRepository<TDomainEntity, TID>
-        where TDomainEntity : Entity<TID>
-        where TPersistenceEntity : EntityDMO<TID>
+        where TDomainEntity : Planru.Core.Domain.Entity<TID>
+        where TPersistenceEntity : Planru.Core.Persistence.Entity<TID>
     {
         private bool _disposed = false;
         private MongoCollection<TPersistenceEntity> _collection;

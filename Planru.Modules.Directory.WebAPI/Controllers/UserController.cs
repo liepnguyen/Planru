@@ -11,18 +11,16 @@ using System.Net.Http;
 using System.Net;
 using Planru.Modules.Directory.Domain.Services;
 using Planru.Crosscutting.Data;
-using Planru.Modules.Directory.Application.DTOs;
-using Planru.Modules.Directory.Application.Services;
 
 namespace Planru.Modules.Directory.WebAPI.Controllers
 {
     public class UserController : ApiController
     {
-        private IUserAppService _userAppService;
+        private IUserService _userService;
 
-        public UserController(IUserAppService userService)
+        public UserController(IUserService userService)
         {
-            _userAppService = userService;
+            _userService = userService;
         }
 
         public PageResult<UserDTO> Get(int? count, int? page)
@@ -30,7 +28,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
             var pageNumber = page ?? 0;
             var pageSize = count ?? 10;
 
-            var pageResult = _userAppService.GetPaged(pageNumber, pageSize, o => o.UserName, true)
+            var pageResult = _userService.GetPaged(pageNumber, pageSize, o => o.UserName, true)
                 .ToPageResult<UserDTO>();
 
             return pageResult;
@@ -38,7 +36,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public IHttpActionResult Get(Guid id)
         {
-            UserDTO user = _userAppService.GetUserById(id);
+            UserDTO user = _userService.GetUserById(id);
             if (user == null)
             {
                 return NotFound();
@@ -49,7 +47,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public IHttpActionResult Post(UserDTO model)
         {
-            _userAppService.CreateUser(model);
+            _userService.CreateUser(model);
             return Created<UserDTO>(Url.Link("DefaultApi", new { id = model.Id }), model);
         }
 
@@ -60,7 +58,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public void Delete(Guid id)
         {
-            _userAppService.DeleteUserById(id);
+            _userService.DeleteUserById(id);
         }
     }
 }

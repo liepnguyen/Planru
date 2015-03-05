@@ -60,6 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Tenant.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="WebApiConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,9 +100,7 @@
       <Name>Planru.Modules.Directory</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

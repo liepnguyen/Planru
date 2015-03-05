@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Planru.Core.Persistence
 {
-    public abstract class EntityAuditDMO<TID> : EntityDMO<TID>
+    public abstract class EntityAudit<TID> : Entity<TID>
     {
         public DateTime? WhenCreated { get; set; }
         public DateTime? WhenChanged { get; set; }

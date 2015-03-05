@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Persistence.MongoDB
 {
-    public class UserRepository : Repository<PUser, User, Guid>, IUserRepository
+    public class UserRepository : Repository<CUser, User, Guid>, IUserRepository
     {
         public UserRepository(MongoDatabase database)
             : base(database)

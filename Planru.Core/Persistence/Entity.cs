@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Planru.Core.Persistence
 {
-    public abstract class EntityDMO<TID>
+    public abstract class Entity<TID>
     {
         public virtual TID Id { get; set; }
     }

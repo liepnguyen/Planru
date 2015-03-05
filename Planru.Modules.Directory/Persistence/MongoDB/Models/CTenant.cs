@@ -1,6 +1,5 @@
-﻿using Planru.Core.Domain;
+﻿using Planru.Core.Configuration.Annotations;
 using Planru.Core.Persistence;
-using Planru.Core.Configuration.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +9,24 @@ using System.Threading.Tasks;
 namespace Planru.Modules.Directory.Persistence.MongoDB.Models
 {
     /// <summary>
-    /// Represent for a user
+    /// Represent for a tenant (organization)
     /// </summary>
-    [Collection("user")]
-    public class PUser : EntityAuditDMO<Guid>
+    [Collection("tenant")]
+    public class CTenant : EntityAudit<Guid>
     {
-        /// <summary>
-        /// Gets or sets the username
-        /// </summary>
-        public string UserName { get; set; }
-
         /// <summary>
         /// Gets or sets the display name
         /// </summary>
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// Gets or sets the first name
+        /// Gets or sets the city
         /// </summary>
-        public string FirstName { get; set; }
+        public string City { get; set; }
 
         /// <summary>
-        /// Gets or sets the last name
+        /// Gets or sets the state
         /// </summary>
-        public string LastName { get; set; }
+        public string State { get; set; }
     }
 }

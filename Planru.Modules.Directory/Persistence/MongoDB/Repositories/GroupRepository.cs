@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Persistence.MongoDB
 {
-    public class GroupRepository : Repository<PGroup, Group, Guid>, IGroupRepository
+    public class GroupRepository : Repository<CGroup, Group, Guid>, IGroupRepository
     {
         public GroupRepository(MongoDatabase database)
             : base(database)

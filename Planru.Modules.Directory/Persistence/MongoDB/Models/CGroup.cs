@@ -13,7 +13,7 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     /// Represent for a group
     /// </summary>
     [Collection("group")]
-    public class PGroup : EntityAuditDMO<Guid>
+    public class CGroup : EntityAudit<Guid>
     {
         /// <summary>
         /// Gets or sets the name

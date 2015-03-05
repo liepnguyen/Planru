@@ -64,8 +64,8 @@
     <Compile Include="Configuration\Annotations\TableAttribute.cs" />
     <Compile Include="Persistence\IRepository.cs" />
     <Compile Include="Persistence\IUnitOfWork.cs" />
-    <Compile Include="Persistence\EntityDMO.cs" />
-    <Compile Include="Persistence\EntityAuditDMO.cs" />
+    <Compile Include="Persistence\Entity.cs" />
+    <Compile Include="Persistence\EntityAudit.cs" />
     <Compile Include="Domain\ValueObject.cs" />
     <Compile Include="Persistence\MongoDB\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
