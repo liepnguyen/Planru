@@ -8,6 +8,6 @@ namespace Planru.Core.Persistence
 {
     public abstract class Entity<TID>
     {
-        public virtual TID Id { get; set; }
+        public abstract TID Id { get; set; }
     }
 }

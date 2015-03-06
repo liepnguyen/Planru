@@ -15,6 +15,9 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     [Collection("user")]
     public class CUser : EntityAudit<Guid>
     {
+        /// <inheritdoc />
+        public override Guid Id { get; set; }
+
         /// <summary>
         /// Gets or sets the username
         /// </summary>
@@ -34,5 +37,11 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
         /// Gets or sets the last name
         /// </summary>
         public string LastName { get; set; }
+
+        /// <inheritdoc />
+        public override DateTime? WhenCreated { get; set; }
+
+        /// <inheritdoc />
+        public override DateTime? WhenChanged { get; set; }
     }
 }

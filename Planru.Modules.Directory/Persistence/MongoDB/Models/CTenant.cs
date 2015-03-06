@@ -14,6 +14,9 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     [Collection("tenant")]
     public class CTenant : EntityAudit<Guid>
     {
+        /// <inheritdoc />
+        public override Guid Id { get; set; }
+
         /// <summary>
         /// Gets or sets the display name
         /// </summary>
@@ -28,5 +31,11 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
         /// Gets or sets the state
         /// </summary>
         public string State { get; set; }
+
+        /// <inheritdoc />
+        public override DateTime? WhenCreated { get; set; }
+
+        /// <inheritdoc />
+        public override DateTime? WhenChanged { get; set; }
     }
 }

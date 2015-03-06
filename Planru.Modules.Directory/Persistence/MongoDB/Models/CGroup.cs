@@ -15,6 +15,9 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     [Collection("group")]
     public class CGroup : EntityAudit<Guid>
     {
+        /// <inheritdoc />
+        public override Guid Id { get; set; }
+
         /// <summary>
         /// Gets or sets the name
         /// </summary>
@@ -24,5 +27,11 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
         /// Gets or sets the description
         /// </summary>
         public string Description { get; set; }
+
+        /// <inheritdoc />
+        public override DateTime? WhenCreated { get; set; }
+
+        /// <inheritdoc />
+        public override DateTime? WhenChanged { get; set; }
     }
 }

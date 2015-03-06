@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Planru.Modules.Directory.Application.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,9 @@ namespace Planru.Modules.Directory.WebAPI.Models
     /// <summary>
     /// Represent for tenant model
     /// </summary>
-    public class Tenant
+    public class Tenant : ITenant
     {
-        /// <summary>
-        /// Gets and sets the indentifer
-        /// </summary>
+
         public Guid Id { get; set; }
     }
 }

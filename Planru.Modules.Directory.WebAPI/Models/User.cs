@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Planru.Modules.Directory.Application.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,31 +10,17 @@ namespace Planru.Modules.Directory.WebAPI.Models
     /// <summary>
     /// Represent for a user model
     /// </summary>
-    public class User
+    public class User : IUser
     {
-        /// <summary>
-        /// Gets and sets the indentifer
-        /// </summary>
+
         public Guid Id { get; set; }
 
-        /// <summary>
-        /// Gets and sets the user principal name
-        /// </summary>
         public string UserPrincipalName { get; set; }
 
-        /// <summary>
-        /// Gets and sets the display name
-        /// </summary>
         public string DisplayName { get; set; }
 
-        /// <summary>
-        /// Gets and sets the first name
-        /// </summary>
         public string FirstName { get; set; }
 
-        /// <summary>
-        /// Gets and sets the last name
-        /// </summary>
         public string LastName { get; set; }
     }
 }

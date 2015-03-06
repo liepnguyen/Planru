@@ -8,7 +8,7 @@ namespace Planru.Core.Persistence
 {
     public abstract class EntityAudit<TID> : Entity<TID>
     {
-        public DateTime? WhenCreated { get; set; }
-        public DateTime? WhenChanged { get; set; }
+        public abstract DateTime? WhenCreated { get; set; }
+        public abstract DateTime? WhenChanged { get; set; }
     }
 }

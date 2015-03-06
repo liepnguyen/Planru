@@ -59,6 +59,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Models\IGroup.cs" />
+    <Compile Include="Application\Models\ITenant.cs" />
+    <Compile Include="Application\Models\IUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\Services\Internal\UserAppService.cs" />
+    <Compile Include="Application\Services\IUserAppService.cs" />
     <Compile Include="Domain\Entities\Group.cs" />
     <Compile Include="Domain\Repositories\IGroupRepository.cs" />
     <Compile Include="Domain\Repositories\IRoleRepository.cs" />
