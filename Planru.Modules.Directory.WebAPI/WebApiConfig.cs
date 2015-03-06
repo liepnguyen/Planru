@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Planru.Modules.Directory.Domain.Repositories;
 using Planru.Modules.Directory.Domain.Services;
-using Planru.Modules.Directory.Services.Impl;
+using Planru.Modules.Directory.Services.Internal;
 using Planru.Modules.Directory.Persistence.MongoDB.Models;
 using Planru.Modules.Directory.Application.DTOs;
 using Planru.Modules.Directory.Application.Services;

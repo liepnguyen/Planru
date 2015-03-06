@@ -11,14 +11,15 @@ using System.Net.Http;
 using System.Net;
 using Planru.Modules.Directory.Domain.Services;
 using Planru.Crosscutting.Data;
+using Planru.Modules.Directory.Application.Services;
 
 namespace Planru.Modules.Directory.WebAPI.Controllers
 {
     public class UserController : ApiController
     {
-        private IUserService _userService;
+        private IUserAppService _userService;
 
-        public UserController(IUserService userService)
+        public UserController(IUserAppService userService)
         {
             _userService = userService;
         }

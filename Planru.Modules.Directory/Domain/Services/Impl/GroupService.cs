@@ -10,11 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Modules.Directory.Services.Impl
+namespace Planru.Modules.Directory.Domain.Services.Impl
 {
-    public class UserService : Service<User, Guid>, IUserService
+    public class GroupService : Service<Group, Guid>, IGroupService
     {
-        public UserService(IUserRepository repository)
+        public GroupService(IGroupRepository repository) 
             : base(repository)
         { 
 

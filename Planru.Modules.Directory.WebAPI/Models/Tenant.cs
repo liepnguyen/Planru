@@ -12,7 +12,6 @@ namespace Planru.Modules.Directory.WebAPI.Models
     /// </summary>
     public class Tenant : ITenant
     {
-
         public Guid Id { get; set; }
     }
 }

@@ -1,18 +1,20 @@
 ﻿using Planru.Core.Domain;
+using Planru.Crosscutting.Adapter;
 using Planru.Modules.Directory.Domain.Entities;
+using Planru.Modules.Directory.Domain.Repositories;
+using Planru.Modules.Directory.Domain.Services;
+using Planru.Modules.Directory.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Planru.Modules.Directory.Services;
-using Planru.Modules.Directory.Persistence.MongoDB.Repositories;
 
 namespace Planru.Modules.Directory.Domain.Services.Impl
 {
-    public class TenantService : Service<Tenant, Guid>, ITenantService
+    public class UserService : Service<User, Guid>, IUserService
     {
-        public TenantService(TenantRepository repository)
+        public UserService(IUserRepository repository)
             : base(repository)
         { 
 
