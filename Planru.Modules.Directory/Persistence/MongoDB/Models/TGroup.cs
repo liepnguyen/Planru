@@ -6,14 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization.Attributes;
+using Planru.Core.Persistence.MongoDB;
 
 namespace Planru.Modules.Directory.Persistence.MongoDB.Models
 {
     /// <summary>
     /// Represent for a group
     /// </summary>
-    [Collection("group")]
-    public class CGroup : EntityAudit<Guid>
+    [BsonDiscriminator("group")]
+    public class TGroup : MongoEntityAudit<Guid>
     {
         /// <inheritdoc />
         public override Guid Id { get; set; }
@@ -27,11 +29,5 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
         /// Gets or sets the description
         /// </summary>
         public string Description { get; set; }
-
-        /// <inheritdoc />
-        public override DateTime? WhenCreated { get; set; }
-
-        /// <inheritdoc />
-        public override DateTime? WhenChanged { get; set; }
     }
 }

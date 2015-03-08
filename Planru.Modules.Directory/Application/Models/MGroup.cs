@@ -7,13 +7,9 @@ using System.Threading.Tasks;
 namespace Planru.Modules.Directory.Application.Models
 {
     /// <summary>
-    /// Represent a tenant model contract
+    /// Represent a group model contract
     /// </summary>
-    public interface ITenant
+    public class MGroup
     {
-        /// <summary>
-        /// Gets and sets the indentifer
-        /// </summary>
-        Guid Id { get; set; }
     }
 }

@@ -10,7 +10,13 @@ using System.Threading.Tasks;
 
 namespace Planru.Core.Persistence
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TEntity">The type of domain entity</typeparam>
+    /// <typeparam name="TID">The type of indentifer</typeparam>
     public interface IRepository<TEntity, TID> : IDisposable
+        where TEntity : Core.Domain.Entity<TID>
     {
         /// <summary>
         /// Add item into repository

@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Persistence.MongoDB
 {
-    public class UserRepository : Repository<CUser, User, Guid>, IUserRepository
+    public class UserRepository : MongoRepository<TUser, User, Guid>, IUserRepository
     {
-        public UserRepository(MongoDatabase database)
+        public UserRepository(string connectionString, )
             : base(database)
         {
 

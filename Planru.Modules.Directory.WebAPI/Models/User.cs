@@ -10,7 +10,7 @@ namespace Planru.Modules.Directory.WebAPI.Models
     /// <summary>
     /// Represent for a user model
     /// </summary>
-    public class User : IUser
+    public class User : MUser
     {
 
         public Guid Id { get; set; }

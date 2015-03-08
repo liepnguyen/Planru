@@ -1,5 +1,7 @@
-﻿using Planru.Core.Configuration.Annotations;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using Planru.Core.Configuration.Annotations;
 using Planru.Core.Persistence;
+using Planru.Core.Persistence.MongoDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +13,9 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     /// <summary>
     /// Represent for a tenant (organization)
     /// </summary>
-    [Collection("tenant")]
-    public class CTenant : EntityAudit<Guid>
+    [BsonDiscriminator("tenant")]
+    public class TTenant : MongoEntityAudit<Guid>
     {
-        /// <inheritdoc />
-        public override Guid Id { get; set; }
-
         /// <summary>
         /// Gets or sets the display name
         /// </summary>
@@ -31,11 +30,5 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
         /// Gets or sets the state
         /// </summary>
         public string State { get; set; }
-
-        /// <inheritdoc />
-        public override DateTime? WhenCreated { get; set; }
-
-        /// <inheritdoc />
-        public override DateTime? WhenChanged { get; set; }
     }
 }

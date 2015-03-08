@@ -10,7 +10,7 @@ namespace Planru.Modules.Directory.WebAPI.Models
     /// <summary>
     /// Represent for a group model
     /// </summary>
-    public class Group : IGroup
+    public class Group : Group
     {
 
     }

@@ -6,18 +6,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization.Attributes;
+using Planru.Core.Persistence.MongoDB;
 
 namespace Planru.Modules.Directory.Persistence.MongoDB.Models
 {
     /// <summary>
     /// Represent for a user
     /// </summary>
-    [Collection("user")]
-    public class CUser : EntityAudit<Guid>
+    [BsonDiscriminator("user")]
+    public class TUser : MongoEntityAudit<Guid>
     {
-        /// <inheritdoc />
-        public override Guid Id { get; set; }
-
         /// <summary>
         /// Gets or sets the username
         /// </summary>
@@ -37,11 +36,5 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
         /// Gets or sets the last name
         /// </summary>
         public string LastName { get; set; }
-
-        /// <inheritdoc />
-        public override DateTime? WhenCreated { get; set; }
-
-        /// <inheritdoc />
-        public override DateTime? WhenChanged { get; set; }
     }
 }

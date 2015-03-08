@@ -1,24 +1,41 @@
-﻿using MongoDB.Driver;
-using Planru.Core.Configuration.Annotations;
-using Planru.Core.Domain;
-using Planru.Crosscutting.Adapter;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Planru.Core.Domain.Specification;
+using Planru.Core.Domain;
+using System.Linq.Expressions;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
+using System.Data.Entity.Design.PluralizationServices;
+using MongoDB.Driver.Builders;
+using MongoDB.Bson;
+using Planru.Crosscutting.Data;
+using Planru.Crosscutting.Adapter;
+using Planru.Crosscutting.Common;
+using Planru.Core.Configuration.Annotations;
 
 namespace Planru.Core.Persistence.MongoDB
 {
-    public abstract class MongoRepository<TEntity, TID> : IRepository<TEntity, TID>
-        where TEntity : Entity<TID>
+    /// <summary>
+    /// Represent for a Mongo repository
+    /// </summary>
+    /// <typeparam name="TPersistenceEntity">The type of persistence entity</typeparam>
+    /// <typeparam name="TDomainEntity">The type of domain entity</typeparam>
+    /// <typeparam name="TID">The type of indentifer</typeparam>
+    public abstract class MongoRepository<TPersistenceEntity, TDomainEntity, TID> : IRepository<TDomainEntity, TID>
+        where TDomainEntity : Planru.Core.Domain.Entity<TID>
+        where TPersistenceEntity : Planru.Core.Persistence.MongoDB.MongoEntity<TID>
     {
+        private bool _disposed = false;
         private readonly string _connectionString;
         private readonly string _databaseName;
 
         private readonly MongoServer _server;
         private readonly MongoClient _client;
         private readonly MongoDatabase _db;
+        private MongoCollection<TPersistenceEntity> _collection;
 
         public MongoRepository(string connectionString, string databaseName)
         {
@@ -28,99 +45,143 @@ namespace Planru.Core.Persistence.MongoDB
             _client = new MongoClient(connectionString);
             _server = _client.GetServer();
             _db = _server.GetDatabase(databaseName);
+            _collection = _db.GetCollection<TPersistenceEntity>(this.GetCollectionName());
+        }
+
+        public void Add(TDomainEntity item)
+        {
+            var entity = item.Adapt<TPersistenceEntity>();
+            _collection.Insert(item);
+        }
+
+        public void Add(IEnumerable<TDomainEntity> items)
+        {
+            var entities = items.AdaptMany<TPersistenceEntity>();
+            _collection.InsertBatch(items);
+        }
+
+        public void Remove(TDomainEntity item)
+        {
+            this.Remove(item.Id);
+        }
+
+        public void Remove(TID id)
+        {
+            _collection.Remove(Query.EQ("_id", BsonValue.Create(id)));
+        }
+
+        public void Remove(IEnumerable<TDomainEntity> items)
+        {
+            IEnumerable<TID> ids = items.Select(e => e.Id);
+            Remove(ids);
+        }
+
+        public void Remove(IEnumerable<TID> ids)
+        {
+            _collection.Remove(Query.In("_id", new BsonArray(ids)));
+        }
+
+        public void RemoveAll()
+        {
+            _collection.RemoveAll();
+        }
+
+        public void Modify(TDomainEntity item)
+        {
+            var entity = item.Adapt<TPersistenceEntity>();
+            _collection.Save(item);
+        }
+
+        public void Modify(IEnumerable<TDomainEntity> items)
+        {
+            var entities = items.AdaptMany<TPersistenceEntity>();
+            _collection.Save(items);
+        }
+
+        public bool Exists(TID id)
+        {
+            return _collection.AsQueryable<TPersistenceEntity>().Any(e => e.Id.Equals(id));
+        }
+
+        public TDomainEntity Get(TID id)
+        {
+            var result = _collection.FindOneById(BsonValue.Create(id));
+            return result.Adapt<TDomainEntity>();
+        }
+
+        public IEnumerable<TDomainEntity> GetAll()
+        {
+            var result = _collection.FindAll().AsEnumerable();
+            return result.AdaptMany<TDomainEntity>();
+        }
+
+        public IEnumerable<TDomainEntity> AllMatching(ISpecification<TDomainEntity> specification)
+        {
+            return this.GetFiltered(specification.SatisfiedBy());
+        }
+
+        public PageResult<TDomainEntity> GetPaged<KProperty>(int pageNumber, int pageSize, 
+            Expression<Func<TDomainEntity, KProperty>> orderByExpression, bool ascending)
+        {
+            var newOrderByExpression = 
+                ExpressionConverter<TPersistenceEntity>.Convert(orderByExpression);
+
+            IEnumerable<TPersistenceEntity> persistenceEntities;
+            if (ascending)
+                persistenceEntities = _collection.AsQueryable()
+                                                    .OrderBy(newOrderByExpression)
+                                                    .Skip(pageNumber * pageSize)
+                                                    .Take(pageSize);
+            else
+                persistenceEntities = _collection.AsQueryable()
+                                                    .OrderByDescending(newOrderByExpression)
+                                                    .Skip(pageNumber * pageSize)
+                                                    .Take(pageSize);
+            var domainEntities = persistenceEntities.AdaptMany<TDomainEntity>();
+
+            return new PageResult<TDomainEntity>(domainEntities, pageNumber, pageSize, this.Count());
+        }
+
+        public IEnumerable<TDomainEntity> GetFiltered(Expression<Func<TDomainEntity, bool>> filter)
+        {
+            var filterExpression = ExpressionConverter<TPersistenceEntity>.Convert(filter);
+
+            var result = _collection.Find(Query<TPersistenceEntity>
+                                    .Where(filterExpression))
+                                    .Select(e => e.Adapt<TDomainEntity>());
+            return result;
+        }
+
+        public long Count()
+        {
+            return _collection.Count();
         }
 
         protected virtual string GetCollectionName()
         {
-            var collectionName = ((CollectionAttribute)typeof(TEntity).GetCustomAttributes(true)
+            var collectionName = ((CollectionAttribute)typeof(TPersistenceEntity).GetCustomAttributes(true)
                     .FirstOrDefault(attr => attr.GetType() == typeof(CollectionAttribute))).Name;
 
             return collectionName;
         }
 
-        public void Add(TEntity item)
+        protected virtual void Dispose(bool disposing)
         {
-            
-        }
+            if (_disposed)
+                return;
 
-        public void Add(IEnumerable<TEntity> items)
-        {
-            throw new NotImplementedException();
-        }
+            if (disposing)
+            {
+                // 
+            }
 
-        public void Remove(TEntity item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(TID id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(IEnumerable<TEntity> items)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(IEnumerable<TID> ids)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Modify(TEntity item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Modify(IEnumerable<TEntity> items)
-        {
-            throw new NotImplementedException();
-        }
-
-        public TEntity Get(TID id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<TEntity> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Exists(TID id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<TEntity> AllMatching(Domain.Specification.ISpecification<TEntity> specification)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Crosscutting.Data.PageResult<TEntity> GetPaged<KProperty>(int pageNumber, int pageSize, System.Linq.Expressions.Expression<Func<TEntity, KProperty>> orderByExpression, bool ascending)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<TEntity> GetFiltered(System.Linq.Expressions.Expression<Func<TEntity, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public long Count()
-        {
-            throw new NotImplementedException();
+            _disposed = true;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

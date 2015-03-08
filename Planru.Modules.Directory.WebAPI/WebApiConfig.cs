@@ -18,6 +18,7 @@ using Planru.Modules.Directory.Persistence.MongoDB.Models;
 using Planru.Modules.Directory.Application.DTOs;
 using Planru.Modules.Directory.Application.Services;
 using Planru.Modules.Directory.Application.Impl;
+using Planru.Modules.Directory.Application.Models;
 
 namespace Planru.Modules.Directory.WebAPI
 {
@@ -34,12 +35,12 @@ namespace Planru.Modules.Directory.WebAPI
         public void CreateMappings(ITypeAdapter typeAdapter)
         {
             // domain <-> persistence
-            typeAdapter.CreateMap<CUser, User>();
-            typeAdapter.CreateMap<User, CUser>();
+            typeAdapter.CreateMap<TUser, User>();
+            typeAdapter.CreateMap<User, TUser>();
 
             // domain <-> application
-            typeAdapter.CreateMap<User, UserDTO>();
-            typeAdapter.CreateMap<UserDTO, User>();
+            typeAdapter.CreateMap<User, MUser>();
+            typeAdapter.CreateMap<MUser, User>();
         }
     }
 }

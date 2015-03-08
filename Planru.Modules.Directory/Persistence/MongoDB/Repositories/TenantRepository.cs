@@ -11,7 +11,7 @@ using MongoDB.Driver;
 
 namespace Planru.Modules.Directory.Persistence.MongoDB.Repositories
 {
-    public class TenantRepository : Repository<CTenant, Tenant, Guid>, ITenantRepository
+    public class TenantRepository : MongoRepository<TTenant, Tenant, Guid>, ITenantRepository
     {
         public TenantRepository(MongoDatabase database)
             : base(database)

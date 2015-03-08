@@ -10,7 +10,7 @@ namespace Planru.Modules.Directory.WebAPI.Models
     /// <summary>
     /// Represent for tenant model
     /// </summary>
-    public class Tenant : ITenant
+    public class Tenant : MTenant
     {
         public Guid Id { get; set; }
     }
