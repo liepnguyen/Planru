@@ -31,7 +31,7 @@ namespace Planru.Modules.Directory.Tests.Persistence.MongoDB.Repositories
         [TearDown]
         public void TearDown()
         {
-            _userRepository.RemoveAll();
+            //_userRepository.RemoveAll();
         }
 
         [TestCase]
@@ -43,7 +43,7 @@ namespace Planru.Modules.Directory.Tests.Persistence.MongoDB.Repositories
                 UserName = "liepnguyen",
                 FirstName = "Liep",
                 LastName ="Nguyen",
-                DisplayName = "Liep Nguyen"
+                DisplayName = "Liep Nguyen",
             };
 
             _userRepository.Add(expected);
@@ -57,20 +57,20 @@ namespace Planru.Modules.Directory.Tests.Persistence.MongoDB.Repositories
         #region Private methods
         private void Initialize()
         {
-            var credential = MongoCredential.CreateMongoCRCredential("planru_system", "liepnguyen", "@dmin348");
+            //var credential = MongoCredential.CreateMongoCRCredential("planru_system", "liepnguyen", "@dmin348");
 
-            var settings = new MongoClientSettings
-            {
-                Credentials = new[] { credential },
-                Server = new MongoServerAddress("ds055680.mongolab.com", 55680)
-            };
+            //var settings = new MongoClientSettings
+            //{
+            //    Credentials = new[] { credential },
+            //    Server = new MongoServerAddress("ds055680.mongolab.com", 55680)
+            //};
 
-            var client = new MongoClient(settings);
-            var server = client.GetServer();
-            var database = server.GetDatabase("planru_system");
+            //var client = new MongoClient(settings);
+            //var server = client.GetServer();
+            //var database = server.GetDatabase("planru_system");
 
             TypeAdapterFactory.SetCurrent(new AutomapperTypeAdapterFactory());
-            _userRepository = new UserRepository(database);
+            _userRepository = new UserRepository("mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system", "planru_system");
 
             var adapter = TypeAdapterFactory.CreateAdapter();
 

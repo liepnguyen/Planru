@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace Planru.Core.Tests.Persistence.MongoDB
 {
+    [TestFixture]
     public class RepositoryTests
     {
     }

@@ -15,8 +15,8 @@ namespace Planru.Modules.Directory.Persistence.MongoDB
 {
     public class UserRepository : MongoRepository<TUser, User, Guid>, IUserRepository
     {
-        public UserRepository(string connectionString, )
-            : base(database)
+        public UserRepository(string connectionString, string databaseName)
+            : base(connectionString, databaseName)
         {
 
         }

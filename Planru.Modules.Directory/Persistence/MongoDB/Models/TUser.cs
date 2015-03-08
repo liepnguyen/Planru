@@ -14,8 +14,8 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     /// <summary>
     /// Represent for a user
     /// </summary>
-    [BsonDiscriminator("user")]
-    public class TUser : MongoEntityAudit<Guid>
+    [Collection("user")]
+    public class TUser : EntityAudit<Guid>
     {
         /// <summary>
         /// Gets or sets the username

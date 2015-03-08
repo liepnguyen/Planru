@@ -26,7 +26,7 @@ namespace Planru.Core.Persistence.MongoDB
     /// <typeparam name="TID">The type of indentifer</typeparam>
     public abstract class MongoRepository<TPersistenceEntity, TDomainEntity, TID> : IRepository<TDomainEntity, TID>
         where TDomainEntity : Planru.Core.Domain.Entity<TID>
-        where TPersistenceEntity : Planru.Core.Persistence.MongoDB.MongoEntity<TID>
+        where TPersistenceEntity : Planru.Core.Persistence.Entity<TID>
     {
         private bool _disposed = false;
         private readonly string _connectionString;
@@ -51,7 +51,12 @@ namespace Planru.Core.Persistence.MongoDB
         public void Add(TDomainEntity item)
         {
             var entity = item.Adapt<TPersistenceEntity>();
-            _collection.Insert(item);
+            if (entity.GetType().BaseType == typeof(EntityAudit<TID>))
+            {
+                (entity as EntityAudit<TID>).WhenCreated = 
+                (entity as EntityAudit<TID>).WhenChanged = DateTime.UtcNow;
+            }
+            _collection.Insert(entity);
         }
 
         public void Add(IEnumerable<TDomainEntity> items)

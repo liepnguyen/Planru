@@ -13,8 +13,8 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Repositories
 {
     public class TenantRepository : MongoRepository<TTenant, Tenant, Guid>, ITenantRepository
     {
-        public TenantRepository(MongoDatabase database)
-            : base(database)
+        public TenantRepository(string connectionString, string databaseName)
+            : base(connectionString, databaseName)
         { 
             
         }

@@ -14,8 +14,8 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     /// <summary>
     /// Represent for a group
     /// </summary>
-    [BsonDiscriminator("group")]
-    public class TGroup : MongoEntityAudit<Guid>
+    [Collection("user")]
+    public class TGroup : EntityAudit<Guid>
     {
         /// <inheritdoc />
         public override Guid Id { get; set; }

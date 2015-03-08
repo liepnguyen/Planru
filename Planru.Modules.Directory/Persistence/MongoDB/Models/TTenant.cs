@@ -13,8 +13,8 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     /// <summary>
     /// Represent for a tenant (organization)
     /// </summary>
-    [BsonDiscriminator("tenant")]
-    public class TTenant : MongoEntityAudit<Guid>
+    [Collection("user")]
+    public class TTenant : EntityAudit<Guid>
     {
         /// <summary>
         /// Gets or sets the display name
