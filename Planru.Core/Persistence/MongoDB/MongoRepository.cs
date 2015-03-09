@@ -51,11 +51,6 @@ namespace Planru.Core.Persistence.MongoDB
         public void Add(TDomainEntity item)
         {
             var entity = item.Adapt<TPersistenceEntity>();
-            if (entity.GetType().BaseType == typeof(EntityAudit<TID>))
-            {
-                (entity as EntityAudit<TID>).WhenCreated = 
-                (entity as EntityAudit<TID>).WhenChanged = DateTime.UtcNow;
-            }
             _collection.Insert(entity);
         }
 
@@ -162,12 +157,15 @@ namespace Planru.Core.Persistence.MongoDB
             return _collection.Count();
         }
 
+        /// <summary>
+        /// Gets the name of collection
+        /// </summary>
+        /// <returns>The name of collection</returns>
         protected virtual string GetCollectionName()
         {
-            var collectionName = ((CollectionAttribute)typeof(TPersistenceEntity).GetCustomAttributes(true)
-                    .FirstOrDefault(attr => attr.GetType() == typeof(CollectionAttribute))).Name;
-
-            return collectionName;
+            var collectionAttr = ((CollectionAttribute)typeof(TPersistenceEntity).GetCustomAttributes(true)
+                    .FirstOrDefault(attr => attr.GetType() == typeof(CollectionAttribute)));
+            return collectionAttr != null ? collectionAttr.Name : typeof(TPersistenceEntity).Name;
         }
 
         protected virtual void Dispose(bool disposing)
