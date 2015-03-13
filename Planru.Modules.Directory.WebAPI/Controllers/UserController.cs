@@ -1,6 +1,5 @@
 ﻿using Planru.Core.Persistence;
 using Planru.Crosscutting.Adapter;
-using Planru.Modules.Directory.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +11,7 @@ using System.Net;
 using Planru.Modules.Directory.Domain.Services;
 using Planru.Crosscutting.Data;
 using Planru.Modules.Directory.Application.Services;
-using Planru.Modules.Directory.Application.Models;
+using Planru.Modules.Directory.Application.DTOs;
 
 namespace Planru.Modules.Directory.WebAPI.Controllers
 {
@@ -27,7 +26,10 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public PageResult<UserDTO> Get(int? count, int? page)
         {
-            throw new NotImplementedException();
+            int pageNumber = page ?? 0;
+            int pageSize = count ?? 0;
+            var result = _userService.GetUsers<string>(pageNumber, pageSize, k => k.FirstName, true);
+            return result;
         }
 
         public IHttpActionResult Get(Guid id)

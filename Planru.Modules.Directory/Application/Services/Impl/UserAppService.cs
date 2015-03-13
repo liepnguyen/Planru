@@ -1,6 +1,6 @@
 ﻿using Planru.Crosscutting.Common;
 using Planru.Crosscutting.Data;
-using Planru.Modules.Directory.Application.Models;
+using Planru.Modules.Directory.Application.DTOs;
 using Planru.Modules.Directory.Domain.Entities;
 using Planru.Modules.Directory.Domain.Repositories;
 using Planru.Modules.Directory.Domain.Services;

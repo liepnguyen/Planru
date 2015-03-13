@@ -6,7 +6,7 @@ using Planru.Modules.Directory.Application.Services;
 using Planru.Modules.Directory.Persistence.MongoDB;
 using Planru.Crosscutting.Adapter;
 using Planru.Crosscutting.Adapter.Automapper;
-using Planru.Modules.Directory.Application.Models;
+using Planru.Modules.Directory.Application.DTOs;
 using Planru.Modules.Directory.Application.Services.Impl;
 using Planru.Modules.Directory.Domain.Services.Impl;
 using System.Collections.Generic;

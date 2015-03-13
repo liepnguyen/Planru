@@ -1,5 +1,5 @@
 ﻿using Planru.Crosscutting.Data;
-using Planru.Modules.Directory.Application.Models;
+using Planru.Modules.Directory.Application.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

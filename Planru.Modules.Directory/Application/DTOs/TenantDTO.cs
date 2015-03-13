@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Modules.Directory.Application.Models
+namespace Planru.Modules.Directory.Application.DTOs
 {
     /// <summary>
     /// Represent a tenant model contract
