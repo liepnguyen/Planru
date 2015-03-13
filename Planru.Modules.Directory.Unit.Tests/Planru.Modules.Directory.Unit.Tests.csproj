@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E75712C-4985-4811-84B0-16AB7E73CA58}</ProjectGuid>
+    <ProjectGuid>{09783FB8-7F5B-469C-BDF5-84BEB5320374}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Planru.Core.Unit.Tests</RootNamespace>
-    <AssemblyName>Planru.Core.Unit.Tests</AssemblyName>
+    <RootNamespace>Planru.Modules.Directory.Unit.Tests</RootNamespace>
+    <AssemblyName>Planru.Modules.Directory.Unit.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,7 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Persistence\Mongo\MongoRepository.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Choose>

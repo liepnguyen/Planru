@@ -12,34 +12,40 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Planru.Core.Integration.Tests.Persitence.Mongo
 {
-    public class TestDomainEntity : Planru.Core.Domain.Entity<Guid>
-    {
-        public string StringValue { get; set; }
-        public int IntegerValue { get; set; }
-        public DateTime DateTimeValue { get; set; }
-    }
-
-    [Collection("test_repository")]
-    public class TestPersistenceEntity : Planru.Core.Persistence.Entity<Guid>
-    {
-        public string StringValue { get; set; }
-        public int IntegerValue { get; set; }
-        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-        public DateTime DateTimeValue { get; set; }
-    }
-
-    public class MongoTestRepository : MongoRepository<TestPersistenceEntity, TestDomainEntity, Guid>
-    {
-        public MongoTestRepository(string connectionString, string databaseName)
-            : base(connectionString, databaseName)
-        { 
-            
-        }
-    }
+    
 
     [TestClass]
     public class MongoRepositoryTest
     {
+        #region Inner classes
+
+        public class TestDomainEntity : Planru.Core.Domain.Entity<Guid>
+        {
+            public string StringValue { get; set; }
+            public int IntegerValue { get; set; }
+            public DateTime DateTimeValue { get; set; }
+        }
+
+        [Collection("test_repository")]
+        public class TestPersistenceEntity : Planru.Core.Persistence.Entity<Guid>
+        {
+            public string StringValue { get; set; }
+            public int IntegerValue { get; set; }
+            [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+            public DateTime DateTimeValue { get; set; }
+        }
+
+        public class MongoTestRepository : MongoRepository<TestPersistenceEntity, TestDomainEntity, Guid>
+        {
+            public MongoTestRepository(string connectionString, string databaseName)
+                : base(connectionString, databaseName)
+            {
+
+            }
+        }
+
+        #endregion
+
         private IRepository<TestDomainEntity, Guid> _repository;
 
         [TestInitialize]

@@ -9,7 +9,7 @@ namespace Planru.Modules.Directory.Application.Models
     /// <summary>
     /// Represent a user model contract
     /// </summary>
-    public class MUser
+    public class UserDTO
     {
         /// <summary>
         /// Gets and sets the indentifer

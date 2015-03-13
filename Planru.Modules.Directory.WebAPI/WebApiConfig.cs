@@ -39,8 +39,8 @@ namespace Planru.Modules.Directory.WebAPI
             typeAdapter.CreateMap<User, TUser>();
 
             // domain <-> application
-            typeAdapter.CreateMap<User, MUser>();
-            typeAdapter.CreateMap<MUser, User>();
+            typeAdapter.CreateMap<User, UserDTO>();
+            typeAdapter.CreateMap<UserDTO, User>();
         }
     }
 }

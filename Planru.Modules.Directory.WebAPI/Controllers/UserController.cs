@@ -12,6 +12,7 @@ using System.Net;
 using Planru.Modules.Directory.Domain.Services;
 using Planru.Crosscutting.Data;
 using Planru.Modules.Directory.Application.Services;
+using Planru.Modules.Directory.Application.Models;
 
 namespace Planru.Modules.Directory.WebAPI.Controllers
 {
@@ -26,30 +27,17 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public PageResult<UserDTO> Get(int? count, int? page)
         {
-            var pageNumber = page ?? 0;
-            var pageSize = count ?? 10;
-
-            var pageResult = _userService.GetPaged(pageNumber, pageSize, o => o.UserName, true)
-                .ToPageResult<UserDTO>();
-
-            return pageResult;
+            throw new NotImplementedException();
         }
 
         public IHttpActionResult Get(Guid id)
         {
-            UserDTO user = _userService.GetUserById(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(user);
+            throw new NotImplementedException();
         }
 
         public IHttpActionResult Post(UserDTO model)
         {
-            _userService.CreateUser(model);
-            return Created<UserDTO>(Url.Link("DefaultApi", new { id = model.Id }), model);
+            throw new NotImplementedException();
         }
 
         public void Put(UserDTO model)
@@ -59,7 +47,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public void Delete(Guid id)
         {
-            _userService.DeleteUserById(id);
+            throw new NotImplementedException();
         }
     }
 }

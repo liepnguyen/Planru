@@ -9,7 +9,7 @@ namespace Planru.Modules.Directory.Application.Models
     /// <summary>
     /// Represent a tenant model contract
     /// </summary>
-    public class MTenant
+    public class TenantDTO
     {
         /// <summary>
         /// Gets and sets the indentifer

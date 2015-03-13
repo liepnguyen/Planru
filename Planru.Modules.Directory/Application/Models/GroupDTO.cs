@@ -9,7 +9,7 @@ namespace Planru.Modules.Directory.Application.Models
     /// <summary>
     /// Represent a group model contract
     /// </summary>
-    public class MGroup
+    public class GroupDTO
     {
     }
 }

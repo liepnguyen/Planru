@@ -61,9 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\Models\MGroup.cs" />
-    <Compile Include="Application\Models\MTenant.cs" />
-    <Compile Include="Application\Models\MUser.cs">
+    <Compile Include="Application\Models\GroupDTO.cs" />
+    <Compile Include="Application\Models\TenantDTO.cs" />
+    <Compile Include="Application\Models\UserDTO.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Application\Services\Impl\UserAppService.cs" />

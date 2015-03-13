@@ -12,12 +12,13 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Domain.Services.Impl
 {
-    public class UserService : Service<User, Guid>, IUserService
+    public class UserService : IUserService
     {
-        public UserService(IUserRepository repository)
-            : base(repository)
-        { 
+        private IUserRepository _userRepository;
 
+        public UserService(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
         }
     }
 }

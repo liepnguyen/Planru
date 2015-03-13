@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E75712C-4985-4811-84B0-16AB7E73CA58}</ProjectGuid>
+    <ProjectGuid>{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Planru.Core.Unit.Tests</RootNamespace>
-    <AssemblyName>Planru.Core.Unit.Tests</AssemblyName>
+    <RootNamespace>Planru.Modules.Directory.Integration.Tests</RootNamespace>
+    <AssemblyName>Planru.Modules.Directory.Integration.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,8 +50,30 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Persistence\Mongo\MongoRepository.cs" />
+    <Compile Include="Application\Services\Impl\UserAppServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Planru.Core\Planru.Core.csproj">
+      <Project>{2f2826d4-b154-4b16-94b6-288d1efb9d05}</Project>
+      <Name>Planru.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Planru.Crosscutting.Adapter\Planru.Crosscutting.Adapter.csproj">
+      <Project>{c4ff9d0b-2f25-40e3-868f-a94057ad90a0}</Project>
+      <Name>Planru.Crosscutting.Adapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Planru.Crosscutting.Common\Planru.Crosscutting.Common.csproj">
+      <Project>{ecc001c0-8bc3-4c9d-8d32-4cabb030f16e}</Project>
+      <Name>Planru.Crosscutting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Planru.Crosscutting.Data\Planru.Crosscutting.Data.csproj">
+      <Project>{ca941891-7b9b-499b-966c-481e515120e1}</Project>
+      <Name>Planru.Crosscutting.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Planru.Modules.Directory\Planru.Modules.Directory.csproj">
+      <Project>{bf73c400-1175-458f-aad1-ee59104f14bf}</Project>
+      <Name>Planru.Modules.Directory</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
