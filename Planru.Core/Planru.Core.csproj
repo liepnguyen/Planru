@@ -64,7 +64,6 @@
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Configuration\Annotations\CollectionAttribute.cs" />
     <Compile Include="Configuration\Annotations\TableAttribute.cs" />
-    <Compile Include="Persistence\IDbContext.cs" />
     <Compile Include="Persistence\IRepository.cs" />
     <Compile Include="Persistence\IUnitOfWork.cs" />
     <Compile Include="Persistence\Entity.cs" />

@@ -65,7 +65,7 @@ namespace Planru.Core.Integration.Tests.Persitence.Mongo
         }
 
         [TestMethod]
-        public void Add_MethodIsCalled_EntityIsAdded()
+        public void Add_MethodIsCalled_AnEntityIsAdded()
         {
             // Arrange
             var expected = new TestDomainEntity() 
@@ -88,7 +88,7 @@ namespace Planru.Core.Integration.Tests.Persitence.Mongo
         }
 
         [TestMethod]
-        public void Get_MethodIsCalledWithId_EntityIsReturned()
+        public void Get_MethodIsCalledWithId_AnEntityIsReturned()
         {
             // Arrange
             var expected = new TestDomainEntity()
@@ -109,7 +109,7 @@ namespace Planru.Core.Integration.Tests.Persitence.Mongo
         }
 
         [TestMethod]
-        public void Modify_MethodIsCalled_EntityIsModified()
+        public void Modify_MethodIsCalled_AnEntityIsModified()
         {
             // Arrange
             var expected = new TestDomainEntity()
@@ -134,7 +134,7 @@ namespace Planru.Core.Integration.Tests.Persitence.Mongo
         }
 
         [TestMethod]
-        public void Remove_MethodIsCalled_EntityIsRemoved()
+        public void Remove_MethodIsCalled_AnEntityIsRemoved()
         {
             // Arrange
             var entity = new TestDomainEntity() { Id = Guid.NewGuid() };
