@@ -29,23 +29,11 @@ namespace Planru.Core.Persistence.MongoDB
         where TPersistenceEntity : Planru.Core.Persistence.Entity<TID>
     {
         private bool _disposed = false;
-        private readonly string _connectionString;
-        private readonly string _databaseName;
-
-        private readonly MongoServer _server;
-        private readonly MongoClient _client;
-        private readonly MongoDatabase _db;
         private MongoCollection<TPersistenceEntity> _collection;
 
-        public MongoRepository(string connectionString, string databaseName)
+        public MongoRepository(IMongoDbContext mongoDatabaseManager)
         {
-            _connectionString = connectionString;
-            _databaseName = databaseName;
-
-            _client = new MongoClient(connectionString);
-            _server = _client.GetServer();
-            _db = _server.GetDatabase(databaseName);
-            _collection = _db.GetCollection<TPersistenceEntity>(this.GetCollectionName());
+            _collection = mongoDatabaseManager.GetCollection<TPersistenceEntity>();
         }
 
         public void Add(TDomainEntity item)
@@ -155,17 +143,6 @@ namespace Planru.Core.Persistence.MongoDB
         public long Count()
         {
             return _collection.Count();
-        }
-
-        /// <summary>
-        /// Gets the name of collection
-        /// </summary>
-        /// <returns>The name of collection</returns>
-        protected virtual string GetCollectionName()
-        {
-            var collectionAttr = ((CollectionAttribute)typeof(TPersistenceEntity).GetCustomAttributes(true)
-                    .FirstOrDefault(attr => attr.GetType() == typeof(CollectionAttribute)));
-            return collectionAttr != null ? collectionAttr.Name : typeof(TPersistenceEntity).Name;
         }
 
         protected virtual void Dispose(bool disposing)

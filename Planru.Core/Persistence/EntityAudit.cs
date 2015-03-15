@@ -18,8 +18,18 @@ namespace Planru.Core.Persistence
         public virtual DateTime? WhenCreated { get; set; }
 
         /// <summary>
-        /// Gets and sets the updated datetime
+        /// Gets or sets the updated datetime
         /// </summary>
         public virtual DateTime? WhenChanged { get; set; }
+
+        /// <summary>
+        /// Gets or sets the identifer of who created this entity
+        /// </summary>
+        public virtual TID WhoCreated { get; set; }
+
+        /// <summary>
+        /// Gets or sets the identifer fo who changed this entity
+        /// </summary>
+        public virtual TID WhoChanged { get; set; }
     }
 }

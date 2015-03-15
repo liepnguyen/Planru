@@ -69,9 +69,12 @@
     <Compile Include="Persistence\Entity.cs" />
     <Compile Include="Persistence\EntityAudit.cs" />
     <Compile Include="Domain\ValueObject.cs" />
-    <Compile Include="Persistence\MongoDB\IMongoSessionFactory.cs" />
+    <Compile Include="Persistence\MongoDB\IMongoDbContext.cs" />
+    <Compile Include="Persistence\MongoDB\MongoDbContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Persistence\MongoDB\MongoRepository.cs" />
-    <Compile Include="Persistence\MongoDB\MongoSessionFactory.cs" />
+    <Compile Include="Persistence\MongoDB\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Specification\AndSpecification.cs" />
     <Compile Include="Domain\Specification\CompositeSpecification.cs" />

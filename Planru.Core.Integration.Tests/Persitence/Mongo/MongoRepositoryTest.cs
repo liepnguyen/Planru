@@ -51,6 +51,7 @@ namespace Planru.Core.Integration.Tests.Persitence.Mongo
         [TestInitialize]
         public void Setup()
         {
+            var mongoDbContext = new MongoDbContext()
             _repository = new MongoTestRepository(
                 "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system", 
                 "planru_system");
