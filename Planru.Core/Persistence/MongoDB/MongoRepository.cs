@@ -31,9 +31,9 @@ namespace Planru.Core.Persistence.MongoDB
         private bool _disposed = false;
         private MongoCollection<TPersistenceEntity> _collection;
 
-        public MongoRepository(IMongoDbContext mongoDatabaseManager)
+        public MongoRepository(IMongoDbContext dbContext)
         {
-            _collection = mongoDatabaseManager.GetCollection<TPersistenceEntity>();
+            _collection = dbContext.GetCollection<TPersistenceEntity>();
         }
 
         public void Add(TDomainEntity item)
