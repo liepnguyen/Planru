@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using Planru.Modules.Directory.Domain.Repositories;
 using System.Linq;
 using Planru.Modules.Directory.Persistence.MongoDB.Models;
+using Planru.Core.Persistence.MongoDB;
 
 namespace Planru.Modules.Directory.Integration.Tests.Application.Services.Impl
 {
@@ -27,7 +28,8 @@ namespace Planru.Modules.Directory.Integration.Tests.Application.Services.Impl
         {
             var connectionString = "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system";
             var databaseName = "planru_system";
-            _userRepository = new UserRepository(connectionString, databaseName);
+            IMongoDbContext dbContext = new MongoDbContext(connectionString, databaseName);
+            _userRepository = new UserRepository(dbContext);
             var userService = new UserService(_userRepository);
             
             TypeAdapterFactory.SetCurrent(new AutomapperTypeAdapterFactory());

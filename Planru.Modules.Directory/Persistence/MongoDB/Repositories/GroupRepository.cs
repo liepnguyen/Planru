@@ -15,8 +15,8 @@ namespace Planru.Modules.Directory.Persistence.MongoDB
 {
     public class GroupRepository : MongoRepository<TGroup, Group, Guid>, IGroupRepository
     {
-        public GroupRepository(string connectionString, string databaseName)
-            : base(connectionString, databaseName)
+        public GroupRepository(IMongoDbContext dbContext)
+            : base(dbContext)
         {
 
         }
