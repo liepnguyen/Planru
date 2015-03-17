@@ -25,12 +25,21 @@ namespace Planru.Core.Persistence.MongoDB
         public MongoDatabase Database { get; private set; }
 
         /// <summary>
+        /// Gets the mongo client
+        /// </summary>
+        public MongoClient Client { get; private set; }
+
+        /// <summary>
+        /// Gets the mongo server
+        /// </summary>
+        public MongoServer Server { get; private set; }
+
+        /// <summary>
         /// Initializes for a new instance of the <see cref="MongoDbContext"/> class with the specified parameters.
         /// </summary>
         public MongoDbContext(string databaseName)
             : this(Util.GetDefaultConnectionString(), databaseName)
         { 
-
         }
 
         /// <summary>
@@ -40,6 +49,10 @@ namespace Planru.Core.Persistence.MongoDB
         public MongoDbContext(string connectionString, string databaseName)
         {
             this.ConnectionString = connectionString;
+
+            this.Client = new MongoClient(connectionString);
+            this.Server = this.Client.GetServer();
+            this.Database = Server.GetDatabase(databaseName);
         }
 
         /// <inheritdoc/>

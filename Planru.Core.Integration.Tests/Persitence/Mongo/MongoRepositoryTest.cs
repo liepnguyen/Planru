@@ -12,8 +12,6 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Planru.Core.Integration.Tests.Persitence.Mongo
 {
-    
-
     [TestClass]
     public class MongoRepositoryTest
     {
@@ -37,8 +35,8 @@ namespace Planru.Core.Integration.Tests.Persitence.Mongo
 
         public class MongoTestRepository : MongoRepository<TestPersistenceEntity, TestDomainEntity, Guid>
         {
-            public MongoTestRepository(string connectionString, string databaseName)
-                : base(connectionString, databaseName)
+            public MongoTestRepository(IMongoDbContext dbContext)
+                : base(dbContext)
             {
 
             }
@@ -51,10 +49,11 @@ namespace Planru.Core.Integration.Tests.Persitence.Mongo
         [TestInitialize]
         public void Setup()
         {
-            var mongoDbContext = new MongoDbContext()
-            _repository = new MongoTestRepository(
-                "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system", 
+            var dbContext = new MongoDbContext(
+                "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system",
                 "planru_system");
+
+            _repository = new MongoTestRepository(dbContext);
 
             _repository.RemoveAll();
 
