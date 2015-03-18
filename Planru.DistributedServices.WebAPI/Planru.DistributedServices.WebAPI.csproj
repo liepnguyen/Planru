@@ -223,7 +223,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IoCConfig.cs" />
     <Compile Include="App_Start\IoCWebApiActivator.cs" />
-    <Compile Include="App_Start\MongoDbConfig.cs" />
     <Compile Include="App_Start\ModuleConfig.cs">
       <SubType>Code</SubType>
     </Compile>

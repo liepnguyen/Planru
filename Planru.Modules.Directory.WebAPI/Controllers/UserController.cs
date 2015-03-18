@@ -39,17 +39,18 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public IHttpActionResult Post(UserDTO model)
         {
-            throw new NotImplementedException();
+            _userService.UpdateUser(model);
+            return Created<UserDTO>(Url.Link("DefaultApi", new { id = model.Id }), model);
         }
 
         public void Put(UserDTO model)
         {
-
+            
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            _userService.DeleteUser(id);
         }
     }
 }

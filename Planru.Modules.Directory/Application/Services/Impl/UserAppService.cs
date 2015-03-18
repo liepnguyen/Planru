@@ -15,7 +15,8 @@ using System.Threading.Tasks;
 namespace Planru.Modules.Directory.Application.Services.Impl
 {
     /// <summary>
-    /// Represent a user application service
+    /// The user management service implementation.
+    /// <see cref="IUserAppService" />
     /// </summary>
     public class UserAppService : IUserAppService
     {
@@ -59,6 +60,12 @@ namespace Planru.Modules.Directory.Application.Services.Impl
         {
             var user = userDto.Adapt<User>();
             _userRepository.Modify(user);
+        }
+
+        /// <inheritdoc />
+        public void DeleteUser(Guid id)
+        {
+            _userRepository.Remove(id);
         }
     }
 }

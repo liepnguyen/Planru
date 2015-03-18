@@ -19,7 +19,7 @@ namespace Planru.Modules.Directory.Application.DTOs
         /// <summary>
         /// Gets and sets the user principal name
         /// </summary>
-        public string UserPrincipalName { get; set; }
+        public string UserName { get; set; }
 
         /// <summary>
         /// Gets and sets the display name

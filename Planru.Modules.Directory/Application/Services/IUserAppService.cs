@@ -37,5 +37,11 @@ namespace Planru.Modules.Directory.Application.Services
         /// </summary>
         /// <param name="userDto">The user data transfer object</param>
         void UpdateUser(UserDTO userDto);
+
+        /// <summary>
+        /// Deletes a user by id
+        /// </summary>
+        /// <param name="id">The unique identifer of a user</param>
+        void DeleteUser(Guid id);
     }
 }

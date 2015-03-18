@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using Planru.Core.Module.WebAPI;
+using Planru.Core.Persistence.MongoDB;
 using Planru.Crosscutting.Adapter;
 using Planru.Crosscutting.Adapter.Automapper;
 using Planru.Crosscutting.IoC;
@@ -31,7 +32,12 @@ namespace Planru.DistributedServices.WebAPI
         public static void RegisterTypes(IContainer container)
         {
             TypeAdapterFactory.SetCurrent(new SingletonAutomapperTypeAdapterFactory());
-            container.RegisterInstance<MongoDatabase>(MongoDbConfig.GetMongoDbDatabase());
+
+            var dbContext = new MongoDbContext(
+                "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system",
+                "planru_system");
+
+            container.RegisterInstance<IMongoDbContext>(dbContext);
         }
     }
 }
