@@ -12,10 +12,9 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Domain.Services.Impl
 {
-    public class GroupService : Service<Group, Guid>, IGroupService
+    public class GroupService : IGroupService
     {
         public GroupService(IGroupRepository repository) 
-            : base(repository)
         { 
 
         }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Domain.Services
 {
-    public interface ITenantService : IService<Tenant, Guid>
+    public interface ITenantService
     { 
 
     }

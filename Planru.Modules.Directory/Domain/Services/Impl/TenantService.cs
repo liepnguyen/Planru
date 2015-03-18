@@ -9,10 +9,9 @@ using Planru.Modules.Directory.Persistence.MongoDB.Repositories;
 
 namespace Planru.Modules.Directory.Domain.Services.Impl
 {
-    public class TenantService : Service<Tenant, Guid>, ITenantService
+    public class TenantService : ITenantService
     {
         public TenantService(TenantRepository repository)
-            : base(repository)
         { 
 
         }

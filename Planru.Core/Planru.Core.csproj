@@ -86,8 +86,6 @@
     <Compile Include="Domain\Specification\ParametersRebinder.cs" />
     <Compile Include="Domain\Specification\Specification.cs" />
     <Compile Include="Domain\Specification\TrueSpecification.cs" />
-    <Compile Include="Domain\IService.cs" />
-    <Compile Include="Domain\Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

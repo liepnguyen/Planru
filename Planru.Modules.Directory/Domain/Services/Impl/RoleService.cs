@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 
 namespace Planru.Modules.Directory.Domain.Services.Impl
 {
-    public class RoleService : Service<Role, Guid>, IRoleService
+    public class RoleService : IRoleService
     {
         public RoleService(IRoleRepository repository)
-            : base(repository)
         { 
             
         }
