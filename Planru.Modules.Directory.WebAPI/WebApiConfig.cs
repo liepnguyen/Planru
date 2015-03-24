@@ -17,6 +17,8 @@ using Planru.Modules.Directory.Application.Services;
 using Planru.Modules.Directory.Application.DTOs;
 using Planru.Modules.Directory.Domain.Services.Impl;
 using Planru.Modules.Directory.Application.Services.Impl;
+using MongoDB.Bson.Serialization.Conventions;
+using Planru.Core.Persistence.MongoDB;
 
 namespace Planru.Modules.Directory.WebAPI
 {
@@ -24,6 +26,12 @@ namespace Planru.Modules.Directory.WebAPI
     {
         public void RegisterTypes(IContainer container)
         {
+            var pack = new ConventionPack();
+            pack.Add(new LowerCaseWithUnderscoreElementNameConvention());
+
+            ConventionRegistry.Register(
+                "Custom Conventions", pack, t => true);
+
             container.Register<IUserRepository, UserRepository>();
             container.Register<IUserService, UserService>();
             container.Register<IUserAppService, UserAppService>();
