@@ -12,7 +12,6 @@ using Planru.Modules.Directory.Persistence;
 using Planru.Modules.Directory.Domain.Entities;
 using Planru.Crosscutting.IoC;
 using Planru.Crosscutting.IoC.Unity;
-using Planru.Modules.Directory.Services;
 using Planru.Modules.Directory.Persistence.MongoDB;
 using MongoDB.Bson.Serialization;
 using Planru.Core.Domain;
@@ -22,10 +21,8 @@ using Planru.Crosscutting.Adapter.Automapper;
 using Planru.Crosscutting.Adapter;
 using Planru.Modules.Directory.Domain.Repositories;
 using Planru.Modules.Directory.Domain.Services;
-using Planru.Modules.Directory.Services.Internal;
 using Planru.Modules.Directory.Persistence.MongoDB.Models;
 using Planru.Modules.Directory.Application.Services;
-using Planru.Modules.Directory.Application.Impl;
 using Planru.Modules.Directory.Application.DTOs;
 
 namespace Planru.Research.MongoDB.Console
@@ -66,8 +63,6 @@ namespace Planru.Research.MongoDB.Console
             IContainer container = new UnityContainer();
             container.RegisterInstance<MongoDatabase>(database);
             container.RegisterInstance<ITypeAdapter>(typeAdapter);
-            container.Register<IUserService, UserService>();
-            container.Register<IUserAppService, UserAppService>();
 
             // domain <-> persistence
             typeAdapter.CreateMap<TUser, User>();

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Planru.Modules.Directory.Application.Services
 {
     /// <summary>
-    /// Represent for a user application service contract
+    /// This is the contract that the application will interact to perform various operations for "users management".
     /// </summary>
     public interface IUserAppService
     {

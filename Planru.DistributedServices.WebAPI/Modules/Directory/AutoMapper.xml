@@ -510,11 +510,6 @@
             Source extension methods included for search
             </summary>
         </member>
-        <member name="P:AutoMapper.IMappingOptions.BindingFlags">
-            <summary>
-            Binding flags used to search for members. Defaults to public instance methods
-            </summary>
-        </member>
         <member name="T:AutoMapper.ITypeConverter`2">
             <summary>
             Converts source type to destination type instead of normal member mapping
