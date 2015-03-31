@@ -15,7 +15,7 @@ using System.Linq;
 using Planru.Modules.Directory.Persistence.MongoDB.Models;
 using Planru.Core.Persistence.MongoDB;
 
-namespace Planru.Modules.Directory.Integration.Tests.Application.Services.Impl
+namespace Tests.Integration.Planru.Modules.Directory.Application.Services.Impl
 {
     [TestClass]
     public class UserAppServiceTest

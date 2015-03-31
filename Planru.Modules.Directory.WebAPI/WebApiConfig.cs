@@ -27,10 +27,10 @@ namespace Planru.Modules.Directory.WebAPI
         public void RegisterTypes(IContainer container)
         {
             var pack = new ConventionPack();
-            pack.Add(new LowerCaseWithUnderscoreElementNameConvention());
+            pack.Add(new CamelCaseElementNameConvention());
 
             ConventionRegistry.Register(
-                "Custom Conventions", pack, t => true);
+                "Camel Case Convention", pack, t => true);
 
             container.Register<IUserRepository, UserRepository>();
             container.Register<IUserService, UserService>();

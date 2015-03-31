@@ -60,9 +60,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core.Unit.Tests", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core.Integration.Tests", "Planru.Core.Integration.Tests\Planru.Core.Integration.Tests.csproj", "{2104799E-8F1A-4B39-9BF8-2C9FE3B30BA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Modules.Directory.Unit.Tests", "Planru.Modules.Directory.Unit.Tests\Planru.Modules.Directory.Unit.Tests.csproj", "{09783FB8-7F5B-469C-BDF5-84BEB5320374}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Unit.Planru.Modules.Directory", "Planru.Modules.Directory.Unit.Tests\Tests.Unit.Planru.Modules.Directory.csproj", "{09783FB8-7F5B-469C-BDF5-84BEB5320374}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Modules.Directory.Integration.Tests", "Planru.Modules.Directory.Integration.Tests\Planru.Modules.Directory.Integration.Tests.csproj", "{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Integration.Planru.Modules.Directory", "Planru.Modules.Directory.Integration.Tests\Tests.Integration.Planru.Modules.Directory.csproj", "{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -169,8 +169,8 @@ Global
 		{CA941891-7B9B-499B-966C-481E515120E1} = {90133825-A2EA-4E2F-A3C0-700498A4F0A7}
 		{2E75712C-4985-4811-84B0-16AB7E73CA58} = {49B55C31-6F90-47A8-857A-ADDF86A6C7E2}
 		{2104799E-8F1A-4B39-9BF8-2C9FE3B30BA3} = {49B55C31-6F90-47A8-857A-ADDF86A6C7E2}
-		{09783FB8-7F5B-469C-BDF5-84BEB5320374} = {49B55C31-6F90-47A8-857A-ADDF86A6C7E2}
-		{339EF2AF-CCC9-4087-8CFF-28F2974CDF24} = {49B55C31-6F90-47A8-857A-ADDF86A6C7E2}
+		{09783FB8-7F5B-469C-BDF5-84BEB5320374} = {90151720-7AE7-4BAE-AE8D-ECBE10B0FC57}
+		{339EF2AF-CCC9-4087-8CFF-28F2974CDF24} = {90151720-7AE7-4BAE-AE8D-ECBE10B0FC57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45

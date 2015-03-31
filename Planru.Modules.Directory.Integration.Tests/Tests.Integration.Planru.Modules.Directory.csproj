@@ -6,8 +6,8 @@
     <ProjectGuid>{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Planru.Modules.Directory.Integration.Tests</RootNamespace>
-    <AssemblyName>Planru.Modules.Directory.Integration.Tests</AssemblyName>
+    <RootNamespace>Tests.Integration.Planru.Modules.Directory</RootNamespace>
+    <AssemblyName>Tests.Integration.Planru.Modules.Directory</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
