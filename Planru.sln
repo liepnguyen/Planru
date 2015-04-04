@@ -60,9 +60,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core.Unit.Tests", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Core.Integration.Tests", "Planru.Core.Integration.Tests\Planru.Core.Integration.Tests.csproj", "{2104799E-8F1A-4B39-9BF8-2C9FE3B30BA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Unit.Planru.Modules.Directory", "Planru.Modules.Directory.Unit.Tests\Tests.Unit.Planru.Modules.Directory.csproj", "{09783FB8-7F5B-469C-BDF5-84BEB5320374}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Unit.Planru.Modules.Directory", "Tests.Unit.Planru.Modules.Directory\Tests.Unit.Planru.Modules.Directory.csproj", "{09783FB8-7F5B-469C-BDF5-84BEB5320374}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Integration.Planru.Modules.Directory", "Planru.Modules.Directory.Integration.Tests\Tests.Integration.Planru.Modules.Directory.csproj", "{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Integration.Planru.Modules.Directory", "Tests.Integration.Planru.Modules.Directory\Tests.Integration.Planru.Modules.Directory.csproj", "{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
