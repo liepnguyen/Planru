@@ -52,7 +52,7 @@
     <Compile Include="Automapper\AutomapperTypeAdapterFactory.cs" />
     <Compile Include="AdapterProfile.cs" />
     <Compile Include="Automapper\AutomapperMappingExpression.cs" />
-    <Compile Include="Automapper\SingletonAutomapperTypeAdapterFactory.cs" />
+    <Compile Include="Automapper\AutomapperSingletonTypeAdapterFactory.cs" />
     <Compile Include="TypeAdapterExtensions.cs" />
     <Compile Include="IMemberConfiguration.cs" />
     <Compile Include="IMappingExpression.cs" />

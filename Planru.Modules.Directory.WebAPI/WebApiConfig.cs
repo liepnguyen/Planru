@@ -46,7 +46,7 @@ namespace Planru.Modules.Directory.WebAPI
 
             // domain <-> application
             typeAdapter.CreateMap<User, UserDTO>();
-            typeAdapter.CreateMap<UserDTO, User>();
+            typeAdapter.CreateMap<UserDTO, User>().ForMember(d => d.DisplayName, opt => opt.Ignore());
         }
     }
 }

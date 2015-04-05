@@ -31,7 +31,7 @@ namespace Planru.DistributedServices.WebAPI
 
         public static void RegisterTypes(IContainer container)
         {
-            TypeAdapterFactory.SetCurrent(new SingletonAutomapperTypeAdapterFactory());
+            TypeAdapterFactory.SetCurrent(new AutomapperSingletonTypeAdapterFactory());
 
             var dbContext = new MongoDbContext(
                 "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system",

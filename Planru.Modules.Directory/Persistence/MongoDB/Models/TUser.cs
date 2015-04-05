@@ -17,6 +17,8 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     [Collection("user")]
     public class TUser : EntityAudit<Guid>
     {
+        public Guid TenantId { get; set; }
+
         /// <summary>
         /// Gets or sets the username
         /// </summary>

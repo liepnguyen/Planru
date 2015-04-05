@@ -10,18 +10,16 @@ namespace Planru.Crosscutting.Adapter.Automapper
 {
     public class AutomapperMemberConfiguration<TSource> : IMemberConfiguration<TSource>
     {
-        private Expression<Func<TSource, object>> _sourceMember;
+        public Expression<Func<TSource, object>> SourceMember { get; private set; }
 
         public void MapFrom(Expression<Func<TSource, object>> sourceMember)
         {
-            _sourceMember = sourceMember;
+            this.SourceMember = sourceMember;
         }
-
-        public Expression<Func<TSource, object>> SourceMember { get { return _sourceMember; } }
 
         public void Ignore()
         {
-            throw new NotImplementedException();
+            this.SourceMember = null;
         }
     }
 }

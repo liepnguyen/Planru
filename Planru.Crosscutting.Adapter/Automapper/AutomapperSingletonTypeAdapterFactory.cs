@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Planru.Crosscutting.Adapter.Automapper
 {
-    public class SingletonAutomapperTypeAdapterFactory : ITypeAdapterFactory
+    public class AutomapperSingletonTypeAdapterFactory : ITypeAdapterFactory
     {
         private static Lazy<ITypeAdapter> _typeAdapter = new Lazy<ITypeAdapter>(() =>
         {

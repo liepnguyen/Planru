@@ -25,10 +25,14 @@ namespace Planru.Crosscutting.Adapter.Automapper
         public IMappingExpression<TSource, TTarget> ForMember(Expression<Func<TTarget, object>> destinationMember, 
             Action<IMemberConfiguration<TSource>> memberOptions)
         {
-            memberOptions(_memberConfiguration.Value);
+            memberOptions(this.MemberConfiguration);
 
-            Mapper.CreateMap<TSource, TTarget>()
-                .ForMember(destinationMember, m => m.MapFrom(MemberConfiguration.SourceMember));
+            if (this.MemberConfiguration.SourceMember == null)
+                Mapper.CreateMap<TSource, TTarget>()
+                    .ForMember(destinationMember, m => m.Ignore());
+            else
+                Mapper.CreateMap<TSource, TTarget>()
+                .ForMember(destinationMember, opt => opt.MapFrom(this.MemberConfiguration.SourceMember));
 
             return this;
         }
