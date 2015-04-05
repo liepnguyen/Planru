@@ -1,4 +1,4 @@
-﻿   using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Planru.Core.Persistence.MongoDB
         /// Gets the collection of the specified entity type
         /// </summary>
         /// <typeparam name="T">The type of entity</typeparam>
-        /// <returns>The mongo collection</returns>
+        /// <returns>The mongo collection of the specified entity.</returns>
         MongoCollection<T> GetCollection<T>();
     }
 }

@@ -23,12 +23,12 @@ namespace Planru.Core.Persistence
         public virtual DateTime? WhenChanged { get; set; }
 
         /// <summary>
-        /// Gets or sets the identifer of who created this entity
+        /// Gets or sets the identifer whose created this entity
         /// </summary>
         public virtual TID WhoCreated { get; set; }
 
         /// <summary>
-        /// Gets or sets the identifer fo who changed this entity
+        /// Gets or sets the identifer whose changed this entity
         /// </summary>
         public virtual TID WhoChanged { get; set; }
     }
