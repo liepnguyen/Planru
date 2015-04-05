@@ -5,111 +5,103 @@ using System.Reflection;
 namespace Planru.Core.Domain
 {
     /// <summary>
-    /// Base class for value objects in domain.
-    /// Value
+    /// Value Object base (Handles Equality)
     /// </summary>
-    /// <typeparam name="TValueObject">The type of this value object</typeparam>
-    public class ValueObject<TValueObject> : IEquatable<TValueObject>
-        where TValueObject : ValueObject<TValueObject>
+    /// <typeparam name="TValueObject"></typeparam>
+    public class ValueObjectBase<TValueObject> : 
+        IEquatable<TValueObject>
+        where TValueObject : ValueObjectBase<TValueObject>
     {
-
-        #region IEquatable and Override Equals operators
-
+        /// <summary>
+        /// Indicates whether the current object 
+        /// is equal to another object of the same type.
+        /// </summary>
+        /// <returns>
+        /// true if the current object is equal 
+        /// to the <paramref name="other"/> parameter; otherwise, false.
+        /// </returns>
+        /// <param name="other">An object to compare with this object.</param>
         public bool Equals(TValueObject other)
         {
-            if ((object)other == null)
+            if (other == null)
                 return false;
-
-            if (Object.ReferenceEquals(this, other))
-                return true;
-
-            //compare all public properties
-            PropertyInfo[] publicProperties = this.GetType().GetProperties();
-
-            if ((object)publicProperties != null
-                &&
-                publicProperties.Any())
-            {
-                return publicProperties.All(p =>
-                {
-                    var left = p.GetValue(this, null);
-                    var right = p.GetValue(other, null);
-
-                    if (typeof(TValueObject).IsAssignableFrom(left.GetType()))
-                    {
-                        // Check not self-references...
-                        return Object.ReferenceEquals(left, right);
-                    }
-                    else
-                        return left.Equals(right);
-                });
-            }
-            else
-                return true;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if ((object)obj == null)
-                return false;
-
-            if (Object.ReferenceEquals(this, obj))
-                return true;
-
-            ValueObject<TValueObject> item = obj as ValueObject<TValueObject>;
-
-            if ((object)item != null)
-                return Equals((TValueObject)item);
-            else
-                return false;
-
-        }
-
-        public override int GetHashCode()
-        {
-            int hashCode = 31;
-            bool changeMultiplier = false;
-            int index = 1;
 
             // Compare all public properties
-            PropertyInfo[] publicProperties = this.GetType().GetProperties();
+            var publicProperties = GetType().GetProperties();
 
-            if ((object)publicProperties != null
-                &&
-                publicProperties.Any())
+            if (publicProperties != null && publicProperties.Any())
+                return publicProperties
+                    .All(item => item.GetValue(this, null)
+                    .Equals(item.GetValue(other, null)));
+
+            return true;
+        }
+
+        /// <summary>
+        /// Equality
+        /// </summary>
+        public override bool Equals(object obj)
+        {
+            // If both are null, or both are same instance, return true
+            if (ReferenceEquals(obj, this))
+                return true;
+
+            if (obj == null)
+                return false;
+
+            var item = obj as ValueObjectBase<TValueObject>;
+
+            if (item == null)
+                return false;
+
+            return Equals((TValueObject) item);
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var hashCode = 31;
+            var changeMultiplier = false;
+            const int index = 1;
+
+            // Compare all public properties
+            var publicProperties = GetType().GetProperties();
+
+            if (publicProperties != null && publicProperties.Any())
             {
-                foreach (var item in publicProperties)
+                foreach (var value in publicProperties
+                    .Select(item => item.GetValue(this, null)))
                 {
-                    object value = item.GetValue(this, null);
-
-                    if ((object)value != null)
+                    if (value != null)
                     {
-                        hashCode = hashCode * ((changeMultiplier) ? 59 : 114) + value.GetHashCode();
-
+                        hashCode = hashCode * ((changeMultiplier) ? 59 : 114) 
+                            + value.GetHashCode();
                         changeMultiplier = !changeMultiplier;
                     }
                     else
-                        hashCode = hashCode ^ (index * 13); // Only for support {"a",null,null,"a"} <> {null,"a","a",null}
+                        hashCode = hashCode ^ (index * 13); // Support order
                 }
             }
 
             return hashCode;
         }
 
-        public static bool operator ==(ValueObject<TValueObject> left, ValueObject<TValueObject> right)
+        /// <summary>
+        /// Equal operator
+        /// </summary>
+        public static bool operator ==(ValueObjectBase<TValueObject> x, ValueObjectBase<TValueObject> y)
         {
-            if (Object.Equals(left, null))
-                return (Object.Equals(right, null)) ? true : false;
-            else
-                return left.Equals(right);
-
+            return Equals(x, y);
         }
 
-        public static bool operator !=(ValueObject<TValueObject> left, ValueObject<TValueObject> right)
+        /// <summary>
+        /// Not equal operator
+        /// </summary>
+        public static bool operator !=(ValueObjectBase<TValueObject> x, ValueObjectBase<TValueObject> y)
         {
-            return !(left == right);
+            return !(x == y);
         }
-
-        #endregion
     }
 }

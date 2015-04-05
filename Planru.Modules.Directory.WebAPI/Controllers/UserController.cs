@@ -29,7 +29,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
             int pageNumber = page ?? 0;
             int pageSize = count ?? 0;
 
-            var result = _userService.GetUsers<string>(pageNumber, pageSize, k => k.Firstname, true);
+            var result = _userService.GetUsers<string>(pageNumber, pageSize, k => k.FirstName, true);
             return result;
         }
 

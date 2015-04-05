@@ -14,20 +14,22 @@ namespace Planru.Modules.Directory.Domain.Entities
     /// </summary>
     public class User : Entity<Guid>
     {
+        public Guid TenantId { get; set; }
+
         /// <summary>
         /// Gets or sets the first name
         /// </summary>
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or sets the last name
         /// </summary>
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
 
         /// <summary>
         /// Gets or sets the username
         /// </summary>
-        public string Username { get; set; }
+        public string UserName { get; set; }
 
         /// <summary>
         /// Gets or sets the display name

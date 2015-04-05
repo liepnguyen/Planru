@@ -1,8 +1,5 @@
 ﻿namespace Planru.Crosscutting.Logging
 {
-    /// <summary>
-    /// Log Factory
-    /// </summary>
     public static class LoggerFactory
     {
         #region Members
@@ -23,7 +20,7 @@
         }
 
         /// <summary>
-        /// Createt a new <paramref name="Microsoft.Samples.NLayerApp.Infrastructure.Crosscutting.Logging.ILog"/>
+        /// Createt a new <paramref name="ILogger"/>
         /// </summary>
         /// <returns>Created ILog</returns>
         public static ILogger CreateLog()

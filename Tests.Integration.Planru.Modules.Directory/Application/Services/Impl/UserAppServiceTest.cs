@@ -58,20 +58,20 @@ namespace Tests.Integration.Planru.Modules.Directory.Application.Services.Impl
             // Arrange
             var users = new List<User>()
             {
-                new User() { Id = Guid.NewGuid(), Firstname = "A" },
-                new User() { Id = Guid.NewGuid(), Firstname = "C" },
-                new User() { Id = Guid.NewGuid(), Firstname = "B" }
+                new User() { Id = Guid.NewGuid(), FirstName = "A" },
+                new User() { Id = Guid.NewGuid(), FirstName = "C" },
+                new User() { Id = Guid.NewGuid(), FirstName = "B" }
             };
             _userRepository.Add(users);
 
             // Action
-            var actualUsers = _userAppService.GetUsers<string>(1, 2, k => k.Firstname, true);
+            var actualUsers = _userAppService.GetUsers<string>(1, 2, k => k.FirstName, true);
 
             // Assert
             Assert.IsNotNull(actualUsers);
             Assert.AreEqual(3, actualUsers.TotalItems);
             Assert.AreEqual(1, actualUsers.Items.Count());
-            Assert.AreEqual("C", actualUsers.Items.First().Firstname);
+            Assert.AreEqual("C", actualUsers.Items.First().FirstName);
         }
 
         [TestMethod]
