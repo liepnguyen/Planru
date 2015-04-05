@@ -7,9 +7,8 @@ using System.Linq.Expressions;
 
 namespace Planru.Crosscutting.Adapter
 {
-    public interface IMemberConfiguration<TSource>
+    public interface IMemberConfiguration<TSource, TTarget>
     {
-        Expression<Func<TSource, object>> SourceMember { get; }
         void MapFrom(Expression<Func<TSource, object>> sourceMember);
         void Ignore();
     }

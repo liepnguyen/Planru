@@ -8,18 +8,26 @@ using AutoMapper;
 
 namespace Planru.Crosscutting.Adapter.Automapper
 {
-    public class AutomapperMemberConfiguration<TSource> : IMemberConfiguration<TSource>
+    public class AutomapperMemberConfiguration<TSource, TTarget> : IMemberConfiguration<TSource, TTarget>
     {
-        public Expression<Func<TSource, object>> SourceMember { get; private set; }
+        public Expression<Func<TTarget, object>> DestinationMember { get; private set; }
+
+        public AutomapperMemberConfiguration(Expression<Func<TTarget, object>> destinationMember)
+        {
+            if (destinationMember == null)
+                throw new ArgumentNullException("destinationMember");
+
+            this.DestinationMember = destinationMember;
+        }
 
         public void MapFrom(Expression<Func<TSource, object>> sourceMember)
         {
-            this.SourceMember = sourceMember;
+            Mapper.CreateMap<TSource, TTarget>().ForMember(this.DestinationMember, opt => opt.MapFrom(sourceMember));
         }
 
         public void Ignore()
         {
-            this.SourceMember = null;
+            Mapper.CreateMap<TSource, TTarget>().ForMember(this.DestinationMember, opt => opt.Ignore());
         }
     }
 }

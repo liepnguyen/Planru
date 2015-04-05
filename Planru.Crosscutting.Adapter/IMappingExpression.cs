@@ -9,6 +9,6 @@ namespace Planru.Crosscutting.Adapter
 {
     public interface IMappingExpression<TSource, TTarget>
     {
-        IMappingExpression<TSource, TTarget> ForMember(Expression<Func<TTarget, object>> destinationMember, Action<IMemberConfiguration<TSource>> memberOptions);
+        IMappingExpression<TSource, TTarget> ForMember(Expression<Func<TTarget, object>> destinationMember, Action<IMemberConfiguration<TSource, TTarget>> memberOptions);
     }
 }
