@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Planru.Core.Persistence.MongoDB
 {
-    public class LowerCaseWithUnderscoreElementNameConvention : IMemberMapConvention
+    public class UnderscoreElementNameConvention : IMemberMapConvention
     {
         public void Apply(BsonMemberMap memberMap)
         {
@@ -19,7 +19,7 @@ namespace Planru.Core.Persistence.MongoDB
 
         public string Name
         {
-            get { return "Lower Case With Undersore Element Name"; }
+            get { return "Undersore Element Name"; }
         }
     }
 }

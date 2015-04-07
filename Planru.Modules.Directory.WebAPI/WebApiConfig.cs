@@ -27,7 +27,7 @@ namespace Planru.Modules.Directory.WebAPI
         public void RegisterTypes(IContainer container)
         {
             var pack = new ConventionPack();
-            pack.Add(new LowerCaseWithUnderscoreElementNameConvention());
+            pack.Add(new UnderscoreElementNameConvention());
 
             ConventionRegistry.Register(
                 "Lower Case With Undersore Element Name", pack, t => true);
@@ -46,9 +46,7 @@ namespace Planru.Modules.Directory.WebAPI
 
             // domain <-> application
             typeAdapter.CreateMap<User, UserDTO>();
-            typeAdapter.CreateMap<UserDTO, User>()
-                .ForMember(d => d.UserName, opt => opt.MapFrom(s => "liepnguyen"))
-                .ForMember(d => d.LastName, opt => opt.Ignore());
+            typeAdapter.CreateMap<UserDTO, User>();
         }
     }
 }

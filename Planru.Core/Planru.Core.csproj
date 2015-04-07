@@ -72,7 +72,7 @@
     <Compile Include="Persistence\EntityAudit.cs" />
     <Compile Include="Domain\ValueObject.cs" />
     <Compile Include="Persistence\MongoDB\IMongoDbContext.cs" />
-    <Compile Include="Persistence\MongoDB\LowerCaseWithUnderscoreElementNameConvention.cs" />
+    <Compile Include="Persistence\MongoDB\UnderscoreElementNameConvention.cs" />
     <Compile Include="Persistence\MongoDB\MongoDbContext.cs">
       <SubType>Code</SubType>
     </Compile>
