@@ -66,8 +66,7 @@ namespace Planru.Core.Domain
         /// <summary>
         /// Equal operator
         /// </summary>
-        public static bool operator ==
-            (Entity<TID> x, Entity<TID> y)
+        public static bool operator ==(Entity<TID> x, Entity<TID> y)
         {
             return Equals(x, y);
         }
@@ -75,8 +74,7 @@ namespace Planru.Core.Domain
         /// <summary>
         /// Not equal operator
         /// </summary>
-        public static bool operator !=
-            (Entity<TID> x, Entity<TID> y)
+        public static bool operator !=(Entity<TID> x, Entity<TID> y)
         {
             return !(x == y);
         }

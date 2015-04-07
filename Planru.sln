@@ -62,6 +62,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Unit.Planru.Modules.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Integration.Planru.Modules.Directory", "Tests.Integration.Planru.Modules.Directory\Tests.Integration.Planru.Modules.Directory.csproj", "{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planru.Research.ConsoleApplication", "Planru.Research.ConsoleApplication\Planru.Research.ConsoleApplication.csproj", "{6B71832B-4C0A-4B51-B023-28715B8E67AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A6C513DD-7841-4961-8794-01E52DD09C4F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +149,10 @@ Global
 		{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{339EF2AF-CCC9-4087-8CFF-28F2974CDF24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B71832B-4C0A-4B51-B023-28715B8E67AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B71832B-4C0A-4B51-B023-28715B8E67AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B71832B-4C0A-4B51-B023-28715B8E67AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B71832B-4C0A-4B51-B023-28715B8E67AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +177,7 @@ Global
 		{2104799E-8F1A-4B39-9BF8-2C9FE3B30BA3} = {49B55C31-6F90-47A8-857A-ADDF86A6C7E2}
 		{09783FB8-7F5B-469C-BDF5-84BEB5320374} = {90151720-7AE7-4BAE-AE8D-ECBE10B0FC57}
 		{339EF2AF-CCC9-4087-8CFF-28F2974CDF24} = {90151720-7AE7-4BAE-AE8D-ECBE10B0FC57}
+		{6B71832B-4C0A-4B51-B023-28715B8E67AE} = {72F57F5E-37B2-4782-B4D9-268429433CA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
