@@ -12,7 +12,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Modules.Directory.Application.Services.Impl
+namespace Planru.Modules.Directory.Application.Services.Internal
 {
     /// <summary>
     /// The user management service implementation.

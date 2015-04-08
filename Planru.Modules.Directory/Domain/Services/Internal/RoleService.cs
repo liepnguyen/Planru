@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Modules.Directory.Domain.Services.Impl
+namespace Planru.Modules.Directory.Domain.Services.Internal
 {
     public class RoleService : IRoleService
     {

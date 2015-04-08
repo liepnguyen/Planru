@@ -67,17 +67,17 @@
     <Compile Include="Application\DTOs\UserDTO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Application\Services\Impl\UserAppService.cs" />
+    <Compile Include="Application\Services\Internal\UserAppService.cs" />
     <Compile Include="Application\Services\IUserAppService.cs" />
     <Compile Include="Domain\Entities\Group.cs" />
     <Compile Include="Domain\Repositories\IGroupRepository.cs" />
     <Compile Include="Domain\Repositories\IRoleRepository.cs" />
     <Compile Include="Domain\Entities\Role.cs" />
     <Compile Include="Domain\Repositories\ITenantRepository.cs" />
-    <Compile Include="Domain\Services\Impl\GroupService.cs" />
-    <Compile Include="Domain\Services\Impl\RoleService.cs" />
-    <Compile Include="Domain\Services\Impl\TenantService.cs" />
-    <Compile Include="Domain\Services\Impl\UserService.cs" />
+    <Compile Include="Domain\Services\Internal\GroupService.cs" />
+    <Compile Include="Domain\Services\Internal\RoleService.cs" />
+    <Compile Include="Domain\Services\Internal\TenantService.cs" />
+    <Compile Include="Domain\Services\Internal\UserService.cs" />
     <Compile Include="Domain\Services\ITenantService.cs" />
     <Compile Include="Domain\Repositories\IUserRepositoty.cs" />
     <Compile Include="Domain\Entities\Tenant.cs" />
