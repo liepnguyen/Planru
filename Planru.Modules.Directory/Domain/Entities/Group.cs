@@ -12,6 +12,8 @@ namespace Planru.Modules.Directory.Domain.Entities
     /// </summary>
     public class Group : Entity<Guid>
     {
+        public string Name { get; set; }
 
+        public string Description { get; set; }
     }
 }

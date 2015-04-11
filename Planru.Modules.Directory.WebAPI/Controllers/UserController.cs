@@ -40,7 +40,7 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
         public IHttpActionResult Post(UserDTO model)
         {
-            _userService.UpdateUser(model);
+            this._userService.CreateUser(model);
             return Created<UserDTO>(Url.Link("DefaultApi", new { id = model.Id }), model);
         }
 

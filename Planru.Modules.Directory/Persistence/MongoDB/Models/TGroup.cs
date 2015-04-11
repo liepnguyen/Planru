@@ -14,7 +14,7 @@ namespace Planru.Modules.Directory.Persistence.MongoDB.Models
     /// <summary>
     /// Represent for a group
     /// </summary>
-    [Collection("user")]
+    [Collection("group")]
     public class TGroup : EntityAudit<Guid>
     {
         /// <inheritdoc />

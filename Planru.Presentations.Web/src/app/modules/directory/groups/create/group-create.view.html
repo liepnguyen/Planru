@@ -1,1 +1,33 @@
-﻿
+﻿<!-- Modal -->
+<div class="modal-header">
+    <button type="button" class="close"
+            data-dismiss="modal" aria-hidden="true" ng-click="vm.close()">
+        &times;
+    </button>
+    <h4 class="modal-title" id="myModalLabel">
+        Create a group
+    </h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label for="tbName" class="control-label">Name</label>
+                <input name="tbName" type="text" class="form-control" ng-model="vm.new.name">
+            </div>
+            <div class="col-sm-12">
+                <label for="tbDescription" class="control-label">Description</label>
+                <textarea name="tbDescription" class="form-control" ng-model="vm.new.description"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+                    data-dismiss="modal" ng-click="vm.close()">
+                Close
+            </button>
+            <button type="button" class="btn btn-primary" ng-click="vm.create()">
+                Create
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,1 +1,9 @@
-﻿
+﻿<table ng-table="tableParams" class="table table-bordered table-striped">
+    <tr ng-repeat="group in $data">
+        <td data-title="'Name'">{{group.Name}}</td>
+        <td data-title="'Description'">{{group.Description}}</td>
+        <td data-title="'Actions'">
+            <button class="btn btn-xs btn-danger" ng-click="vm.deleteGroup(group.Id)"><i class="fa fa-trash-o"></i></button>
+        </td>
+    </tr>
+</table>

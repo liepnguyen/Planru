@@ -6,7 +6,7 @@ var app = angular.module('planruApp', [
     'angular-loading-bar',
     'ngAnimate',
     'toastr',
-    'planru.modules.user'
+    'planru.modules.directory'
 ])
 .config(['$stateProvider', function ($stateProvider) {
     $stateProvider

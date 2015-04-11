@@ -77,7 +77,6 @@
     <Content Include="src\app\modules\directory\module.config.js" />
     <Content Include="src\app\modules\directory\users\user.events.js" />
     <Content Include="src\app\modules\directory\users\deleted-users\deleted-user.controller.js" />
-    <Content Include="src\app\modules\directory\users\deleted-users\deleted-user.view.html" />
     <Content Include="src\app\modules\directory\users\deleted-users\list\deleted-user-list.controller.js" />
     <Content Include="src\app\modules\directory\users\deleted-users\list\deleted-user-list.view.html" />
     <Content Include="src\app\modules\directory\users\user.controller.js" />

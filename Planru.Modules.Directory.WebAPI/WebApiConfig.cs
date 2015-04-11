@@ -36,6 +36,11 @@ namespace Planru.Modules.Directory.WebAPI
             container.Register<IUserService, UserService>();
             container.Register<IUserAppService, UserAppService>();
             container.Register<UserController, UserController>();
+
+            container.Register<IGroupRepository, GroupRepository>();
+            container.Register<IGroupService, GroupService>();
+            container.Register<IGroupAppService, GroupAppService>();
+            container.Register<GroupController, GroupController>();
         }
 
         public void CreateMappings(ITypeAdapter typeAdapter)
@@ -43,10 +48,14 @@ namespace Planru.Modules.Directory.WebAPI
             // domain <-> persistence
             typeAdapter.CreateMap<TUser, User>();
             typeAdapter.CreateMap<User, TUser>();
+            typeAdapter.CreateMap<TGroup, Group>();
+            typeAdapter.CreateMap<Group, TGroup>();
 
             // domain <-> application
             typeAdapter.CreateMap<User, UserDTO>();
             typeAdapter.CreateMap<UserDTO, User>();
+            typeAdapter.CreateMap<Group, GroupDTO>();
+            typeAdapter.CreateMap<GroupDTO, Group>();
         }
     }
 }
