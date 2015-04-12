@@ -1,6 +1,7 @@
 ﻿directoryPlugin.controller('GroupController', ['$scope', 'ngTableParams', '$modal', '$state', '$modal', '$rootScope',
     function ($scope, ngTableParams, $modal, $state, $modal, $rootScope) {
         $rootScope.title = 'Groups';
+        $rootScope.icon = 'fa-group';
         var vm = this;
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {

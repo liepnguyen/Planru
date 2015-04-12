@@ -5,6 +5,7 @@
         // definations
         vm.loadGroups = loadGroups;
         vm.deleteGroup = deleteGroup;
+        vm.editGroup = editGroup;
 
         // initialize
         vm.loadGroups();
@@ -23,11 +24,15 @@
                     });
                 }
             });
-        };
+        }
 
         function deleteGroup(id) {
             groupService.removeGroup(id).then(function(response) {
                 $scope.tableParams.reload();
             });
+        }
+
+        function editGroup(id) {
+            $state.go('groups.edit', { groupId: id });
         }
     }]);

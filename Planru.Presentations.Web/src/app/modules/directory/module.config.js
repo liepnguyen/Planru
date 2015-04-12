@@ -20,13 +20,13 @@
           url: '/create'
       })
       .state('groups', {
-          url: '/groups',
+          url: '/groups/:groupId',
           views: {
               '': {
                   templateUrl: 'app/modules/directory/groups/group.view.html',
                   controller: 'GroupController'
               },
-              'group-list@groups': {
+              '@groups': {
                   templateUrl: 'app/modules/directory/groups/list/group-list.view.html',
                   controller: 'GroupListController',
                   controllerAs: 'vm'
@@ -35,5 +35,15 @@
       })
       .state('groups.create', {
           url: '/create'
+      })
+      .state('groups.edit', {
+          url: '/edit',
+          views: {
+              '': {
+                  templateUrl: 'app/modules/directory/groups/edit/group-edit.view.html',
+                  controller: 'GroupEditController',
+                  controllerAs: 'vm'
+              }
+          }
       })
 }]);
