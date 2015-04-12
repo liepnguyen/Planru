@@ -44,5 +44,11 @@ namespace Planru.Modules.Directory.Application.Services.Internal
             var group = groupDto.Adapt<Group>();
             this._groupRepository.Add(group);
         }
+
+
+        public void DeleteGroup(Guid id)
+        {
+            this._groupRepository.Remove(id);
+        }
     }
 }

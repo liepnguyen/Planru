@@ -237,7 +237,7 @@ h4, .h4 {
    border: 2px solid #999;
    color: #999;
    text-transform: uppercase;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    font-size: 12px;
 }
 
@@ -252,7 +252,7 @@ h4, .h4 {
    border: 2px solid #428BCA;
    color: #428BCA;
    text-transform: uppercase;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    font-size: 12px;
 }
 
@@ -267,7 +267,7 @@ h4, .h4 {
    border: 2px solid #1CAF9A;
    color: #1CAF9A;
    text-transform: uppercase;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    font-size: 12px;
 }
 
@@ -282,7 +282,7 @@ h4, .h4 {
    border: 2px solid #F0AD4E;
    color: #F0AD4E;
    text-transform: uppercase;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    font-size: 12px;
 }
 
@@ -297,7 +297,7 @@ h4, .h4 {
    border: 2px solid #D9534F;
    color: #D9534F;
    text-transform: uppercase;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    font-size: 12px;
 }
 
@@ -312,7 +312,7 @@ h4, .h4 {
    border: 2px solid #5BC0DE;
    color: #5BC0DE;
    text-transform: uppercase;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    font-size: 12px;
 }
 
@@ -342,7 +342,7 @@ h4, .h4 {
    color: #583f26;
    text-transform: uppercase;
    font-size: 12px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
 }
 
 .btn-brown-alt:hover,
@@ -370,7 +370,7 @@ h4, .h4 {
    border: 2px solid #333;
    color: #333;
    font-size: 12px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    text-transform: uppercase;
 }
 
@@ -399,7 +399,7 @@ h4, .h4 {
    border: 2px solid #f579e8;
    color: #f579e8;
    font-size: 12px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    text-transform: uppercase;
 }
 
@@ -429,7 +429,7 @@ h4, .h4 {
    color: #2e4678;
    text-transform: uppercase;
    font-size: 12px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
 }
 
 .btn-darkblue-alt:hover,
@@ -458,7 +458,7 @@ h4, .h4 {
    color: #f38108;
    text-transform: uppercase;
    font-size: 12px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
 }
 
 .btn-orange-alt:hover,
@@ -487,7 +487,7 @@ h4, .h4 {
    color: #990000;
    text-transform: uppercase;
    font-size: 12px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
 }
 
 .btn-maroon-alt:hover,
@@ -516,7 +516,7 @@ h4, .h4 {
    color: #0390fd;
    text-transform: uppercase;
    font-size: 12px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
 }
 
 .btn-lightblue-alt:hover,
@@ -666,12 +666,12 @@ h4, .h4 {
 .panel-title {
    font-size: 18px;
    color: #111;
-   /*font-family: 'LatoBold'; */
+   /*font-family: 'OpenSansBold'; */
 }
 
 .panel-title-alt {
    font-size: 13px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    text-transform: uppercase;
    margin: 0;
 }
@@ -764,7 +764,7 @@ h4, .h4 {
 .panel-alt .panel-title {
    font-size: 13px;
    text-transform: uppercase;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
 }
 
 .panel-alt .panel-heading p {
@@ -923,7 +923,7 @@ h4, .h4 {
 }
 
 .alert .alert-link {
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    font-weight: normal;
 }
 
@@ -1054,7 +1054,7 @@ h4, .h4 {
 }
 
 .nav .dropdown > a {
-   font-family: 'LatoBold';  
+   font-family: 'OpenSansBold';  
 }
 
 .nav .dropdown-menu {
@@ -1084,7 +1084,7 @@ h4, .h4 {
    border: 0;
    background: none;
    color: #333;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
 }
 
 .panel-group .panel-heading {
@@ -1093,7 +1093,7 @@ h4, .h4 {
 
 .panel-group .panel-title {
    font-size: 14px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
 }
 
 .panel-group .panel-title a {
@@ -1242,7 +1242,7 @@ h4, .h4 {
 .media-heading {
    color: #333;
    font-size: 14px;
-   font-family: 'LatoBold';
+   font-family: 'OpenSansBold';
    margin: 0;
 }
 
@@ -1265,7 +1265,7 @@ small.media-desc {
 
 .table th {
 	font-weight: normal;
-	font-family: 'LatoBold';
+	font-family: 'OpenSansBold';
 }
 
 .table thead > tr > th {

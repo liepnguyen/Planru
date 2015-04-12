@@ -15,5 +15,7 @@ namespace Planru.Modules.Directory.Application.Services
             Expression<Func<GroupDTO, KProperty>> orderByExpression, bool ascending);
 
         void CreateGroup(GroupDTO groupDto);
+
+        void DeleteGroup(Guid id);
     }
 }

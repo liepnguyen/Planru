@@ -4,6 +4,7 @@
 
         // definations
         vm.loadGroups = loadGroups;
+        vm.deleteGroup = deleteGroup;
 
         // initialize
         vm.loadGroups();
@@ -23,4 +24,10 @@
                 }
             });
         };
+
+        function deleteGroup(id) {
+            groupService.removeGroup(id).then(function(response) {
+                $scope.tableParams.reload();
+            });
+        }
     }]);

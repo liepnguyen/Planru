@@ -36,5 +36,10 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
             this._groupAppService.CreateGroup(model);
             return Created<GroupDTO>(Url.Link("DefaultApi", new { id = model.Id }), model);
         }
+
+        public void Delete(Guid id)
+        {
+            this._groupAppService.DeleteGroup(id);
+        }
     }
 }
