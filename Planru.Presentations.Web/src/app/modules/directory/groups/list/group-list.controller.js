@@ -1,11 +1,13 @@
-﻿directoryPlugin.controller('GroupListController', ['$scope', 'ngTableParams', '$modal', '$state', '$modal', '$rootScope', 'groupService',
-    function ($scope, ngTableParams, $modal, $state, $modal, $rootScope, groupService) {
+﻿directoryPlugin.controller('GroupListController', ['$scope', 'ngTableParams', '$modal', '$state', '$modal', '$rootScope', 'groupService', 'groupEvent',
+    function ($scope, ngTableParams, $modal, $state, $modal, $rootScope, groupService, groupEvent) {
         var vm = this;
+        vm.checkboxes = { 'checked': false, items: {} };
 
         // definations
         vm.loadGroups = loadGroups;
         vm.deleteGroup = deleteGroup;
         vm.editGroup = editGroup;
+        vm.createGroup = createGroup;
 
         // initialize
         vm.loadGroups();
@@ -35,4 +37,25 @@
         function editGroup(id) {
             $state.go('groups.edit', { groupId: id });
         }
+
+        function createGroup() {
+            var modalInstance = $modal.open({
+                templateUrl: 'app/modules/directory/groups/create/group-create.view.html',
+                controller: 'GroupCreateController',
+                controllerAs: 'vm',
+                backdrop: true,
+                backdropClass: 'overlay',
+                resolve: { userCtrl: function () { return this; } }
+            }).result.finally(function () {
+
+            });
+        }
+
+        // event handlers
+        groupEvent.onGroupCreated(function (event, args) {
+            $scope.tableParams.reload();
+        });
+        groupEvent.onGroupDeleted(function (event, args) {
+            $scope.tableParams.reload();
+        });
     }]);

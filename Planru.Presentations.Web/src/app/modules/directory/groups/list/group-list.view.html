@@ -1,17 +1,22 @@
 ﻿<div class="form-group pull-left">
-    <a ui-sref="groups.create" class="btn-sm"><i class="fa fa-plus fa-lg"></i></a>
+    <a href="" class="btn-sm" ng-click="vm.createGroup()"><i class="fa fa-plus fa-lg"></i></a>
     <a href="" class="btn-sm"><i class="fa fa-search fa-lg"></i></a>
 </div>
 <div class="form-group pull-right">
     <a href="" class="btn-sm"><i class="fa fa-refresh fa-lg" ng-click=""></i></a>
 </div>
-<table ng-table="tableParams" class="table table-bordered">
+<table ng-table="tableParams" class="table table-primary table-striped">
     <tr ng-repeat="group in $data">
-        <td data-title="'Name'" class="col-lg-4">{{group.Name}}</td>
-        <td data-title="'Description'" class="col-lg-6">{{group.Description}}</td>
-        <td data-title="'Actions'" class="col-lg-2 text-center">
-            <button class="btn btn-xs btn-danger" ng-click="vm.deleteGroup(group.Id)"><i class="fa fa-trash-o"></i></button>
-            <button class="btn btn-xs btn-primary" ng-click="vm.editGroup(group.Id)"><i class="fa fa-edit"></i></button>
+        <td width="30" style="text-align: left">
+            <input type="checkbox" ng-model="vm.checkboxes.items[group.Id]" />
+        </td>
+        <td data-title="'Name'">{{group.Name}}</td>
+        <td data-title="'Description'">{{group.Description}}</td>
+        <td data-title="'Actions'" class="text-center">
+            <!--<button class="btn btn-xs btn-danger" ng-click="vm.deleteGroup(group.Id)"><i class="fa fa-trash-o"></i></button>
+            <button class="btn btn-xs btn-primary" ng-click="vm.editGroup(group.Id)"><i class="fa fa-edit"></i></button>-->
+            <a href=""><i class="fa fa-pencil"></i></a>
+            <a href="" class="delete-row"><i class="fa fa-trash-o"></i></a>
         </td>
     </tr>
 </table>

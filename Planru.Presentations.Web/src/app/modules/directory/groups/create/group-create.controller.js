@@ -1,5 +1,5 @@
-﻿directoryPlugin.controller('GroupCreateController', ['$rootScope', '$scope', '$modalInstance', 'toastr', 'groupService',
-function ($rootScope, $scope, $modalInstance, toastr, groupService) {
+﻿directoryPlugin.controller('GroupCreateController', ['$rootScope', '$scope', '$modalInstance', 'toastr', 'groupService', 'groupEvent',
+function ($rootScope, $scope, $modalInstance, toastr, groupService, groupEvent) {
     var vm = this;
     vm.new = {};
 
@@ -10,6 +10,8 @@ function ($rootScope, $scope, $modalInstance, toastr, groupService) {
     vm.create = function () {
         groupService.addGroup(vm.new).then(
             function (response) {
+                groupEvent.emitGroupCreatedEvent({ sender: vm, group: response });
+                toastr.success('You have created group successfully!', 'Success');
                 $modalInstance.close();
             },
             function (error) {

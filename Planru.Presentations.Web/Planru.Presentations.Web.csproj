@@ -63,6 +63,7 @@
     <Content Include="src\app\modules\directory\groups\edit\group-edit.controller.js" />
     <Content Include="src\app\modules\directory\groups\edit\group-edit.view.html" />
     <Content Include="src\app\modules\directory\groups\group.controller.js" />
+    <Content Include="src\app\modules\directory\groups\group.events.js" />
     <Content Include="src\app\modules\directory\groups\group.view.html" />
     <Content Include="src\app\modules\directory\groups\group.service.js" />
     <Content Include="src\app\modules\directory\groups\list\group-list.controller.js" />

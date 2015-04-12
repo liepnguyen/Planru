@@ -33,9 +33,6 @@
               }
           }
       })
-      .state('groups.create', {
-          url: '/create'
-      })
       .state('groups.edit', {
           url: '/edit',
           views: {
