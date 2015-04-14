@@ -6,7 +6,9 @@ var app = angular.module('planruApp', [
     'angular-loading-bar',
     'ngAnimate',
     'toastr',
-    'planru.modules.directory'
+    'planru.core',
+    'planru.modules.directory',
+    'ngReallyClickModule'
 ])
 .config(['$stateProvider', function ($stateProvider) {
     $stateProvider

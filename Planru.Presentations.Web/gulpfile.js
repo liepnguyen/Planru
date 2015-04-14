@@ -72,6 +72,7 @@ gulp.task('build:index', function() {
     var services = gulp.src(['./build/app/**/*.service.js'], { read: false });
     var controllers = gulp.src(['./build/app/**/*.controller.js'], { read: false });
     var configs = gulp.src(['./build/app/**/*.config.js'], { read: false });
+    var directives = gulp.src(['./build/app/**/*.directive.js'], { read: false });
     var events = gulp.src(['./build/app/**/*.events.js'], { read: false });
 
     var transform = function (filepath) {
@@ -85,6 +86,7 @@ gulp.task('build:index', function() {
         .pipe(inject(services, { name: 'services', transform: transform }))
         .pipe(inject(controllers, { name: 'controllers', transform: transform }))
         .pipe(inject(configs, { name: 'configs', transform: transform }))
+        .pipe(inject(directives, { name: 'directives', transform: transform }))
         .pipe(inject(events, { name: 'events', transform: transform }))
         .pipe(gulp.dest('./build'));
 });

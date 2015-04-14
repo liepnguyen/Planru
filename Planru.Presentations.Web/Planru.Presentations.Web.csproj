@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".bowerrc" />
+    <Content Include="src\app\core\directives\ng-confirm-click.directive.js" />
     <Content Include="src\app\modules\directory\groups\create\group-create.controller.js" />
     <Content Include="src\app\modules\directory\groups\create\group-create.view.html" />
     <Content Include="src\app\modules\directory\groups\edit\group-edit.controller.js" />
@@ -381,9 +382,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\app\core\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="src\content\fonts\opensans\opensans-bold-webfont.eot" />
     <Content Include="src\content\fonts\opensans\opensans-bold-webfont.ttf" />

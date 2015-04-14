@@ -1,9 +1,11 @@
-﻿directoryPlugin.controller('UserListController', ['$scope', '$state', 'ngTableParams', 'toastr', 'userService', 'userEvent', function ($scope, $state, ngTableParams, toastr, userService, userEvent) {
+﻿directoryPlugin.controller('UserListController', ['$scope', '$state', '$modal', 'ngTableParams', 'toastr', 'userService', 'userEvent',
+    function ($scope, $state, $modal, ngTableParams, toastr, userService, userEvent) {
     var vm = this;
 
     // definations
     vm.loadUsers = loadUsers;
     vm.deleteUser = deleteUser;
+    vm.createUser = createUser;
 
     // initialize
     vm.loadUsers();
@@ -29,6 +31,16 @@
             toastr.success('You have deleted user successfully!', 'Success');
         });
     };
+    function createUser() {
+        var modalInstance = $modal.open({
+            templateUrl: 'app/modules/directory/users/active-users/create/user-create.view.html',
+            controller: 'UserCreateController',
+            controllerAs: 'vm',
+            backdrop: true,
+            backdropClass: 'overlay',
+            resolve: { userCtrl: function () { return vm; } }
+        }).result.finally(function () { });
+    }
 
     // event handlers
     userEvent.onUserCreated(function (event, args) {

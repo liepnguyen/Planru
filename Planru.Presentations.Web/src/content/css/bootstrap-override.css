@@ -121,7 +121,7 @@ h4, .h4 {
    -moz-border-radius: 3px;
    -webkit-border-radius: 3px;
    border-radius: 3px;
-   padding: 10px;
+   padding: 8px;
    height: auto;
    -moz-box-shadow: none;
    -webkit-box-shadow: none;
@@ -159,28 +159,10 @@ h4, .h4 {
    -moz-transition: all 0.2s ease-out 0s;
    -webkit-transition: all 0.2s ease-out 0s;
    transition: all 0.2s ease-out 0s;
-   padding: 9px 15px;
 }
 
 .btn:focus {
 	outline: none;
-}
-
-.btn-sm {
-   padding: 5px 10px;
-}
-
-.btn-xs {
-   padding: 2px 10px;
-}
-
-.btn-lg {
-   padding: 12px 20px;
-}
-
-.btn-default {
-   background: #e4e7ea;
-   color: #636e7b;
 }
 
 .btn-default:hover,
@@ -587,7 +569,7 @@ h4, .h4 {
 }
 
 .panel-heading {
-   padding: 20px;
+   padding: 15px;
 }
 
 .panel-default > .panel-heading {

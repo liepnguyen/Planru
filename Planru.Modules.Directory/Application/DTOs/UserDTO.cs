@@ -17,11 +17,6 @@ namespace Planru.Modules.Directory.Application.DTOs
         public Guid Id { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        public Guid TenantId { get; set; }
-
-        /// <summary>
         /// Gets and sets the user principal name
         /// </summary>
         public string UserName { get; set; }

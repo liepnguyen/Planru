@@ -14,12 +14,8 @@
 
         // implementations
         function loadGroups() {
-            $scope.tableParams = new ngTableParams({
-                page: 1,
-                count: 10
-            }, {
-                total: 0,
-                getData: function ($defer, params) {
+            $scope.tableParams = new ngTableParams({ page: 1, count: 10 }, {
+                total: 0, getData: function ($defer, params) {
                     groupService.getGroups(params.page() - 1, params.count()).then(function (response) {
                         params.total(response.TotalItems);
                         $defer.resolve(response.Items);
@@ -44,8 +40,7 @@
                 controller: 'GroupCreateController',
                 controllerAs: 'vm',
                 backdrop: true,
-                backdropClass: 'overlay',
-                resolve: { userCtrl: function () { return this; } }
+                backdropClass: 'overlay'
             }).result.finally(function () {
 
             });
