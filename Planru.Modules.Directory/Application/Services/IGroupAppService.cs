@@ -14,6 +14,8 @@ namespace Planru.Modules.Directory.Application.Services
         PageResult<GroupDTO> GetGroups<KProperty>(int pageNumber, int pageSize,
             Expression<Func<GroupDTO, KProperty>> orderByExpression, bool ascending);
 
+        GroupDTO GetGroup(Guid id);
+
         void CreateGroup(GroupDTO groupDto);
 
         void DeleteGroup(Guid id);

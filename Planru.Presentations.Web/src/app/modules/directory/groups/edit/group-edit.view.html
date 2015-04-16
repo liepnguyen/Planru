@@ -1,1 +1,23 @@
-﻿
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-btns">
+            <a href="" class="panel-close">×</a>
+            <a href="" class="minimize">−</a>
+        </div>
+        <h4 class="panel-title" ng-bind="vm.edit.Name"></h4>
+    </div>
+    <div class="panel-body">
+        <h5>Members</h5>
+        <table ng-table="membersTableParams" class="table table-hover">
+            <tr ng-repeat="group in $data">
+                <td data-title="'Full Name'"></td>
+                <td data-title="'User Name'"></td>
+                <td data-title="'Email'" width="100" class="text-center">
+                    <a href="" class="btn btn-xs btn-white" ng-really-click="">
+                        <i class="fa fa-remove"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -71,7 +71,7 @@
 
 body {
     background: #1d2939;
-    font-family: 'LatoRegular', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif !important;
+    font-family: 'OpenSansRegular', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif !important;
     line-height: 21px;
 }
 
@@ -89,17 +89,18 @@ body.signin {
     width: 100%;
     background-color: rgba(0,0,0,0.5);
     z-index: 10;
+    overflow: hidden;
 }
 
 input,select,textarea {
-    font-family: 'LatoRegular', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif !important;
+    font-family: 'OpenSansRegular', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif !important;
     color: #636e7b;
 }
 
 a:focus, a:active { outline: none; }
 
 h1,h2,h3,h4,h5 {
-    font-family: 'LatoRegular', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif;
+    font-family: 'OpenSansRegular', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif;
 }
 
 strong {
@@ -2579,7 +2580,7 @@ div.error label.error:before {
 
 .blog-quote .quote-author {
     display: block;
-    font-family: 'LatoRegular';
+    font-family: 'OpenSansRegular';
     opacity: 0.5;
 }
 
@@ -2643,7 +2644,7 @@ div.error label.error:before {
 }
 
 .blogsingle-title {
-    font-family: 'LatoRegular';
+    font-family: 'OpenSansRegular';
     color: #333;
     margin: 0;
 }

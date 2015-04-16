@@ -39,12 +39,17 @@ namespace Planru.Modules.Directory.Application.Services.Internal
             return result.ToPageResult<GroupDTO>();
         }
 
+        public GroupDTO GetGroup(Guid id)
+        {
+            var group = this._groupRepository.Get(id);
+            return group.Adapt<GroupDTO>();
+        }
+
         public void CreateGroup(GroupDTO groupDto)
         {
             var group = groupDto.Adapt<Group>();
             this._groupRepository.Add(group);
         }
-
 
         public void DeleteGroup(Guid id)
         {

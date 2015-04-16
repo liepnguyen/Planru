@@ -3,7 +3,7 @@
 ]).config(['$stateProvider', function ($stateProvider) {
     $stateProvider
       .state('active-users', {
-          url: '/active-users',
+          url: '/active-users/:userId',
           views: {
               '': {
                   templateUrl: 'app/modules/directory/users/active-users/active-user.view.html',
@@ -15,6 +15,9 @@
                   controllerAs: 'vm'
               }
           }
+      })
+      .state('active-users.edit', {
+          url: '/edit'
       })
       .state('groups', {
           url: '/groups/:groupId',

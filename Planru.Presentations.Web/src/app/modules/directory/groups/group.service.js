@@ -24,6 +24,7 @@
     }
 
     function getGroup(id) {
+        return Group.get({ id: id }).$promise;
     }
 
     function updateGroup(user) {

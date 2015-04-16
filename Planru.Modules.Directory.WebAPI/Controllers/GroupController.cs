@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace Planru.Modules.Directory.WebAPI.Controllers
 {
+    [RoutePrefix("api/Group")]
     public class GroupController : ApiController
     {
         private IGroupAppService _groupAppService;
@@ -29,6 +30,20 @@ namespace Planru.Modules.Directory.WebAPI.Controllers
 
             var result = this._groupAppService.GetGroups<string>(pageNumber, pageSize, k => k.Name, true);
             return result;
+        }
+
+        public IHttpActionResult Get(Guid id) 
+        {
+            var group = this._groupAppService.GetGroup(id);
+            if (group == null)
+                return NotFound();
+            return Ok<GroupDTO>(group);
+        }
+
+        [Route("Members")]
+        public IHttpActionResult GetMembers(Guid groupId)
+        {
+            return Ok<IEnumerable<UserDTO>>(new[] { new UserDTO() { DisplayName = "Liep Nguyen", Id = Guid.NewGuid() }, new UserDTO() { DisplayName = "Liep Nguyen", Id = Guid.NewGuid() } });
         }
 
         public IHttpActionResult Post(GroupDTO model)

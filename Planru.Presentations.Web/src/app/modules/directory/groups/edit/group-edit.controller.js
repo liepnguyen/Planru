@@ -1,5 +1,13 @@
-﻿directoryPlugin.controller('GroupEditController', ['$rootScope', '$scope', '$modalInstance', 'toastr', 'groupService',
-function ($rootScope, $scope, $modalInstance, toastr, groupService) {
+﻿directoryPlugin.controller('GroupEditController', ['$rootScope', '$scope', '$state', 'toastr', 'groupService',
+function ($rootScope, $scope, $state, toastr, groupService) {
+    // initialize
     var vm = this;
-    vm.new = {};
+    vm.edit = {};
+
+    // definations
+    var groupId = $state.params.groupId;
+
+    groupService.getGroup(groupId).then(function (response) {
+        vm.edit = response;
+    });
 }]);
