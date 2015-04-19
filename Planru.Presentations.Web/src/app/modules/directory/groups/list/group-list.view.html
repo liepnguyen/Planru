@@ -2,18 +2,14 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="panel-btns">
-            <a href="" class="panel-close">×</a>
-            <a href="" class="minimize">−</a>
+            <button type="button" class="close">&times;</button>
         </div>
-        <h4 class="panel-title">Groups</h4>
+        <h3 class="panel-title">Groups</h3>
     </div>
     <div class="panel-body">
         <div class="form-group pull-left">
             <a href="" class="btn-sm" ng-click="vm.createGroup()"><i class="fa fa-plus fa-lg"></i></a>
             <a href="" class="btn-sm"><i class="fa fa-search fa-lg"></i></a>
-        </div>
-        <div class="form-group pull-right">
-            <a href="" class="btn-sm"><i class="fa fa-refresh fa-lg" ng-click=""></i></a>
         </div>
         <table ng-table="tableParams" class="table table-hover">
             <tr ng-repeat="group in $data">
@@ -22,7 +18,7 @@
                 </td>
                 <td data-title="'Name'">{{group.Name}}</td>
                 <td data-title="'Description'">{{group.Description}}</td>
-                <td data-title="'Actions'" width="100" class="text-center">
+                <td width="100" class="text-center">
                     <a href="" ng-click="vm.editGroup(group.Id)" class="btn btn-xs btn-white">
                         <i class="fa fa-pencil"></i>
                     </a>

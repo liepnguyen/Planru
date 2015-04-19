@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson.Serialization.Conventions;
+using MongoDB.Driver;
 using Planru.Core.Module.WebAPI;
 using Planru.Core.Persistence.MongoDB;
 using Planru.Crosscutting.Adapter;
@@ -33,8 +34,18 @@ namespace Planru.DistributedServices.WebAPI
         {
             TypeAdapterFactory.SetCurrent(new AutomapperSingletonTypeAdapterFactory());
 
+            var pack = new ConventionPack();
+            pack.Add(new CamelCaseElementNameConvention());
+
+            ConventionRegistry.Register(
+                "Camel Case Element Name", pack, t => true);
+
+            //var dbContext = new MongoDbContext(
+            //    "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system",
+            //    "planru_system");
+
             var dbContext = new MongoDbContext(
-                "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system",
+                "mongodb://localhost:27017/planru_system",
                 "planru_system");
 
             container.RegisterInstance<IMongoDbContext>(dbContext);

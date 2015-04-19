@@ -67,5 +67,11 @@ namespace Planru.Modules.Directory.Application.Services.Internal
         {
             _userRepository.Remove(id);
         }
+
+        public PageResult<UserDTO> GetUsersByGroupId<KProperty>(Guid groupId, int pageNumber, int pageSize, 
+            Expression<Func<UserDTO, KProperty>> orderByExpression, bool ascending)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

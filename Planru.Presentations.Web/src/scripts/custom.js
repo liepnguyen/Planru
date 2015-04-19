@@ -5,7 +5,7 @@ jQuery(window).load(function() {
 
    // Page Preloader
    jQuery('#preloader').delay(350).fadeOut(function(){
-      jQuery('body').delay(350).css({'overflow':'visible'});
+      //jQuery('body').delay(350).css({'overflow':'visible'});
    });
 });
 

@@ -26,11 +26,7 @@ namespace Planru.Modules.Directory.WebAPI
     {
         public void RegisterTypes(IContainer container)
         {
-            var pack = new ConventionPack();
-            pack.Add(new UnderscoreElementNameConvention());
-
-            ConventionRegistry.Register(
-                "Lower Case With Undersore Element Name", pack, t => true);
+            
 
             container.Register<IUserRepository, UserRepository>();
             container.Register<IUserService, UserService>();

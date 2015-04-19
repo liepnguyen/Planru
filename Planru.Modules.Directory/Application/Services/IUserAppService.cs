@@ -27,6 +27,18 @@ namespace Planru.Modules.Directory.Application.Services
             Expression<Func<UserDTO, KProperty>> orderByExpression, bool ascending);
 
         /// <summary>
+        /// Gets all users of a group by group id.
+        /// </summary>
+        /// <typeparam name="KProperty"></typeparam>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="orderByExpression"></param>
+        /// <param name="ascending"></param>
+        /// <returns></returns>
+        PageResult<UserDTO> GetUsersByGroupId<KProperty>(Guid groupId, int pageNumber, int pageSize,
+            Expression<Func<UserDTO, KProperty>> orderByExpression, bool ascending);
+
+        /// <summary>
         /// Creates a user
         /// </summary>
         /// <param name="userDto">The user data transfer object</param>

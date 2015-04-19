@@ -8,9 +8,9 @@
 </div>
 <table ng-table="tableParams" class="table">
     <tr ng-repeat="user in $data">
-        <td data-title="'DISPLAY NAME'">{{user.DisplayName}}</td>
-        <td data-title="'USER NAME'">{{user.UserName}}</td>
-        <td data-title="'ACTIONS'" width="100" class="text-center">
+        <td data-title="'Display Name'">{{user.DisplayName}}</td>
+        <td data-title="'Username'">{{user.UserName}}</td>
+        <td data-title="''" width="100" class="text-center">
             <a href=""><i class="btn btn-xs btn-white fa fa-pencil"></i></a>
             <a href="" class="btn btn-xs btn-white delete-row" ng-click="vm.deleteUser(user.Id)"><i class="fa fa-trash-o"></i></a>
         </td>

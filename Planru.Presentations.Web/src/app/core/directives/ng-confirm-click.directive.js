@@ -38,10 +38,15 @@ angular.module('ngReallyClickModule', ['ui.bootstrap'])
                 element.bind('click', function () {
                     var title = attrs.ngReallyTitle || "Confirm";
                     var message = attrs.ngReallyMessage || "Are you sure you want to do that?";
-
-                    var modalHtml = '<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button><h4 class="modal-title">' + title + '</h4></div>';
-                    modalHtml += '<div class="modal-body">' + message + '</div>';
-                    modalHtml += '<div class="modal-footer"><button class="btn btn-primary" ng-click="ok()">OK</button><button class="btn btn-default" ng-click="cancel()">Cancel</button></div>';
+                    var modalHtml =
+                        '<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>' +
+                        '<h4 class="modal-title"><i class="fa fa-exclamation-triangle"/> ' + title + '</h4></div>' +
+                        '<div class="modal-body">' +
+                            '<div class="alert alert-warning" role="alert">' +
+                                message +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="modal-footer"><button class="btn btn-primary" ng-click="ok()">OK</button><button class="btn btn-default" ng-click="cancel()">Cancel</button></div>';
 
                     var modalInstance = $modal.open({
                         template: modalHtml,
