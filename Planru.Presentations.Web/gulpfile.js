@@ -36,6 +36,17 @@ gulp.task('build:css', function() {
     return css.pipe(gulp.dest('build/content/css'));
 });
 
+gulp.task('build:less', function () {
+    var lessFiles = gulp.src('src/content/less/**/style-*.less');
+    if (yargs.buildProd) {
+        // TODO: should be implemented to minify all css files in build pro mode
+    }
+    return lessFiles
+        .pipe(less())
+        .pipe(gulp.dest('build/content/css'));
+});
+
+
 gulp.task('build:images', function() {
     var css = gulp.src('src/content/images/**/*.*');
     if (yargs.buildProd) {
@@ -65,8 +76,8 @@ gulp.task('build:index', function() {
 
     var scripts = gulp.src('./build/scripts/**', { read: false });
     var bowerFiles = gulp.src([
-        './build/lib/**/*.js', 
-        './build/lib/**/*.css'], { read: false });
+        './build/bower_components/**/*.js', 
+        './build/bower_components/**/*.css'], { read: false });
     var components = bowerFiles.pipe(ignore.exclude(importantsFilter));
     var importants = bowerFiles.pipe(filter(importantsFilter));
     var services = gulp.src(['./build/app/**/*.service.js'], { read: false });
@@ -103,7 +114,7 @@ gulp.task('build:bower', function () {
         .pipe(minifyCss())
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssFilter.restore())
-		.pipe(gulp.dest('build/lib'));
+		.pipe(gulp.dest('build/bower_components'));
 });
 
 gulp.task('default', ['build'], function () {
@@ -116,7 +127,8 @@ gulp.task('build', function (cb) {
         ['build:bower', 
         'build:html', 
         'build:js', 
-        'build:css', 
+        'build:css',
+        'build:less',
         'build:fonts', 
         'build:images'], 
         'build:index', cb);

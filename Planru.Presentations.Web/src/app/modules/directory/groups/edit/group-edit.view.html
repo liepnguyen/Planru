@@ -1,17 +1,18 @@
 ﻿<div class="panel panel-default">
     <div class="panel-heading">
         <div class="panel-btns">
-            <button type="button" class="close">&times;</button>
+            <button type="button" class="close" ng-click="">&times;</button>
         </div>
         <h4 class="panel-title" ng-bind="vm.edit.Name"></h4>
     </div>
     <div class="panel-body">
         <h5>Members</h5>
         <table ng-table="membersTableParams" class="table table-hover">
-            <tr ng-repeat="group in $data">
-                <td data-title="'Full Name'"></td>
-                <td data-title="'Username'"></td>
-                <td data-title="'Email'" width="100" class="text-center">
+            <tr ng-repeat="member in $data">
+                <td data-title="'Full Name'">{{ member.FullName }}</td>
+                <td data-title="'Username'">{{ member.Username }}</td>
+                <td data-title="'Email'">{{ member.Email }}</td>
+                <td width="100" class="text-center">
                     <a href="" class="btn btn-xs btn-white" ng-really-click="">
                         <i class="fa fa-remove"></i>
                     </a>

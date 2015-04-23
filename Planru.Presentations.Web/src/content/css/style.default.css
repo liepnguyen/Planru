@@ -566,6 +566,12 @@ strong {
     margin-bottom: 10px;
 }
 
+.nav-pills > li > a {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
 .nav-bracket {
     margin-bottom: 30px;
 }
@@ -3350,9 +3356,9 @@ div.error {
 
     .leftpanel-collapsed .nav-bracket li a {
         text-align: center;
-        -moz-border-radius: 2px;
-        -webkit-border-radius: 2px;
-        border-radius: 2px;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
         padding: 10px;
         position: relative;
     }
