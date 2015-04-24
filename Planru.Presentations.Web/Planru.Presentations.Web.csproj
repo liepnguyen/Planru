@@ -211,7 +211,7 @@
     <Content Include="src\content\fonts\roboto\Roboto-ThinItalic-webfontd41d.eot" />
     <Content Include="package.json" />
     <Content Include="gulpfile.js" />
-    <Content Include="src\content\less\planru-ui.less" />
+    <Content Include="src\content\less\planru-style.less" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -437,9 +437,10 @@
     <Content Include="src\content\fonts\opensans\sourcesanspro-boldit-webfont.ttf" />
     <Content Include="src\content\fonts\opensans\sourcesanspro-boldit-webfont.woff" />
     <Content Include="src\content\fonts\opensans\sourcesanspro-boldit-webfont.woff2" />
-    <Content Include="src\content\less\custom-bootstrap.less" />
-    <Content Include="src\content\less\custom-variables.less" />
-    <Content Include="src\content\less\style-admin.less" />
+    <Content Include="src\content\less\bootstrap-components.less" />
+    <Content Include="src\content\less\bootstrap-variables.less" />
+    <Content Include="src\content\less\planru-admin-layout.less" />
+    <Content Include="src\content\less\mixins.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

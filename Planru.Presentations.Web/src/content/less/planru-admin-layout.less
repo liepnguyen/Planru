@@ -1,0 +1,96 @@
+﻿@import "planru-style.less";
+
+/***** HEADER PANEL *****/
+/************************/
+
+.headerbar {
+    border-left: 1px solid #eee;
+    background: #fff;
+    .clearfix();
+
+    & .menutoggle {
+        float: left;
+        .square(50px);
+        font-size: 22px;
+        padding: 14px 0 0 15px;
+        cursor: pointer;
+        float: left;
+        color: #1d2939;
+        border-right: 1px solid #eee;
+        -moz-transition: all 0.2s ease-out 0s;
+        -webkit-transition: all 0.2s ease-out 0s;
+        transition: all 0.2s ease-out 0s;
+
+        &:hover {
+            color: #1d2939;
+            background-color: #f7f7f7;
+        }
+    }
+
+    & .searchform {
+        > input {
+            width: 250px;
+            background: #fff url(../images/icon-search.png) no-repeat 95% center;
+            float: left;
+            padding: 18px 20px;
+            border: 0;
+            border-right: 1px solid #eee;
+            height: 50px;
+            font-size: 14px;
+            .border-radius(0);
+
+            &:focus {
+                .box-shadow(none);
+                border-color: #ddd;
+            }
+        }
+    }
+
+    & .header-right {
+        float: right;
+
+        & .headermenu {
+            list-style: none;
+
+            > li {
+                display: inline-block;
+                float: left;
+                border-left: 1px solid #eee;
+                position: relative;
+            }
+
+            & .dropdown-toggle {
+                padding: 12px 10px;
+                border-color: #fff;
+                background: #fff;
+                border: 0;
+                .border-radius(0);
+
+                &:hover, &:focus, &:active, &.active {
+                    background: #f9f9f9;
+                    color: #333;
+                    .box-shadow(none);
+                }
+            }
+        }
+    }
+}
+
+/***** LEFT PANEL *****/
+/**********************/
+
+.leftpanel {
+    width: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/***** MAIN PANEL *****/
+/**********************/
+
+.mainpanel {
+    margin-left: 240px;
+    background: #e4e7ea;
+    min-height: 1000px;
+}
