@@ -1,7 +1,12 @@
 ﻿@import "planru-style.less";
 
-/***** HEADER PANEL *****/
-/************************/
+body {
+    line-height: 21px;
+}
+
+//
+// Header Panel
+// --------------------------------------------------
 
 .headerbar {
     border-left: 1px solid #eee;
@@ -10,16 +15,14 @@
 
     & .menutoggle {
         float: left;
-        .square(50px);
         font-size: 22px;
         padding: 14px 0 0 15px;
         cursor: pointer;
         float: left;
         color: #1d2939;
         border-right: 1px solid #eee;
-        -moz-transition: all 0.2s ease-out 0s;
-        -webkit-transition: all 0.2s ease-out 0s;
-        transition: all 0.2s ease-out 0s;
+        .square(50px);
+        .transition(all 0.2s ease-out 0s);
 
         &:hover {
             color: #1d2939;
@@ -40,8 +43,8 @@
             .border-radius(0);
 
             &:focus {
-                .box-shadow(none);
                 border-color: #ddd;
+                .box-shadow(none);
             }
         }
     }
@@ -53,10 +56,8 @@
             list-style: none;
 
             > li {
-                display: inline-block;
-                float: left;
                 border-left: 1px solid #eee;
-                position: relative;
+                .pull-left();
             }
 
             & .dropdown-toggle {
@@ -71,13 +72,29 @@
                     color: #333;
                     .box-shadow(none);
                 }
+
+                & img {
+                    margin-right: 5px;
+                    width: 26px;
+                }
+            }
+
+            & .tp-icon {
+                padding: 12px 15px;
+                height: 50px;
+                font-size: 16px;
+                background: #fff;
+                color: #333;
+                border-color: #fff;
+                .transition(all 0.2s ease-out 0s);
             }
         }
     }
 }
 
-/***** LEFT PANEL *****/
-/**********************/
+//
+// Left Panel
+// --------------------------------------------------
 
 .leftpanel {
     width: 240px;
@@ -86,11 +103,39 @@
     left: 0;
 }
 
-/***** MAIN PANEL *****/
-/**********************/
+//
+// Main Panel
+// --------------------------------------------------
+
+.contentpanel {
+    padding: 20px;
+}
 
 .mainpanel {
     margin-left: 240px;
     background: #e4e7ea;
     min-height: 1000px;
+}
+
+//
+// Icons
+// --------------------------------------------------
+
+.tp-icon {
+    padding: 10px 20px;
+    line-height: 20px;
+    border-color: #ddd;
+    position: relative;
+
+    & .badge {
+        position: absolute;
+        font-size: 10px;
+        font-weight: normal;
+        right: 4px;
+        top: 10px;
+        line-height: 13px;
+        background-color: #D9534F;
+        padding: 2px 5px;
+        .border-radius(2px);
+    }
 }
