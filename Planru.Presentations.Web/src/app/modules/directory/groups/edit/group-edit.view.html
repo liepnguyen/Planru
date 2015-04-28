@@ -1,21 +1,22 @@
 ﻿<div class="panel panel-default">
-    <div class="panel-heading">
-        <div class="panel-btns">
-            <button type="button" class="close" ng-click="">&times;</button>
-        </div>
-        <h4 class="panel-title" ng-bind="vm.edit.Name"></h4>
-    </div>
     <div class="panel-body">
+        <div class="pull-right">
+            <button type="button" class="close" ng-click="">×</button>
+        </div>
+        <h4 ng-bind="vm.edit.Name"></h4>
+        <p class="text-muted">subtitle goes here ...</p>
         <h5>Members</h5>
-        <table ng-table="membersTableParams" class="table table-hover">
+        <table ng-table="membersTableParams" class="table table-striped table-hover table-condensed">
             <tr ng-repeat="member in $data">
                 <td data-title="'Full Name'">{{ member.FullName }}</td>
                 <td data-title="'Username'">{{ member.Username }}</td>
                 <td data-title="'Email'">{{ member.Email }}</td>
-                <td width="100" class="text-center">
-                    <a href="" class="btn btn-xs btn-white" ng-really-click="">
-                        <i class="fa fa-remove"></i>
-                    </a>
+                <td width="100">
+                    <div class="pull-right">
+                        <a href="" class="btn btn-xs btn-white" ng-really-click="">
+                            <i class="fa fa-remove"></i>
+                        </a>
+                    </div>
                 </td>
             </tr>
         </table>

@@ -4,7 +4,7 @@
         <div class="pull-right">
             <button type="button" class="close" ng-click="">×</button>
         </div>
-        <h3 class="panel-title">GROUPS</h3>
+        <h4 class="subtitle mb5">Groups</h4>
         <p class="text-muted">subtitle goes here ...</p>
         <!--<div class="form-group pull-left">
             <a href="" class="btn-sm" ng-click="vm.createGroup()"><i class="fa fa-plus fa-lg"></i></a>
@@ -22,10 +22,10 @@
         </div>
         <div class="pull-right">
             <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <button type="button" class="btn btn-sm btn-white dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <i class="glyphicon glyphicon-cog"></i>&nbsp;<span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu" role="menu">
+                <ul class="dropdown-menu pull-right" role="menu">
                     <li><a href="#">Action</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
@@ -34,18 +34,18 @@
                 </ul>
             </div>
         </div>
-        <table ng-table="tableParams" class="table table-hover">
+        <table ng-table="tableParams" class="table table-hover table-striped table-condensed">
             <tr ng-repeat="group in $data">
                 <td width="30" class="text-center">
                     <input type="checkbox" ng-model="vm.checkboxes.items[group.Id]" />
                 </td>
                 <td data-title="'Name'">{{group.Name}}</td>
                 <td data-title="'Description'">{{group.Description}}</td>
-                <td width="100" class="text-center">
-                    <a href="" ng-click="vm.editGroup(group.Id)" class="btn btn-xs btn-white">
+                <td width="100" class="table-action">
+                    <a href="#" ng-click="vm.editGroup(group.Id)">
                         <i class="fa fa-pencil"></i>
                     </a>
-                    <a href="" class="btn btn-xs btn-white" ng-really-click="vm.deleteGroup(group.Id)">
+                    <a href="#" ng-really-click="vm.deleteGroup(group.Id)">
                         <i class="fa fa-trash-o"></i>
                     </a>
                 </td>
