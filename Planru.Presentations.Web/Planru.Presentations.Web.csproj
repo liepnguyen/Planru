@@ -64,6 +64,7 @@
     <Content Include="src\app\common\directives\bootstrap-modal\bootstrap-modal.view.html" />
     <Content Include="src\app\common\services\auth.interceptor.service.js" />
     <Content Include="src\app\core\directives\ng-confirm-click.directive.js" />
+    <Content Include="src\app\core\templates\ng-table-pager.template.html" />
     <Content Include="src\app\modules\directory\groups\create\group-create.controller.js" />
     <Content Include="src\app\modules\directory\groups\create\group-create.view.html" />
     <Content Include="src\app\modules\directory\groups\edit\group-edit.controller.js" />
