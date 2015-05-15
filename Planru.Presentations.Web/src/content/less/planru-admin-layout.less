@@ -2,6 +2,7 @@
 
 body {
     line-height: 21px;
+    background-color: #47A3DA;
 }
 
 //
@@ -101,6 +102,64 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+
+    & .logopanel {
+        padding: 10px;
+        background: #fff;
+
+        & h1 {
+            font-size: 30px;
+            letter-spacing: -1.5px;
+            color: #1d2939;
+            line-height: 30px;
+            margin: 0;
+        }
+    }
+
+    & .leftpanelinner {
+    }
+
+    & .nav > li {
+        border-bottom: 1px solid #258ecd;
+
+        > a {
+            color: #fff;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 300;
+
+            &:hover, &:focus {
+                background: #258ecd;
+            }
+
+            &:active {
+                background: #afdefa;
+                color: #47a3da;
+            }
+        }
+    }
+}
+
+//
+// Left Panel collapsed
+// --------------------------------------------------
+.leftpanel-collapsed {
+    & .logopanel {
+        display: none;
+    }
+
+    & .headerbar {
+        margin-left: -50px;
+    }
+
+    & .leftpanel {
+        width: 51px;
+        top: 51px;
+    }
+
+    & .mainpanel {
+        margin-left: 52px;
+    }
 }
 
 //
@@ -118,10 +177,10 @@ body {
 }
 
 .subtitle {
-  text-transform: uppercase;
-  color: #333;
-  margin-bottom: 15px;
-  margin-top: 0;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 0;
 }
 
 //
@@ -168,13 +227,13 @@ body {
 // Custom styles
 // --------------------------------------------------
 .mb5 {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .mt20 {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .mb20 {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
