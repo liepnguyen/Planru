@@ -108,7 +108,6 @@ body {
         background: #fff;
 
         & h1 {
-            font-size: 30px;
             letter-spacing: -1.5px;
             color: #1d2939;
             line-height: 30px;
@@ -116,25 +115,77 @@ body {
         }
     }
 
-    & .leftpanelinner {
+    & .sidebartitle {
+        color: #afdefa;
+        padding: 20px;
+        margin: 0;
+        font-weight: 300;
+        background: #0d77b6;
     }
 
-    & .nav > li {
-        border-bottom: 1px solid #258ecd;
+    & .nav {
+        > li {
+            border-bottom: 1px solid #258ecd;
 
-        > a {
-            color: #fff;
-            padding: 14px;
-            font-size: 16px;
+            > a {
+                color: #fff;
+                padding: 14px;
+                font-size: 16px;
+                font-weight: 300;
+
+                &:hover, &:focus {
+                    background: #258ecd;
+                }
+
+                &:active {
+                    background: #afdefa;
+                    color: #47a3da;
+                }
+            }
+        }
+    }
+
+    & .nav-parent {
+        & ul.children {
+            list-style: none;
             font-weight: 300;
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 5px;
 
-            &:hover, &:focus {
-                background: #258ecd;
+            > li {
+                > a {
+                    color: #fff;
+                    text-decoration: none;
+                    display: block;
+                    padding: 5px 0 5px 30px;
+
+                    &:hover, &:focus {
+                        background: #258ecd;
+                    }
+                }
+
+                &:before {
+                    border-top: 1px dotted #fff;
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    width: 17px;
+                    margin: 6.5% 0 0;
+                }
             }
 
-            &:active {
-                background: #afdefa;
-                color: #47a3da;
+            &:before {
+                border-color: #fff;
+                border-image: none;
+                border-style: dotted;
+                border-width: 0 0 0 1px;
+                bottom: 0;
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                z-index: 1;
             }
         }
     }

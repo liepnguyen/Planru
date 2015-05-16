@@ -19,6 +19,9 @@
       .state('active-users.edit', {
           url: '/edit'
       })
+      .state('deleted-users', {
+          url: '/deleted-users/:userId'
+      })
       .state('groups', {
           url: '/groups/:groupId',
           views: {

@@ -12,6 +12,7 @@
     <!-- endinject -->
 
     <link rel="stylesheet" type="text/css" href="./content/css/planru-admin-layout.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -47,14 +48,14 @@
                         <li><a href="signout.html"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
                     </ul>
                 </div>
-                <h5 class="sidebartitle">Navigation</h5>
-                <ul class="nav">
-                    <li><a ui-sref="dashboard"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+                <h3 class="sidebartitle">Navigation</h3>
+                <ul class="nav sitebar-menu">
+                    <li><a ui-sref="dashboard"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
                     <li class="nav-parent">
                         <a href=""><i class="fa fa-user"></i> <span>Users</span></a>
                         <ul class="children">
-                            <li><a ui-sref="active-users"><i class="fa fa-caret-right"></i>Active Users</a></li>
-                            <li><a ui-sref="deleted-users"><i class="fa fa-caret-right"></i>Deleted Users</a></li>
+                            <li><a ui-sref="active-users">Active Users</a></li>
+                            <li><a ui-sref="deleted-users">Deleted Users</a></li>
                         </ul>
                     </li>
                     <li><a ui-sref="groups"><i class="fa fa-group"></i> <span>Groups</span></a></li>
