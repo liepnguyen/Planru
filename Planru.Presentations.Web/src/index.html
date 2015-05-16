@@ -48,18 +48,21 @@
                         <li><a href="signout.html"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
                     </ul>
                 </div>
-                <h3 class="sidebartitle">Navigation</h3>
-                <ul class="nav sitebar-menu">
-                    <li><a ui-sref="dashboard"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-                    <li class="nav-parent">
-                        <a href=""><i class="fa fa-user"></i> <span>Users</span></a>
-                        <ul class="children">
-                            <li><a ui-sref="active-users">Active Users</a></li>
-                            <li><a ui-sref="deleted-users">Deleted Users</a></li>
-                        </ul>
-                    </li>
-                    <li><a ui-sref="groups"><i class="fa fa-group"></i> <span>Groups</span></a></li>
-                </ul>
+                <div class="sidebar-menu">
+                    <h3 class="sidebartitle">Navigation</h3>
+                    <ul class="nav">
+                        <li><a ui-sref="dashboard"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+                        <li class="nav-parent">
+                            <a href=""><i class="fa fa-user"></i> <span>Users</span></a>
+                            <ul class="children">
+                                <li><a ui-sref="active-users">Active Users</a></li>
+                                <li><a ui-sref="deleted-users">Deleted Users</a></li>
+                            </ul>
+                        </li>
+                        <li><a ui-sref="groups"><i class="fa fa-group"></i> <span>Groups</span></a></li>
+                    </ul>
+                </div>
+
                 <div class="infosummary">
                 </div><!-- infosummary -->
             </div><!-- leftpanelinner -->
@@ -81,7 +84,7 @@
                         <li>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <img src="content/images/photos/loggeduser.png" class="img-circle" alt=""/>
+                                    <img src="content/images/photos/loggeduser.png" class="img-circle" alt="" />
                                     John Doe
                                     <span class="caret"></span>
                                 </button>
@@ -102,7 +105,7 @@
                 </div><!-- header-right -->
             </div><!-- headerbar -->
             <div class="pageheader">
-                <h2><i class="fa {{ icon }}"></i>{{ title }}<span>Subtitle goes here...</span></h2>
+                <h2><i class="fa {{ icon }}"></i>&nbsp;{{ title }}<span class="subtitle">Subtitle goes here...</span></h2>
                 <div class="breadcrumb-wrapper">
                     <span class="label">You are here:</span>
                     <ol class="breadcrumb">
