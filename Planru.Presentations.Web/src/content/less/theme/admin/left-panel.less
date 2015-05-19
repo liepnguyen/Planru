@@ -7,11 +7,11 @@
     top: 0;
     left: 0;
 
-    & .logopanel {
+    .logo-panel {
         padding: 10px;
         background: #fff;
 
-        & h1 {
+        .app-name {
             letter-spacing: -1.5px;
             color: #1d2939;
             line-height: 30px;
@@ -19,8 +19,8 @@
         }
     }
 
-    & .sidebar-menu {
-        & .title {
+    .sidebar-menu {
+        .title {
             color: #afdefa;
             padding: 20px;
             margin: 0;
@@ -28,7 +28,7 @@
             background: #0d77b6;
         }
 
-        & .nav {
+        .nav {
             > li {
                 border-bottom: 1px solid #258ecd;
 
@@ -48,7 +48,7 @@
                     }
                 }
 
-                & .fa, & .glyphicon {
+                .fa, .glyphicon {
                     font-size: 16px;
                     vertical-align: middle;
                     margin-right: 10px;
@@ -58,8 +58,8 @@
             }
         }
 
-        & .parent {
-            & > a {
+        .parent {
+            > a {
                 &:after {
                     font-family: FontAwesome;
                     content: "\f0d9";
@@ -126,36 +126,38 @@
 // Left Panel collapsed
 // --------------------------------------------------
 .left-panel-collapsed {
-    & .logopanel {
+    .logo-panel {
         display: none;
     }
 
-    & .header-bar {
+    .header-bar {
         margin-left: -50px;
     }
 
-    & .left-panel {
+    .left-panel {
         width: 51px;
         top: 51px;
 
-        & .sidebar-menu {
-            & .nav {
-                & .item-text {
-                    position: absolute;
-                    background: #fff;
-                    padding: 10px 10px 10px 5px;
-                    left: 40px;
-                    top: 0;
-                    min-width: 179px;
-                    text-align: left;
-                    z-index: 100;
-                    display: none;
+        .sidebar-menu {
+            .nav {
+                > li {
+                    .item-text {
+                        position: absolute;
+                        background: #fff;
+                        padding: 10px 10px 10px 5px;
+                        left: 40px;
+                        top: 0;
+                        min-width: 179px;
+                        text-align: left;
+                        z-index: 100;
+                        display: none;
+                    }
                 }
             }
         }
     }
 
-    & .mainpanel {
+    .main-panel {
         margin-left: 52px;
     }
 }
