@@ -212,7 +212,7 @@
     <Content Include="src\content\fonts\roboto\Roboto-ThinItalic-webfontd41d.eot" />
     <Content Include="package.json" />
     <Content Include="gulpfile.js" />
-    <Content Include="src\content\less\planru-style.less" />
+    <Content Include="src\content\less\theme\planru-theme.less" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -438,10 +438,19 @@
     <Content Include="src\content\fonts\opensans\sourcesanspro-boldit-webfont.ttf" />
     <Content Include="src\content\fonts\opensans\sourcesanspro-boldit-webfont.woff" />
     <Content Include="src\content\fonts\opensans\sourcesanspro-boldit-webfont.woff2" />
-    <Content Include="src\content\less\bootstrap-components.less" />
-    <Content Include="src\content\less\bootstrap-variables.less" />
-    <Content Include="src\content\less\planru-admin-layout.less" />
+    <Content Include="src\content\less\base\bootstrap.less" />
+    <Content Include="src\content\less\base\bootstrap-variables.less" />
+    <Content Include="src\content\less\theme\admin\planru-admin-theme.less" />
     <Content Include="src\content\less\mixins.less" />
+    <Content Include="src\content\less\mixins\buttons.less" />
+    <Content Include="src\content\less\mixins\border-radius.less" />
+    <Content Include="src\content\less\dropdowns.less" />
+    <Content Include="src\content\less\variables.less" />
+    <Content Include="src\content\less\theme\admin\page-header.less" />
+    <Content Include="src\content\less\theme\admin\header-bar.less" />
+    <Content Include="src\content\less\base\bootstrap-mixins.less" />
+    <Content Include="src\content\less\theme\admin\left-panel.less" />
+    <Content Include="src\content\less\buttons.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

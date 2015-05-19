@@ -1,0 +1,95 @@
+﻿// Components
+@import "../../mixins.less";
+@import "header-bar.less";
+@import "left-panel.less";
+@import "page-header.less";
+
+body {
+    line-height: 21px;
+    background-color: #47A3DA;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+//
+// Main Panel
+// --------------------------------------------------
+.contentpanel {
+    padding: 20px;
+}
+
+.mainpanel {
+    margin-left: 240px;
+    background: #e4e7ea;
+    min-height: 1000px;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+//
+// Icons
+// --------------------------------------------------
+.tp-icon {
+    padding: 10px 20px;
+    line-height: 20px;
+    border-color: #ddd;
+    position: relative;
+
+    & .badge {
+        position: absolute;
+        font-size: 10px;
+        font-weight: normal;
+        right: 4px;
+        top: 10px;
+        line-height: 13px;
+        background-color: #D9534F;
+        padding: 2px 5px;
+        .border-radius(2px);
+    }
+}
+
+//
+// Tables
+// --------------------------------------------------
+.table-action {
+    text-align: center;
+
+    & a {
+        display: inline-block;
+        margin-right: 5px;
+        color: #666;
+
+        &:hover {
+            color: #333;
+        }
+    }
+}
+
+//
+// Custom styles
+// --------------------------------------------------
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.modal-backdrop {
+  bottom: 0;
+  position: fixed;
+}
+
+label {
+  font-weight: 500;
+}

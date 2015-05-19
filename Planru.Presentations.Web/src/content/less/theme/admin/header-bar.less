@@ -1,0 +1,123 @@
+﻿@import "../../mixins.less";
+
+//
+// Header bar
+// --------------------------------------------------
+.header-bar {
+    border-left: 1px solid #eee;
+    background: #fff;
+    .clearfix();
+
+    & .menu-toggle {
+        float: left;
+        font-size: 22px;
+        padding: 14px 0 0 15px;
+        cursor: pointer;
+        float: left;
+        color: #1d2939;
+        border-right: 1px solid #eee;
+        .square(50px);
+        .transition(all 0.2s ease-out 0s);
+
+        &:hover {
+            color: #1d2939;
+            background-color: #f7f7f7;
+        }
+    }
+
+    & .search-form {
+        > input {
+            width: 250px;
+            background: #fff url(../../../images/icon-search.png) no-repeat 95% center;
+            float: left;
+            padding: 18px 20px;
+            border: 0;
+            border-right: 1px solid #eee;
+            height: 50px;
+            font-size: 14px;
+            .border-radius(0);
+
+            &:focus {
+                border-color: #ddd;
+                .box-shadow(none);
+            }
+        }
+    }
+
+    & .header-right {
+        float: right;
+
+        & .header-menu {
+            list-style: none;
+
+            & .menu-item {
+                border-left: 1px solid #eee;
+                float: left !important;
+            }
+
+            & .dropdown-toggle {
+                padding: 12px 10px;
+                border-color: #fff;
+                background: #fff;
+                border: 0;
+                .border-radius(0);
+
+                &:hover, 
+                &:focus, 
+                &:active, 
+                &.active {
+                    background: #f9f9f9;
+                    color: #333;
+                    .box-shadow(none);
+                }
+
+                & img {
+                    margin-right: 5px;
+                    width: 26px;
+                }
+            }
+
+            & .dropdown-menu-usermenu {
+                background: #47A3DA;
+                min-width: 200px;
+
+                & > li {
+                    & > a {
+                        color: #fff;
+                        font-weight: 300;
+
+                        &:hover, &:focus {
+                            background: #258ecd;
+                        }
+
+                        &:active {
+                            background: #afdefa;
+                            color: #47a3da;
+                        }
+                    }
+                }
+
+                &:after {
+                    border-bottom: 6px solid #47A3DA;
+                    border-left: 6px solid transparent;
+                    border-right: 6px solid transparent;
+                    content: "";
+                    display: inline-block;
+                    right: 95px;
+                    position: absolute;
+                    top: -6px;
+                }
+            }
+
+            & .tp-icon {
+                padding: 12px 15px;
+                height: 50px;
+                font-size: 16px;
+                background: #fff;
+                color: #333;
+                border-color: #fff;
+                .transition(all 0.2s ease-out 0s);
+            }
+        }
+    }
+}

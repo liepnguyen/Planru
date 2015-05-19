@@ -37,7 +37,7 @@ gulp.task('build:css', function() {
 });
 
 gulp.task('build:less', function () {
-    var lessFiles = gulp.src('src/content/less/**/*-layout.less');
+    var lessFiles = gulp.src('src/content/less/**/*-theme.less');
     if (yargs.buildProd) {
         // TODO: should be implemented to minify all css files in build pro mode
     }

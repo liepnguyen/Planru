@@ -11,7 +11,10 @@
     <!-- components:css -->
     <!-- endinject -->
 
-    <link rel="stylesheet" type="text/css" href="./content/css/planru-admin-layout.css">
+    <link rel="stylesheet" type="text/css" href="./content/css/theme/planru-theme.css">
+    <link rel="stylesheet" type="text/css" href="./content/css/theme/admin/planru-admin-theme.css">
+    
+
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,7 +29,7 @@
         <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
     </div>-->
     <section>
-        <div class="leftpanel">
+        <div class="left-panel">
             <div class="logopanel">
                 <h1><span>[</span> Planru <span>]</span></h1>
             </div><!-- logopanel -->
@@ -49,17 +52,17 @@
                     </ul>
                 </div>
                 <div class="sidebar-menu">
-                    <h3 class="sidebartitle">Navigation</h3>
+                    <h3 class="title">Navigation</h3>
                     <ul class="nav">
-                        <li><a ui-sref="dashboard"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-                        <li class="nav-parent">
-                            <a href=""><i class="fa fa-user"></i> <span>Users</span></a>
+                        <li><a ui-sref="dashboard"><i class="fa fa-tachometer"></i> <span class="item-text">Dashboard</span></a></li>
+                        <li class="parent">
+                            <a href=""><i class="fa fa-user"></i> <span class="item-text">Users</span></a>
                             <ul class="children">
-                                <li><a ui-sref="active-users">Active Users</a></li>
-                                <li><a ui-sref="deleted-users">Deleted Users</a></li>
+                                <li><a ui-sref="active-users" class="item-text">Active Users</a></li>
+                                <li><a ui-sref="deleted-users" class="item-text">Deleted Users</a></li>
                             </ul>
                         </li>
-                        <li><a ui-sref="groups"><i class="fa fa-group"></i> <span>Groups</span></a></li>
+                        <li><a ui-sref="groups"><i class="fa fa-group"></i> <span class="item-text">Groups</span></a></li>
                     </ul>
                 </div>
 
@@ -68,23 +71,23 @@
             </div><!-- leftpanelinner -->
         </div><!-- leftpanel -->
         <div class="mainpanel">
-            <div class="headerbar">
-                <a class="menutoggle"><i class="fa fa-bars"></i></a>
-                <form class="searchform" action="#" method="post">
+            <div class="header-bar">
+                <a class="menu-toggle"><i class="fa fa-bars"></i></a>
+                <form class="search-form" action="#" method="post">
                     <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
                 </form>
                 <div class="header-right">
-                    <ul class="headermenu">
-                        <li>
+                    <ul class="header-menu">
+                        <li class="menu-item">
                             <button class="btn btn-default dropdown-toggle tp-icon" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-globe"></i>
                                 <span class="badge">5</span>
                             </button>
                         </li>
-                        <li>
+                        <li class="menu-item">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <img src="content/images/photos/loggeduser.png" class="img-circle" alt="" />
+                                    <img src="content/images/photos/loggeduser.png" class="user-avatar img-circle" alt="" />
                                     John Doe
                                     <span class="caret"></span>
                                 </button>
@@ -96,7 +99,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li>
+                        <li class="menu-item">
                             <button id="chatview" class="btn btn-default tp-icon chat-icon">
                                 <i class="glyphicon glyphicon-comment"></i>
                             </button>
