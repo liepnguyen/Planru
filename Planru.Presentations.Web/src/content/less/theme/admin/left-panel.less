@@ -19,15 +19,15 @@
         }
     }
 
-    .sidebar-menu {
-        .title {
-            color: #afdefa;
-            padding: 20px;
-            margin: 0;
-            font-weight: 300;
-            background: #0d77b6;
-        }
+    .sidebar-title {
+        color: #afdefa;
+        padding: 20px;
+        margin: 0;
+        font-weight: 300;
+        background: #0d77b6;
+    }
 
+    .sidebar-menu {
         .nav {
             > li {
                 border-bottom: 1px solid #258ecd;
@@ -138,9 +138,24 @@
         width: 51px;
         top: 51px;
 
+        .sidebar-title {
+            display: none;
+        }
+
         .sidebar-menu {
             .nav {
                 > li {
+                    > a { 
+                        text-align: center;
+                        &:after {
+                            content: "";
+                        }
+                    }
+
+                    .fa, .glyphicon { 
+                        margin-right: 0; 
+                    }
+
                     .item-text {
                         position: absolute;
                         background: #fff;
