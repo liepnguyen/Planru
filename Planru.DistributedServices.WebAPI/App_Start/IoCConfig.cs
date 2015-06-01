@@ -40,13 +40,13 @@ namespace Planru.DistributedServices.WebAPI
             ConventionRegistry.Register(
                 "Camel Case Element Name", pack, t => true);
 
-            //var dbContext = new MongoDbContext(
-            //    "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system",
-            //    "planru_system");
-
             var dbContext = new MongoDbContext(
-                "mongodb://localhost:27017/planru_system",
+                "mongodb://liepnguyen:abcd1234@ds055680.mongolab.com:55680/planru_system",
                 "planru_system");
+
+            //var dbContext = new MongoDbContext(
+            //    "mongodb://localhost:27017/planru_system",
+            //    "planru_system");
 
             container.RegisterInstance<IMongoDbContext>(dbContext);
         }
