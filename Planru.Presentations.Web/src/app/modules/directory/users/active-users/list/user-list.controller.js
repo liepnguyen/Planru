@@ -37,7 +37,6 @@
             controller: 'UserCreateController',
             controllerAs: 'vm',
             backdrop: true,
-            backdropClass: 'overlay',
             resolve: { userCtrl: function () { return vm; } }
         }).result.finally(function () { });
     }
