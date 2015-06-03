@@ -39,8 +39,7 @@
                 templateUrl: 'app/modules/directory/groups/create/group-create.view.html',
                 controller: 'GroupCreateController',
                 controllerAs: 'vm',
-                backdrop: true,
-                backdropClass: 'overlay'
+                backdrop: true
             }).result.finally(function () {
 
             });
