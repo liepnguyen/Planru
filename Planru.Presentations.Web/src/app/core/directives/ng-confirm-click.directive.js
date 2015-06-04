@@ -51,8 +51,7 @@ angular.module('ngReallyClickModule', ['ui.bootstrap'])
                     var modalInstance = $modal.open({
                         template: modalHtml,
                         controller: ModalInstanceCtrl,
-                        backdrop: true,
-                        backdropClass: 'overlay'
+                        backdrop: true
                     });
 
                     modalInstance.result.then(function () {

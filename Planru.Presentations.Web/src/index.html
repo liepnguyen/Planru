@@ -27,11 +27,7 @@
     <script src="lib/respond/dest/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-    <!-- Preloader -->
-    <!--<div id="preloader">
-        <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
-    </div>-->
+<body ng-controller="MainController as vm" ng-class="{ 'left-panel-collapsed': vm.leftPanelCollapsed }">
     <section>
         <div class="left-panel">
             <div class="logo-panel">
@@ -58,7 +54,7 @@
                 <h3 class="sidebar-title">Navigation</h3>
                 <div class="sidebar-menu">
                     <ul class="nav">
-                        <li><a ui-sref="dashboard" popover-placement="right" popover="Dashboard" popover-trigger="click"><i class="fa fa-tachometer"></i> <span class="item-text">Dashboard</span></a></li>
+                        <li><a ui-sref="dashboard" tooltip-placement="right" tooltip="Dashboard"><i class="fa fa-tachometer"></i> <span class="item-text">Dashboard</span></a></li>
                         <li class="parent">
                             <a href=""><i class="fa fa-user"></i> <span class="item-text">Users</span></a>
                             <ul class="children">
@@ -76,7 +72,7 @@
         </div><!-- leftpanel -->
         <div class="main-panel">
             <div class="header-bar">
-                <a class="menu-toggle"><i class="fa fa-bars"></i></a>
+                <a class="menu-toggle" ng-click="vm.toggleLeftPanel()"><i class="fa fa-bars"></i></a>
                 <form class="search-form" action="#" method="post">
                     <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
                 </form>
