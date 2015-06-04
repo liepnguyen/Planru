@@ -65,6 +65,7 @@
     <Content Include="src\app\common\services\auth.interceptor.service.js" />
     <Content Include="src\app\core\directives\ng-confirm-click.directive.js" />
     <Content Include="src\app\core\templates\ng-table-pager.template.html" />
+    <Content Include="src\app\layout\main.controller.js" />
     <Content Include="src\app\modules\directory\groups\create\group-create.controller.js" />
     <Content Include="src\app\modules\directory\groups\create\group-create.view.html" />
     <Content Include="src\app\modules\directory\groups\edit\group-edit.controller.js" />
@@ -383,7 +384,6 @@
     <Content Include="src\content\images\uploadfile.png" />
     <Content Include="src\content\images\user.png" />
     <Content Include="src\index.html" />
-    <Content Include="src\scripts\custom.js" />
     <Content Include="src\scripts\dashboard.js" />
   </ItemGroup>
   <ItemGroup>
