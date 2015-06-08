@@ -451,6 +451,7 @@
     <Content Include="src\content\less\base\bootstrap-mixins.less" />
     <Content Include="src\content\less\theme\admin\left-panel.less" />
     <Content Include="src\content\less\buttons.less" />
+    <Content Include="src\content\less\forms.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
