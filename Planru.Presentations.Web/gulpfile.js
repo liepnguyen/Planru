@@ -118,12 +118,13 @@ gulp.task('build:bower', function () {
 });
 
 gulp.task('build:ui', function () {
-    var lessFiles = gulp.src('src/content/less/ui/definitions/*.less');
+    var lessFiles = gulp.src('src/content/less/ui/planru.less');
     if (yargs.buildProd) {
         // TODO: should be implemented to minify all css files in build pro mode
     }
     return lessFiles
         .pipe(less())
+        .pipe(minifyCss())
         .pipe(gulp.dest('build/content/css'));
 });
 

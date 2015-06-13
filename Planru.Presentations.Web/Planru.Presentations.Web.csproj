@@ -452,6 +452,18 @@
     <Content Include="src\content\less\theme\admin\left-panel.less" />
     <Content Include="src\content\less\buttons.less" />
     <Content Include="src\content\less\forms.less" />
+    <Content Include="src\content\less\ui\definitions\elements\buttons.less" />
+    <Content Include="src\content\less\ui\definitions\elements\input.less" />
+    <Content Include="src\content\less\ui\planru.less" />
+    <Content Include="src\content\less\ui\theme.config.less" />
+    <None Include="src\content\less\ui\definitions\globals\site.less" />
+    <None Include="src\content\less\ui\theme.less" />
+    <Content Include="src\content\less\ui\themes\default\elements\button.overrides.less" />
+    <Content Include="src\content\less\ui\themes\default\elements\button.variables.less" />
+    <Content Include="src\content\less\ui\themes\default\globals\site.overrides.less" />
+    <Content Include="src\content\less\ui\themes\default\globals\site.variables.less" />
+    <Content Include="src\content\less\ui\_site\elements\button.overrides.less" />
+    <Content Include="src\content\less\ui\_site\elements\button.variables.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -459,7 +471,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\content\less\ui\mixins\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

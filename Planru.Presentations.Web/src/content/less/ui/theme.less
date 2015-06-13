@@ -1,0 +1,23 @@
+﻿@theme: @@element;
+
+/*------------------
+    Default Theme
+-------------------*/
+
+@import "@{themesFolder}/default/@{type}s/@{element}.variables.less";
+
+/*------------------
+   Packaged Theme
+-------------------*/
+
+@import "@{themesFolder}/@{theme}/@{type}s/@{element}.variables.less";
+
+/*------------------
+   Site Theme
+-------------------*/
+
+@import "@{siteFolder}/@{type}s/@{element}.variables.less";
+
+.loadOverrides() {
+	@import "@{themesFolder}/@{theme}/@{type}s/@{element}.overrides.less";
+}

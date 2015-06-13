@@ -1,5 +1,10 @@
-﻿@import "themes/default/@{element}.variables.less";
+﻿/* Elements */
+@button	: 'default';
 
-.loadUIOverrides() {
-	@import "themes/default/@{element}.overrides.less";	
-}
+/* Path to theme packages */
+@themesFolder : 'themes/';
+
+/* Path to site override folder */
+@siteFolder  : '_site/';
+
+@import "theme.less";
