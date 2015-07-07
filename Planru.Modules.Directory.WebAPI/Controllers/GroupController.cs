@@ -1,6 +1,6 @@
 ﻿using Planru.Crosscutting.Data;
-using Planru.Modules.Directory.Application.DTOs;
-using Planru.Modules.Directory.Application.Services;
+using Planru.Modules.Directory.WebAPI.Models;
+using Planru.Modules.Directory.WebAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

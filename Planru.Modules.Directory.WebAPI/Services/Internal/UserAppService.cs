@@ -1,6 +1,5 @@
 ﻿using Planru.Crosscutting.Common;
 using Planru.Crosscutting.Data;
-using Planru.Modules.Directory.Application.DTOs;
 using Planru.Modules.Directory.Domain.Entities;
 using Planru.Modules.Directory.Domain.Repositories;
 using Planru.Modules.Directory.Domain.Services;
@@ -11,8 +10,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Planru.Modules.Directory.WebAPI.Models;
 
-namespace Planru.Modules.Directory.Application.Services.Internal
+namespace Planru.Modules.Directory.WebAPI.Services.Internal
 {
     /// <summary>
     /// The user management service implementation.

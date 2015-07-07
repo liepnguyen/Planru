@@ -13,12 +13,12 @@ using System.Threading.Tasks;
 using Planru.Modules.Directory.Domain.Repositories;
 using Planru.Modules.Directory.Domain.Services;
 using Planru.Modules.Directory.Persistence.MongoDB.Models;
-using Planru.Modules.Directory.Application.Services;
-using Planru.Modules.Directory.Application.DTOs;
 using Planru.Modules.Directory.Domain.Services.Internal;
-using Planru.Modules.Directory.Application.Services.Internal;
 using MongoDB.Bson.Serialization.Conventions;
 using Planru.Core.Persistence.MongoDB;
+using Planru.Modules.Directory.WebAPI.Models;
+using Planru.Modules.Directory.WebAPI.Services;
+using Planru.Modules.Directory.WebAPI.Services.Internal;
 
 namespace Planru.Modules.Directory.WebAPI
 {
@@ -26,8 +26,6 @@ namespace Planru.Modules.Directory.WebAPI
     {
         public void RegisterTypes(IContainer container)
         {
-            
-
             container.Register<IUserRepository, UserRepository>();
             container.Register<IUserService, UserService>();
             container.Register<IUserAppService, UserAppService>();

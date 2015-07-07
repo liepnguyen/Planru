@@ -10,8 +10,8 @@ using System.Net.Http;
 using System.Net;
 using Planru.Modules.Directory.Domain.Services;
 using Planru.Crosscutting.Data;
-using Planru.Modules.Directory.Application.Services;
-using Planru.Modules.Directory.Application.DTOs;
+using Planru.Modules.Directory.WebAPI.Services;
+using Planru.Modules.Directory.WebAPI.Models;
 
 namespace Planru.Modules.Directory.WebAPI.Controllers
 {

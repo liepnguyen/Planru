@@ -71,6 +71,12 @@
   <ItemGroup>
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\GroupDTO.cs" />
+    <Compile Include="Models\UserDTO.cs" />
+    <Compile Include="Services\IGroupAppService.cs" />
+    <Compile Include="Services\Internal\GroupAppService.cs" />
+    <Compile Include="Services\Internal\UserAppService.cs" />
+    <Compile Include="Services\IUserAppService.cs" />
     <Compile Include="WebApiConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -91,6 +97,10 @@
       <Project>{c4ff9d0b-2f25-40e3-868f-a94057ad90a0}</Project>
       <Name>Planru.Crosscutting.Adapter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Planru.Crosscutting.Common\Planru.Crosscutting.Common.csproj">
+      <Project>{ecc001c0-8bc3-4c9d-8d32-4cabb030f16e}</Project>
+      <Name>Planru.Crosscutting.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Planru.Crosscutting.Data\Planru.Crosscutting.Data.csproj">
       <Project>{ca941891-7b9b-499b-966c-481e515120e1}</Project>
       <Name>Planru.Crosscutting.Data</Name>
@@ -104,9 +114,7 @@
       <Name>Planru.Modules.Directory</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

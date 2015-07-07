@@ -1,5 +1,4 @@
-﻿using Planru.Modules.Directory.Application.DTOs;
-using Planru.Modules.Directory.Domain.Repositories;
+﻿using Planru.Modules.Directory.Domain.Repositories;
 using Planru.Modules.Directory.Domain.Services;
 using System;
 using System.Collections.Generic;
@@ -11,8 +10,9 @@ using Planru.Modules.Directory.Domain.Entities;
 using Planru.Crosscutting.Data;
 using System.Linq.Expressions;
 using Planru.Crosscutting.Common;
+using Planru.Modules.Directory.WebAPI.Models;
 
-namespace Planru.Modules.Directory.Application.Services.Internal
+namespace Planru.Modules.Directory.WebAPI.Services.Internal
 {
     public class GroupAppService : IGroupAppService
     {

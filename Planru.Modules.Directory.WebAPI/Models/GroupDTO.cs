@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Planru.Modules.Directory.Application.DTOs
+namespace Planru.Modules.Directory.WebAPI.Models
 {
     /// <summary>
-    /// Represent a group model contract
+    /// Represent a group model
     /// </summary>
     public class GroupDTO
     {

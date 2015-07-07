@@ -62,14 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\DTOs\GroupDTO.cs" />
-    <Compile Include="Application\DTOs\UserDTO.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Application\Services\IGroupAppService.cs" />
-    <Compile Include="Application\Services\Internal\GroupAppService.cs" />
-    <Compile Include="Application\Services\Internal\UserAppService.cs" />
-    <Compile Include="Application\Services\IUserAppService.cs" />
     <Compile Include="Domain\Entities\Group.cs" />
     <Compile Include="Domain\Repositories\IGroupRepository.cs" />
     <Compile Include="Domain\Services\Internal\GroupService.cs" />
