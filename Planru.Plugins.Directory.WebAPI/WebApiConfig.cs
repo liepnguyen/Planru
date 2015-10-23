@@ -16,6 +16,8 @@ using Planru.Plugins.Directory.Domain.Services;
 using Planru.Plugins.Directory.Services.Impl;
 using Planru.Plugins.Directory.Persistence.MongoDB.Entities;
 using Planru.Plugins.Directory.Application.DTOs;
+using Planru.Plugins.Directory.Application.Services;
+using Planru.Plugins.Directory.Application.Impl;
 
 namespace Planru.Plugins.Directory.WebAPI
 {
@@ -25,6 +27,7 @@ namespace Planru.Plugins.Directory.WebAPI
         {
             container.Register<IUserRepository, UserRepository>();
             container.Register<IUserService, UserService>();
+            container.Register<IUserAppService, UserAppService>();
             container.Register<UserController, UserController>();
         }
 

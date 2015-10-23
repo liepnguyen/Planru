@@ -1,7 +1,9 @@
-﻿using Planru.Plugins.Directory.Application.DTOs;
+﻿using Planru.Crosscutting.Data;
+using Planru.Plugins.Directory.Application.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,5 +14,6 @@ namespace Planru.Plugins.Directory.Application.Services
         void CreateUser(UserDTO userDto);
         void UpdateUser(UserDTO userDto);
         void DeleteUser(object id);
+        PageResult<UserDTO> GetPaged<KProperty>(int pageNumber, int pageSize, Expression<Func<UserDTO, KProperty>> orderByExpression, bool ascending);
     }
 }

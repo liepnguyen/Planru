@@ -12,18 +12,19 @@ using System.Net;
 using Planru.Plugins.Directory.Domain.Services;
 using Planru.Crosscutting.Data;
 using Planru.Plugins.Directory.Application.DTOs;
+using Planru.Plugins.Directory.Application.Services;
 
 namespace Planru.Plugins.Directory.WebAPI.Controllers
 {
     public class UserController : ApiController
     {
-        private IUserService _userService;
+        private IUserAppService _userAppService;
         private ITypeAdapter _typeAdapter;
 
-        public UserController(ITypeAdapter typeAdapter, IUserService userService)
+        public UserController(ITypeAdapter typeAdapter, IUserAppService userService)
         {
             _typeAdapter = typeAdapter;
-            _userService = userService;
+            _userAppService = userService;
         }
 
         public PageResult<UserDTO> Get(int? count, int? page)
@@ -31,7 +32,7 @@ namespace Planru.Plugins.Directory.WebAPI.Controllers
             var pageNumber = page ?? 0;
             var pageSize = count ?? 10;
 
-            var pageResult = _userService.GetPaged(pageNumber, pageSize, o => o.Id, true)
+            var pageResult = _userAppService.GetPaged(pageNumber, pageSize, o => o.Id, true)
                 .ToPageResult<UserDTO>(_typeAdapter);
 
             return pageResult;
@@ -39,7 +40,7 @@ namespace Planru.Plugins.Directory.WebAPI.Controllers
 
         public IHttpActionResult Get(Guid id)
         {
-            var user = _typeAdapter.Adapt<UserDTO>(_userService.Get(id));
+            UserDTO user = null; // TODO: should be implemented
             if (user == null)
             {
                 return NotFound();
@@ -50,7 +51,8 @@ namespace Planru.Plugins.Directory.WebAPI.Controllers
 
         public IHttpActionResult Post(UserDTO model)
         {
-            return Created<UserDTO>(Url.Link("DefaultApi", new { id = model.Id }), null);
+            _userAppService.CreateUser(model);
+            return Created<UserDTO>(Url.Link("DefaultApi", new { id = model.Id }), model);
         }
 
         public void Put(UserDTO model)
@@ -60,7 +62,7 @@ namespace Planru.Plugins.Directory.WebAPI.Controllers
 
         public void Delete(Guid id)
         {
-            _userService.Remove(id);
+            _userAppService.DeleteUser(id);
         }
     }
 }

@@ -63,7 +63,7 @@ namespace Planru.Core.Domain
 
         public void Remove(TID id)
         {
-            throw new NotImplementedException();
+            _repository.Remove(id);
         }
 
         public void Remove(IEnumerable<TID> ids)

@@ -1,4 +1,14 @@
-﻿app.config(['$stateProvider', function ($stateProvider) {
+var app = angular.module('planruApp', [
+    'ngTable',
+    'ui.router',
+    'ui.bootstrap',
+    'ngResource',
+    'angular-loading-bar',
+    'ngAnimate',
+    'toastr',
+    'planru.plugins.user'
+])
+.config(['$stateProvider', function ($stateProvider) {
     $stateProvider
       .state('dashboard', {
           url: '/',
@@ -18,4 +28,9 @@
               }
           }
       });
-}]);
+}])
+.run(function ($rootScope) {
+    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        $rootScope.previousState = fromState.name;
+    });
+});
